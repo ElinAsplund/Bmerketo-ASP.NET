@@ -8,15 +8,15 @@ header {
     .container {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        grid-template-areas:    "logo btn"
-                                "menu menu";
+        grid-template-areas: "logo btn"
+            "menu menu";
 
         @include lg {
             grid-template-columns: 1fr 2fr;
-            grid-template-areas:    "logo menu";
+            grid-template-areas: "logo menu";
         }
     }
-   
+
     .logo {
         grid-area: logo;
     }
@@ -35,7 +35,8 @@ header {
 
         .menu-links {
             color: $color-dark-1;
-            padding-top: 30px;
+            // padding-top: 30px;
+
 
             @include lg {
                 padding-top: 0;
@@ -43,7 +44,8 @@ header {
 
             .link {
                 color: $color-dark-1;
-                display: block;
+                display: none;
+                // display: block;
                 margin: 10px 20px;
                 padding: 10px;
 
@@ -57,13 +59,14 @@ header {
                     color: $color-theme-1;
                 }
             }
-        }    
+        }
 
         .menu-icons {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
+            z-index: 10;
             text-align: center;
             padding: 20px;
             background: $color-theme-2;
