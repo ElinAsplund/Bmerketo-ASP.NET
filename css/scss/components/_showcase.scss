@@ -1,0 +1,54 @@
+.showcase{
+    background: $color-theme-3;
+
+    .container{
+        padding: 40px 0px;
+
+        @include lg{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .content{
+        font-family: $font-poppins;
+        color: $color-dark-1;
+        text-align: center;
+
+        @include lg{
+            text-align: left;
+        }
+
+        .ingress{
+            font-size: 18px;
+            font-weight: $font-weight-regular;
+            margin-bottom: 20px;
+        }
+
+        .title{
+            font-size: 40px;
+            font-weight: $font-weight-bold;
+            line-height: 1.2;
+            margin-bottom: 20px;
+
+            @include lg{
+                font-size: 60px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    .content-image{
+        display: none;
+        width: 625px;
+
+        @include lg{
+            display: block;
+        }
+
+        img{
+            width: 100%;
+        }
+    }
+}
