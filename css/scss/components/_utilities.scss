@@ -62,13 +62,13 @@ button {
 .card{
     // background-color: $color-green;
     border: none;
-    width: 270px;
+    width: 270px; //<--------CHANGE THIS WHEN OTHER WIDTH
     padding: 0;
     font-family: $font-poppins;
     border-radius: 0;
     
     .img-holder{
-        width: 270px;
+        width: 270px; //<--------CHANGE THIS WHEN OTHER WIDTH
         overflow: hidden;
 
         img{
