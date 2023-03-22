@@ -1,0 +1,64 @@
+.top-selling{
+    padding-top: 45px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include lg {
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+
+    .heading{
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 45px;
+
+        @include lg{
+            font-size: 30px;
+            margin-bottom: 80px;
+        }
+    }
+
+    .row{
+        gap: 20px;
+        justify-content: center;
+        margin: 0;
+
+        @media (min-width: 565px) {
+            gap: 40px;
+        }
+    }
+
+    .col{
+        width: 270px;
+        padding: 0;
+    
+
+        @media (min-width: 1510px) {
+            &:last-child{
+                display: none;
+            }
+        }
+        @media (min-width: 1820px) {
+            &:last-child{
+                display: block;
+            }
+        }
+    }
+
+    .button-holder{
+        display: none;
+        margin-top: 20px;
+        
+        @include sm{
+            display: block;
+        }
+
+        button{
+            padding: 5px 10px;
+            margin-left: 10px;
+        }
+    }
+}
