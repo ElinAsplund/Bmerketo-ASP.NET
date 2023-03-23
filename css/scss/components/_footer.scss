@@ -1,0 +1,15 @@
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-dark-1;
+    font-family: $font-poppins;
+
+    .text{
+        margin: 20px 0;
+
+        @include lg{
+            margin: 40px 0;
+        }
+    }
+}

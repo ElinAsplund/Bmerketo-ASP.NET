@@ -1,6 +1,6 @@
 .top-selling{
     padding-top: 45px;
-    padding-bottom: 30px;
+    padding-bottom: 45px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,14 +50,17 @@
 
     .button-holder{
         display: none;
-        margin-top: 20px;
+        margin-top: 40px;
         
         @include sm{
             display: block;
         }
 
         button{
-            padding: 5px 10px;
+            // font-weight: $font-weight-medium;
+            font-size: 1.3rem;
+            border-radius: 3px;
+            padding: 0px 10px;
             margin-left: 10px;
         }
     }
