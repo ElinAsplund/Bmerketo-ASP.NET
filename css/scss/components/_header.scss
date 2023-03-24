@@ -102,4 +102,20 @@ header {
             font-size: 1.4rem;
         }
     }
+
+    .img-holder{
+        padding-top: 15px;
+        overflow: hidden;
+        height: 150px;
+
+        @include lg {
+            padding-top: 30px;
+            height: 300px;
+        }
+
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+    }
 }
