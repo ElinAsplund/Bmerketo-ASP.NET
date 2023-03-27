@@ -1,9 +1,14 @@
 .related-products{
     padding-top: 1rem;
-    padding-bottom: 45px;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include lg{            
+        padding-top: 2rem;
+        padding-bottom: 60px;
+    }
 
     .heading{
         font-size: 24px;
@@ -23,7 +28,7 @@
         @include md{
             gap: 40px;
         }
-        
+
         @include xxl{
             justify-content: space-between;
         }
