@@ -1,8 +1,8 @@
-.read-more{
+.read-more {
 
-    .container{}
+    .container {}
 
-    .btn-grid{
+    .btn-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -10,55 +10,55 @@
         border: $color-dark-4 1px solid;
         margin-bottom: 30px;
 
-        @include lg{
+        @include lg {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: 1fr;
             gap: 0;
         }
-        
-        button{
+
+        button {
             width: 100%;
             border-color: transparent;
             border-right: $color-dark-4 1px solid;
             padding: 10px 25px;
-            
-            &:nth-child(-n+2){
+
+            &:nth-child(-n+2) {
                 border-bottom: $color-dark-4 1px solid;
             }
-            
-            &:nth-child(even){
+
+            &:nth-child(even) {
                 border-right: none;
             }
-            
-            @include lg{
+
+            @include lg {
                 padding: 10px 35px;
 
-                &:nth-child(-n+2){
+                &:nth-child(-n+2) {
                     border-bottom: transparent;
                 }
 
-                &:nth-child(even){
+                &:nth-child(even) {
                     border-right: $color-dark-4 1px solid;
                 }
 
-                &:last-child{
+                &:last-child {
                     border-right: none;
                 }
             }
 
-            &:hover{
+            &:hover {
                 background: $color-theme-1;
             }
 
-            &:focus{
+            &:focus {
                 background: $color-theme-1;
                 color: $color-dark-1;
             }
         }
     }
 
-    .title{
+    .title {
         font-family: $font-poppins;
         font-size: 24px;
         font-weight: $font-weight-semibold;
@@ -67,57 +67,58 @@
         text-align: left;
         text-align: center;
         max-width: 700px;
-        
-        @include lg{
+
+        @include lg {
             max-width: inherit;
         }
-        @include lg{
+
+        @include lg {
             text-align: left;
         }
     }
 
-    .text-area{
+    .text-area {
         width: 100%;
         display: flex;
         flex-direction: column-reverse;
         align-items: flex-start;
-        
-        @include sm{
+
+        @include sm {
             align-items: center;
         }
 
-        @include lg{
+        @include lg {
             display: grid;
-            grid-template-columns:  auto minmax(auto, 469px);
+            grid-template-columns: auto minmax(auto, 469px);
             gap: 2rem;
             align-items: flex-start;
         }
 
-        .text{
+        .text {
             color: $color-dark-2;
             max-width: 469px;
 
-            @include lg{
+            @include lg {
                 max-width: inherit;
                 width: 100%;
             }
         }
 
-        .img-holder{
+        .img-holder {
             max-width: 469px;
             position: relative;
             overflow: hidden;
             margin-bottom: 1rem;
-            
-            @include lg{
+
+            @include lg {
                 margin-bottom: 0rem;
             }
-            
-            img{
+
+            img {
                 width: 100%;
                 object-fit: cover;
             }
-            
+
             &:after {
                 content: "New";
                 position: absolute;
@@ -131,8 +132,8 @@
             }
         }
     }
-    
-    hr{
+
+    hr {
         margin-top: 2rem;
     }
 }
