@@ -69,7 +69,8 @@ header {
             z-index: 10;
             text-align: center;
             padding: 20px;
-            background: #e3cacb;
+            background: $color-dark-1;
+            // background: #e3cacb;
 
             @include lg {
                 position: static;
@@ -78,11 +79,19 @@ header {
             }
 
             .link {
-                color: $color-dark-2;
+                color: $color-white;
                 margin-left: 15px;
 
                 &:hover {
-                    color: $color-dark-1;
+                    color: $color-dark-2;
+                }
+
+                @include lg{
+                    color: $color-dark-2;
+    
+                    &:hover {
+                        color: $color-dark-1;
+                    }
                 }
             }
         }
@@ -101,21 +110,5 @@ header {
             padding: 5px 15px;
             font-size: 1.4rem;
         }
-    }
-
-    .img-holder{
-        padding-top: 15px;
-        overflow: hidden;
-        height: 150px;
-
-        @include lg {
-            padding-top: 30px;
-            height: 300px;
-        }
-
-            img{
-                width: 100%;
-                object-fit: cover;
-            }
     }
 }
