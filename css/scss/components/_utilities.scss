@@ -52,6 +52,12 @@ button {
     border: 1px solid $color-dark-2;
 }
 
+.btn-dark {
+    background-color: $color-dark-1;
+    color: $color-white;
+    border: 1px solid $color-dark-2;
+}
+
 .btn-theme {
     border: none;
     background-color: $color-theme-1;

@@ -36,16 +36,16 @@ header {
         .menu-links {
             color: $color-dark-1;
             // padding-top: 30px;
-
-
+            
             @include lg {
+                display: block;
                 padding-top: 0;
             }
-
+            
             .link {
                 color: $color-dark-1;
-                display: none;
-                // display: block;
+                // display: none;
+                display: block;
                 margin: 10px 20px;
                 padding: 10px;
 
@@ -106,9 +106,17 @@ header {
             display: none;
         }
 
-        .btn-white {
+        .btn-white,
+        .btn-dark {
             padding: 5px 15px;
             font-size: 1.4rem;
         }
     }
+}
+
+.menu-show{
+    display: block;
+}
+.menu-hide{
+    display: none;
 }
