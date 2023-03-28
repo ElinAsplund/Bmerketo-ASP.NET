@@ -11,8 +11,12 @@
         background: $color-white;
         color: $color-dark-2;
         width: 100%;
-        padding: 50px;
+        padding: 30px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        
+        @include sm{            
+            padding: 50px;
+        }
 
         hr {
             width: 60px;
@@ -22,6 +26,15 @@
         }
 
         form {
+
+            .grid{
+                @include lg{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 0rem 2rem;
+                }
+            }
+
             .col {
                 display: grid;
                 margin-bottom: 1rem;
@@ -39,7 +52,7 @@
 
             .text-area {
                 display: grid;
-                margin-bottom: 0.5rem;
+                margin-bottom: 1rem;
 
                 textarea {
                     height: 100px;
@@ -54,15 +67,58 @@
                 }
             }
 
-            .d-flex {
-                margin-bottom: 1.5rem;
-                align-items: center;
+            //with help of www3school+chatgpt+Hans github
+            .custom-checkbox {
+                display: block;
+                position: relative;
+                padding-left: 25px;
+                margin-bottom: 12px;
+                font-size: 14px;
+                cursor: pointer;
+                user-select: none;
+            }
 
-                .checkbox-text {
-                    font-size: 14px;
-                    margin-left: 0.5rem;
-                    margin-top: 3px;
-                }
+            .custom-checkbox input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+
+            .custom-checkbox .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 15px;
+                width: 15px;
+                background-color: #eee;
+                margin-top: 3px;
+            }
+
+            .custom-checkbox:hover input~.checkmark {
+                background-color: #ccc;
+            }
+
+            .custom-checkbox input:checked~.checkmark {
+                background-color: #efafaf;
+            }
+
+            .custom-checkbox .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+            .custom-checkbox input:checked~.checkmark:after {
+                display: block;
+                left: 5px;
+                top: 2px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                transform: rotate(45deg);
             }
         }
     }
