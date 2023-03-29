@@ -5,23 +5,23 @@
         flex-direction: column;
         align-items: center;
 
-        @include lg{
-            padding: 80px 10px;
+        @include lg {
+            padding: 80px 0px;
         }
     }
-    
+
     .heading {
         text-align: center;
         font-size: 38px;
         line-height: 1.1;
         margin-bottom: 10px;
 
-        @include lg{
+        @include lg {
             font-size: 48px;
             margin-bottom: 30px;
         }
     }
-    
+
     .breadcrumb {
         display: flex;
         list-style: none;
@@ -29,7 +29,7 @@
         justify-content: center;
         margin-bottom: 40px;
 
-        @include lg{
+        @include lg {
             margin-bottom: 50px;
         }
 
@@ -41,21 +41,21 @@
         li:nth-child(n+5) {
             display: none;
         }
-        
-        @include md{
+
+        @include md {
             li:nth-child(-n+7) {
                 display: block;
             }
         }
 
-        @include lg{
+        @include lg {
             li:nth-child(n+5) {
                 display: block;
             }
         }
     }
 
-    .row{
+    .row {
         gap: 20px;
         justify-content: center;
         margin: 0;
@@ -65,39 +65,39 @@
         }
     }
 
-    .col{
+    .col {
         width: 270px;
         padding: 0;
     }
 
-    .card{
-        .card-icon{
+    .card {
+        .card-icon {
             color: $color-black;
 
-            @include lg{
+            @include lg {
                 color: transparent;
             }
         }
     }
 
-    @include lg{
+    @include lg {
         .col:nth-child(n+7) {
             display: none;
-        }   
+        }
     }
 
-    @include xxl{
+    @include xxl {
         .col:nth-child(n+7) {
             display: block;
         }
     }
 
-    button{
+    button {
         margin-top: 40px;
 
-        i{
+        i {
             margin-left: 7px;
-            font-size: 0.8rem;    
+            font-size: 0.8rem;
         }
     }
 }
