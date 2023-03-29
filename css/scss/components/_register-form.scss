@@ -1,9 +1,13 @@
 .register-form {
-    padding-top: 80px;
+    padding-top: 40px;
     padding-bottom: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    @include lg{
+        padding-top: 80px;
+    }
 
     .form-content {
         background: $color-white;
@@ -25,10 +29,23 @@
 
         form {
 
-            // .two-column{
-            //     display: grid;
-            //     grid-template-columns: 1fr 1fr;
-            // }
+            label{
+                margin-bottom: 5px;
+            }
+
+            .grid{
+                gap: 1rem;
+                
+                @include lg{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1.5rem;
+                }
+
+                .column{
+                    display: grid;
+                }
+            }
 
             .line {
                 display: grid;
@@ -47,11 +64,16 @@
                     padding: 5px 10px;
                     border: none;
                     background: #FAFAFA;
+                    font-family: $font-poppins;
 
                     &:focus {
                         outline-color: #f2d8d8;
                     }
                 }
+
+                input[type="file"]{
+                    padding: 10px;
+                  }
 
                 .email-content{
                     display: flex;

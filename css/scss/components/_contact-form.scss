@@ -26,6 +26,9 @@
         }
 
         form {
+            label{
+                margin-bottom: 5px;
+            }
 
             .grid{
                 @include lg{
@@ -43,6 +46,7 @@
                     padding: 5px 10px;
                     border: none;
                     background: #FAFAFA;
+                    font-family: $font-poppins;
 
                     &:focus {
                         outline-color: #f2d8d8;
