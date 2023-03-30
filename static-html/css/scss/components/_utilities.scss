@@ -180,3 +180,25 @@ button {
         transform: rotate(45deg);
     }
 }
+
+//Error styling of forms
+.error-msg{
+    display: none;
+}
+
+.error{
+
+    input,
+    textarea{
+        border: $color-theme-1 1px solid !important;
+
+        &:focus {
+            outline-color: #f2d8d8;
+        }
+    }
+
+    .error-msg{
+        display: block !important;
+        color: $color-theme-1;
+    }
+}
