@@ -1,14 +1,15 @@
-footer{
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $color-dark-1;
     font-family: $font-poppins;
 
-    .text{
+    .text {
+        color: $color-dark-3;
         margin: 20px 0;
 
-        @include lg{
+        @include lg {
             margin: 40px 0;
         }
     }

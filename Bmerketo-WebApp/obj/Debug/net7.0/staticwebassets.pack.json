@@ -1,8 +1,144 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\css\\style.min.css",
+      "PackagePath": "staticwebassets\\css\\style.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\chair.jpg",
+      "PackagePath": "staticwebassets\\images\\chair.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\header.jpg",
+      "PackagePath": "staticwebassets\\images\\header.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\inspiration.jpg",
+      "PackagePath": "staticwebassets\\images\\inspiration.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\lamp.jpg",
+      "PackagePath": "staticwebassets\\images\\lamp.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\product.jpg",
+      "PackagePath": "staticwebassets\\images\\product.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\shoes-info.jpg",
+      "PackagePath": "staticwebassets\\images\\shoes-info.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\shoes-small.jpg",
+      "PackagePath": "staticwebassets\\images\\shoes-small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\shoes.jpg",
+      "PackagePath": "staticwebassets\\images\\shoes.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\wall-lamp.jpg",
+      "PackagePath": "staticwebassets\\images\\wall-lamp.jpg"
+    },
+    {
       "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_best-collection.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_best-collection.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_contact-form.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_contact-form.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_footer.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_footer.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_google-map.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_google-map.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_header.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_header.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_inspiration-images.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_inspiration-images.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_login-form.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_login-form.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_product-info.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_product-info.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_read-more.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_read-more.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_register-form.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_register-form.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_related-products.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_related-products.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_shop-heading.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_shop-heading.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_showcase.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_showcase.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_spotlight.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_spotlight.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_subscribe-form.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_subscribe-form.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_top-selling.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_top-selling.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_up-to-sell.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_up-to-sell.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_utilities.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_utilities.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\core\\_colors.scss",
+      "PackagePath": "staticwebassets\\scss\\core\\_colors.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\core\\_fonts.scss",
+      "PackagePath": "staticwebassets\\scss\\core\\_fonts.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\core\\_mixins.scss",
+      "PackagePath": "staticwebassets\\scss\\core\\_mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\scss\\style.scss"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Bmerketo-WebApp.Microsoft.AspNetCore.StaticWebAssets.props",

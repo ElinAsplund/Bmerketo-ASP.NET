@@ -8,8 +8,7 @@ header {
     .container {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        grid-template-areas: "logo btn"
-            "menu menu";
+        grid-template-areas: "logo btn" "menu menu";
 
         @include lg {
             grid-template-columns: 1fr 2fr;
@@ -36,12 +35,12 @@ header {
         .menu-links {
             color: $color-dark-1;
             // padding-top: 30px;
-            
+
             @include lg {
                 display: block;
                 padding-top: 0;
             }
-            
+
             .link {
                 color: $color-dark-1;
                 // display: none;
@@ -86,9 +85,9 @@ header {
                     color: $color-dark-2;
                 }
 
-                @include lg{
+                @include lg {
                     color: $color-dark-2;
-    
+
                     &:hover {
                         color: $color-dark-1;
                     }
