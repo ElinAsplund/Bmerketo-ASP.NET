@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "aFJg068vjjHGaUrcBBaYugSJFzrUEaTkFMi0rSAclFg=",
+  "Source": "Bmerketo-WebApp",
+  "BasePath": "_content/Bmerketo-WebApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Bmerketo-WebApp\\wwwroot",
+      "Source": "Bmerketo-WebApp",
+      "ContentRoot": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\",
+      "BasePath": "_content/Bmerketo-WebApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\js\\site.js",
+      "SourceId": "Bmerketo-WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\",
+      "BasePath": "_content/Bmerketo-WebApp",
+      "RelativePath": "js/site.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\site.js"
+    }
+  ]
+}
