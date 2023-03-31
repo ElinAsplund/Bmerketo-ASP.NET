@@ -32,7 +32,10 @@ a {
 }
 
 //Button styling
-button {
+button,
+a.btn-white,
+a.btn-dark,
+a.btn-theme {
     padding: 10px 35px;
     font-family: $font-poppins;
     border: 1px solid $color-dark-1;
@@ -40,25 +43,37 @@ button {
     color: $color-dark-1;
     transition: 0.2s ease-in-out;
 
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+
     &:hover {
         background-color: $color-dark-1;
         color: $color-white;
     }
 }
 
-.btn-white {
+.btn-white,
+a.btn-white {
     background-color: $color-white;
     color: $color-dark-2;
     border: 1px solid $color-dark-2;
 }
 
-.btn-dark {
+.btn-dark,
+a.btn-dark {
     background-color: $color-dark-1;
     color: $color-white;
     border: 1px solid $color-dark-2;
+
+    &:hover {
+        background-color: $color-white;
+        color: $color-dark-1;
+    }
 }
 
-.btn-theme {
+.btn-theme,
+a.btn-theme {
     border: none;
     background-color: $color-theme-1;
     color: $color-white;
@@ -182,14 +197,14 @@ button {
 }
 
 //Error styling of forms
-.error-msg{
+.error-msg {
     display: none;
 }
 
-.error{
+.error {
 
     input,
-    textarea{
+    textarea {
         border: $color-theme-1 1px solid !important;
 
         &:focus {
@@ -197,7 +212,7 @@ button {
         }
     }
 
-    .error-msg{
+    .error-msg {
         display: block !important;
         color: $color-theme-1;
     }

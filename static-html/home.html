@@ -1,268 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Tutorial">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-        <title>bmerketo | Home</title>
-        <script src="https://kit.fontawesome.com/41c8b474e2.js" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-            crossorigin="anonymous"></script>
-        <script defer src="./js/script.js"></script>
-        <link href="./css/style.min.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Tutorial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>bmerketo | Home</title>
+    <script src="https://kit.fontawesome.com/41c8b474e2.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script defer src="./js/script.js"></script>
+    <link href="./css/style.min.css" rel="stylesheet">
+</head>
 
-    <body>
-        <!-- header start -->
-        <header class="">
-            <div class="container">
-                <a href="home.html"><img class="logo" src="images/logo.png" alt=""></a>
-    
-                <div class="menu">
-                    <nav class="menu-links menu-hide" id="menu-links">
-                        <a class="link" href="home.html">HOME</a>
-                        <a class="link" href="product.html">PRODUCTS</a>
-                        <a class="link" href="contact.html">CONTACT</a>
-                    </nav>
-                    <nav class="menu-icons">
-                        <a class="link" href="#"><i class="fa-regular fa-search"></i></a>
-                        <a class="link" href="login.html">Login</a>
-                        <a class="link" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                    </nav>
-                </div>
-    
-                <div class="toggle">
-                    <button class="btn-white btn-toggle" data-option="toggle" data-target="#menu-links"><i class="fa-regular fa-bars"></i></button>
-                </div>
+<body>
+    <!-- header start -->
+    <header class="">
+        <div class="container">
+            <a href="home.html"><img class="logo" src="images/logo.png" alt=""></a>
+
+            <div class="menu">
+                <nav class="menu-links menu-hide" id="menu-links">
+                    <a class="link" href="home.html">HOME</a>
+                    <a class="link" href="product.html">PRODUCTS</a>
+                    <a class="link" href="contact.html">CONTACT</a>
+                </nav>
+                <nav class="menu-icons">
+                    <a class="link" href="#"><i class="fa-regular fa-search"></i></a>
+                    <a class="link" href="login.html">Login</a>
+                    <a class="link" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                </nav>
             </div>
-        </header>
-        <!-- header end -->
-        <!-- showcase start -->
-        <section class="showcase">
-            <div class="container">
-                <div class="content">
-                    <div class="ingress">WELCOME TO BMERKETO SHOP</div>
-                    <div class="title">Exclusive Chair gold&nbsp;Collection.</div>
-                    <button class="btn-theme">SHOP NOW</button>
-                </div>
-                <div class="content-image">
-                    <img src="images/chair.jpg" alt="">
-                </div>
+
+            <div class="toggle">
+                <button class="btn-white btn-toggle" data-option="toggle" data-target="#menu-links"><i
+                        class="fa-regular fa-bars"></i></button>
             </div>
-        </section>
-        <!-- showcase end -->
-        <!-- best-collection start -->
-        <section class="best-collection">
-            <div class="container">
-                <div class="heading">Best Collection</div>
-                <ul class="breadcrumb">
-                    <li><a class="link" href="#">All</a></li>
-                    <li><a class="link" href="#">Bags</a></li>
-                    <li><a class="link" href="#">Dress</a></li>
-                    <li><a class="link" href="#">Decoration</a></li>
-                    <li><a class="link" href="#">Essentials</a></li>
-                    <li><a class="link" href="#">Interior</a></li>
-                    <li><a class="link" href="#">Laptop</a></li>
-                    <li><a class="link" href="#">Mobile</a></li>
-                    <li><a class="link" href="#">Beauty</a></li>
-                </ul>
-
-                <div class="row row-cols-4">
-
-                    <div class="col">
-                        <div class="card">
-                            <div class="img-holder">
-                                <img src="./images/product.jpg" class="card-img-top" alt="">
-                            </div>
-                            <div class="card-body">
-                                <div>
-                                    <a class="card-link" href="#">Apple watch series</a>
-                                    <p class="card-text">$30.00</p>
-                                </div>
-                                <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card">
-                            <div class="img-holder">
-                                <img src="./images/product.jpg" class="card-img-top" alt="">
-                            </div>
-                            <div class="card-body">
-                                <div>
-                                    <a class="card-link" href="#">Apple watch series</a>
-                                    <p class="card-text">$30.00</p>
-                                </div>
-                                <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card">
-                            <div class="img-holder">
-                                <img src="./images/product.jpg" class="card-img-top" alt="">
-                            </div>
-                            <div class="card-body">
-                                <div>
-                                    <a class="card-link" href="#">Apple watch series</a>
-                                    <p class="card-text">$30.00</p>
-                                </div>
-                                <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card">
-                            <div class="img-holder">
-                                <img src="./images/product.jpg" class="card-img-top" alt="">
-                            </div>
-                            <div class="card-body">
-                                <div>
-                                    <a class="card-link" href="#">Apple watch series</a>
-                                    <p class="card-text">$30.00</p>
-                                </div>
-                                <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card">
-                            <div class="img-holder">
-                                <img src="./images/product.jpg" class="card-img-top" alt="">
-                            </div>
-                            <div class="card-body">
-                                <div>
-                                    <a class="card-link" href="#">Apple watch series</a>
-                                    <p class="card-text">$30.00</p>
-                                </div>
-                                <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card">
-                            <div class="img-holder">
-                                <img src="./images/product.jpg" class="card-img-top" alt="">
-                            </div>
-                            <div class="card-body">
-                                <div>
-                                    <a class="card-link" href="#">Apple watch series</a>
-                                    <p class="card-text">$30.00</p>
-                                </div>
-                                <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card">
-                            <div class="img-holder">
-                                <img src="./images/product.jpg" class="card-img-top" alt="">
-                            </div>
-                            <div class="card-body">
-                                <div>
-                                    <a class="card-link" href="#">Apple watch series</a>
-                                    <p class="card-text">$30.00</p>
-                                </div>
-                                <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card">
-                            <div class="img-holder">
-                                <img src="./images/product.jpg" class="card-img-top" alt="">
-                            </div>
-                            <div class="card-body">
-                                <div>
-                                    <a class="card-link" href="#">Apple watch series</a>
-                                    <p class="card-text">$30.00</p>
-                                </div>
-                                <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <button>LOAD MORE <i class="fa-solid fa-rotate-right"></i></button>
+        </div>
+    </header>
+    <!-- header end -->
+    <!-- showcase start -->
+    <section class="showcase">
+        <div class="container">
+            <div class="content">
+                <div class="ingress">WELCOME TO BMERKETO SHOP</div>
+                <div class="title">Exclusive Chair gold&nbsp;Collection.</div>
+                <a href="product.html" class="btn-theme">SHOP NOW</a>
             </div>
-        </section>
-        <!-- best-collection end -->
-        <!-- up-to-sell start -->
-        <section class="up-to-sell">
-            <div class="container">
-
-                <div class="row row-cols-3">
-
-                    <div class="col">
-                        <div class="card">
-                            <div class="img-holder">
-                                <img src="./images/lamp.jpg" class="card-img-top" alt="">
-                            </div>
-                            <div class="card-body">
-                                <a class="card-link" href="#">Table Lamp - scelerisque tempore</a>
-                                <div class="card-body-holder">
-                                    <div class="price-holder">
-                                        <p class="card-previous-price">$50.00</p>
-                                        <p class="card-text">$30.00</p>
-                                    </div>
-                                    <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card discount-info">
-                            <p class="heading">UP TO SELL</p>
-                            <p class="procent">50% OFF</p>
-                            <p class="best-price">Get The Best Price</p>
-                            <p class="text">Get the best daily offer et accusam et justo duo dolores et ea rebum. Stet clita
-                                kasd gubergren no sea taki</p>
-                            <a class="link" href="#">Discover more</a>
-                        </div>
-                    </div>
-
-
-                    <div class="col last">
-                        <div class="card">
-                            <div class="img-holder">
-                                <img src="./images/lamp.jpg" class="card-img-top" alt="">
-                            </div>
-                            <div class="card-body">
-                                <a class="card-link" href="#">Table Lamp - scelerisque tempore</a>
-                                <div class="card-body-holder">
-                                    <div class="price-holder">
-                                        <p class="card-previous-price">$50.00</p>
-                                        <p class="card-text">$30.00</p>
-                                    </div>
-                                    <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
+            <div class="content-image">
+                <img src="images/chair.jpg" alt="">
             </div>
-        </section>
-        <!-- up-to-sell end -->
-        <!-- top-selling start -->
-        <section class="top-selling">
-            <div class="heading">Top selling products in this week</div>
+        </div>
+    </section>
+    <!-- showcase end -->
+    <!-- best-collection start -->
+    <section class="best-collection">
+        <div class="container">
+            <div class="heading">Best Collection</div>
+            <ul class="breadcrumb">
+                <li><a class="link" href="#">All</a></li>
+                <li><a class="link" href="#">Bags</a></li>
+                <li><a class="link" href="#">Dress</a></li>
+                <li><a class="link" href="#">Decoration</a></li>
+                <li><a class="link" href="#">Essentials</a></li>
+                <li><a class="link" href="#">Interior</a></li>
+                <li><a class="link" href="#">Laptop</a></li>
+                <li><a class="link" href="#">Mobile</a></li>
+                <li><a class="link" href="#">Beauty</a></li>
+            </ul>
 
-            <div class="row row-cols-6">
+            <div class="row row-cols-4">
+
+                <div class="col">
+                    <div class="card">
+                        <div class="img-holder">
+                            <img src="./images/product.jpg" class="card-img-top" alt="">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <a class="card-link" href="#">Apple watch series</a>
+                                <p class="card-text">$30.00</p>
+                            </div>
+                            <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card">
+                        <div class="img-holder">
+                            <img src="./images/product.jpg" class="card-img-top" alt="">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <a class="card-link" href="#">Apple watch series</a>
+                                <p class="card-text">$30.00</p>
+                            </div>
+                            <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="col">
                     <div class="card">
@@ -355,89 +196,249 @@
                 </div>
 
             </div>
-            <div class="button-holder">
-                <button>&lt;</button>
-                <button>&gt;</button>
+            <button>LOAD MORE <i class="fa-solid fa-rotate-right"></i></button>
+        </div>
+    </section>
+    <!-- best-collection end -->
+    <!-- up-to-sell start -->
+    <section class="up-to-sell">
+        <div class="container">
+
+            <div class="row row-cols-3">
+
+                <div class="col">
+                    <div class="card">
+                        <div class="img-holder">
+                            <img src="./images/lamp.jpg" class="card-img-top" alt="">
+                        </div>
+                        <div class="card-body">
+                            <a class="card-link" href="#">Table Lamp - scelerisque tempore</a>
+                            <div class="card-body-holder">
+                                <div class="price-holder">
+                                    <p class="card-previous-price">$50.00</p>
+                                    <p class="card-text">$30.00</p>
+                                </div>
+                                <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card discount-info">
+                        <p class="heading">UP TO SELL</p>
+                        <p class="procent">50% OFF</p>
+                        <p class="best-price">Get The Best Price</p>
+                        <p class="text">Get the best daily offer et accusam et justo duo dolores et ea rebum. Stet clita
+                            kasd gubergren no sea taki</p>
+                        <a class="link" href="#">Discover more</a>
+                    </div>
+                </div>
+
+
+                <div class="col last">
+                    <div class="card">
+                        <div class="img-holder">
+                            <img src="./images/lamp.jpg" class="card-img-top" alt="">
+                        </div>
+                        <div class="card-body">
+                            <a class="card-link" href="#">Table Lamp - scelerisque tempore</a>
+                            <div class="card-body-holder">
+                                <div class="price-holder">
+                                    <p class="card-previous-price">$50.00</p>
+                                    <p class="card-text">$30.00</p>
+                                </div>
+                                <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-        </section>
-        <!-- top-selling end -->
-        <!-- shotlight start -->
-        <section class="spotlight">
-            <div class="container">
-                <div class="row row-cols-3">
+        </div>
+    </section>
+    <!-- up-to-sell end -->
+    <!-- top-selling start -->
+    <section class="top-selling">
+        <div class="heading">Top selling products in this week</div>
 
-                    <div class="col">
-                        <div class="card">
-                            <div class="img-holder">
-                                <img src="./images/wall-lamp.jpg" class="card-img-top" alt="">
-                            </div>
-                            <div class="card-body">
-                                <a class="card-link" href="#">Wall lamp 1562 LTG modal</a>
-                                <p class="card-text">Best dress for everyone ed totam velit risus viverra nobis donec
-                                    recusandae perspiciatis incididuno</p>
-                                <div class="info-holder d-flex">
-                                    <p class="card-post">POST BY: ADMIN</p>
-                                    <p class="card-comment">COMMENTS 13</p>
-                                </div>
-                            </div>
-                        </div>
+        <div class="row row-cols-6">
+
+            <div class="col">
+                <div class="card">
+                    <div class="img-holder">
+                        <img src="./images/product.jpg" class="card-img-top" alt="">
                     </div>
-
-                    <div class="col">
-                        <div class="card">
-                            <div class="img-holder">
-                                <img src="./images/wall-lamp.jpg" class="card-img-top" alt="">
-                            </div>
-                            <div class="card-body">
-                                <a class="card-link" href="#">Wall lamp 1562 LTG modal</a>
-                                <p class="card-text">Best dress for everyone ed totam velit risus viverra nobis donec
-                                    recusandae perspiciatis incididuno</p>
-                                <div class="info-holder d-flex">
-                                    <p class="card-post">POST BY: ADMIN</p>
-                                    <p class="card-comment">COMMENTS 13</p>
-                                </div>
-                            </div>
+                    <div class="card-body">
+                        <div>
+                            <a class="card-link" href="#">Apple watch series</a>
+                            <p class="card-text">$30.00</p>
                         </div>
+                        <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
                     </div>
-
-                    <div class="col last">
-                        <div class="card">
-                            <div class="img-holder">
-                                <img src="./images/wall-lamp.jpg" class="card-img-top" alt="">
-                            </div>
-                            <div class="card-body">
-                                <a class="card-link" href="#">Wall lamp 1562 LTG modal</a>
-                                <p class="card-text">Best dress for everyone ed totam velit risus viverra nobis donec
-                                    recusandae perspiciatis incididuno</p>
-                                <div class="info-holder d-flex">
-                                    <p class="card-post">POST BY: ADMIN</p>
-                                    <p class="card-comment">COMMENTS 13</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </section>
-        <!-- shotlight end -->
-        <!-- subscribe start -->
-        <section class="subscribe-form">
-            <div class="container">
-                <div class="content">
-                    <input type="text" placeholder="Enter your mail here" />
-                    <button class="btn-theme">SUBSCRIBE FOR NEWSLETTER</button>
-                    <div class="error-msg">Something went wrong!</div>
+
+            <div class="col">
+                <div class="card">
+                    <div class="img-holder">
+                        <img src="./images/product.jpg" class="card-img-top" alt="">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <a class="card-link" href="#">Apple watch series</a>
+                            <p class="card-text">$30.00</p>
+                        </div>
+                        <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
+                    </div>
                 </div>
             </div>
-        </section>
-        <!-- subscribe end -->
-        <!-- footer start -->
-        <footer>
-            <div class="text">© 2023 bmarketo. All right reserved.</div>
-        </footer>
-        <!-- footer end -->
-        <div class="margin-for-login-sm-screens"></div>
-    </body>
+
+            <div class="col">
+                <div class="card">
+                    <div class="img-holder">
+                        <img src="./images/product.jpg" class="card-img-top" alt="">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <a class="card-link" href="#">Apple watch series</a>
+                            <p class="card-text">$30.00</p>
+                        </div>
+                        <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <div class="img-holder">
+                        <img src="./images/product.jpg" class="card-img-top" alt="">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <a class="card-link" href="#">Apple watch series</a>
+                            <p class="card-text">$30.00</p>
+                        </div>
+                        <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <div class="img-holder">
+                        <img src="./images/product.jpg" class="card-img-top" alt="">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <a class="card-link" href="#">Apple watch series</a>
+                            <p class="card-text">$30.00</p>
+                        </div>
+                        <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <div class="img-holder">
+                        <img src="./images/product.jpg" class="card-img-top" alt="">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <a class="card-link" href="#">Apple watch series</a>
+                            <p class="card-text">$30.00</p>
+                        </div>
+                        <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="button-holder">
+            <button>&lt;</button>
+            <button>&gt;</button>
+        </div>
+    </section>
+    <!-- top-selling end -->
+    <!-- shotlight start -->
+    <section class="spotlight">
+        <div class="container">
+            <div class="row row-cols-3">
+
+                <div class="col">
+                    <div class="card">
+                        <div class="img-holder">
+                            <img src="./images/wall-lamp.jpg" class="card-img-top" alt="">
+                        </div>
+                        <div class="card-body">
+                            <a class="card-link" href="#">Wall lamp 1562 LTG modal</a>
+                            <p class="card-text">Best dress for everyone ed totam velit risus viverra nobis donec
+                                recusandae perspiciatis incididuno</p>
+                            <div class="info-holder d-flex">
+                                <p class="card-post">POST BY: ADMIN</p>
+                                <p class="card-comment">COMMENTS 13</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card">
+                        <div class="img-holder">
+                            <img src="./images/wall-lamp.jpg" class="card-img-top" alt="">
+                        </div>
+                        <div class="card-body">
+                            <a class="card-link" href="#">Wall lamp 1562 LTG modal</a>
+                            <p class="card-text">Best dress for everyone ed totam velit risus viverra nobis donec
+                                recusandae perspiciatis incididuno</p>
+                            <div class="info-holder d-flex">
+                                <p class="card-post">POST BY: ADMIN</p>
+                                <p class="card-comment">COMMENTS 13</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col last">
+                    <div class="card">
+                        <div class="img-holder">
+                            <img src="./images/wall-lamp.jpg" class="card-img-top" alt="">
+                        </div>
+                        <div class="card-body">
+                            <a class="card-link" href="#">Wall lamp 1562 LTG modal</a>
+                            <p class="card-text">Best dress for everyone ed totam velit risus viverra nobis donec
+                                recusandae perspiciatis incididuno</p>
+                            <div class="info-holder d-flex">
+                                <p class="card-post">POST BY: ADMIN</p>
+                                <p class="card-comment">COMMENTS 13</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- shotlight end -->
+    <!-- subscribe start -->
+    <section class="subscribe-form">
+        <div class="container">
+            <div class="content">
+                <input type="text" placeholder="Enter your mail here" />
+                <button class="btn-theme">SUBSCRIBE FOR NEWSLETTER</button>
+                <div class="error-msg">Something went wrong!</div>
+            </div>
+        </div>
+    </section>
+    <!-- subscribe end -->
+    <!-- footer start -->
+    <footer>
+        <div class="text">© 2023 bmarketo. All right reserved.</div>
+    </footer>
+    <!-- footer end -->
+    <div class="margin-for-login-sm-screens"></div>
+</body>
 
 </html>
