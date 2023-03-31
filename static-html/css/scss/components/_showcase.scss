@@ -1,61 +1,57 @@
-.showcase{
+.showcase {
     background: $color-theme-3;
 
-    .container{
+    .container {
         padding-top: 40px;
         padding-bottom: 40px;
 
-        @include lg{
+        @include lg {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
     }
 
-    .content{
+    .content {
         font-family: $font-poppins;
         color: $color-dark-1;
         text-align: center;
 
-        @include lg{
+        @include lg {
+            max-width: 670px;
             text-align: left;
         }
 
-        .ingress{
+        .ingress {
             font-size: 18px;
             font-weight: $font-weight-regular;
             margin-bottom: 20px;
         }
 
-        .title{
+        .title {
             font-size: 40px;
             font-weight: $font-weight-bold;
             line-height: 1.2;
             margin-bottom: 20px;
 
-            @include lg{
+            @include lg {
                 font-size: 60px;
                 margin-bottom: 50px;
+                margin-right: 50px;
             }
         }
     }
 
-    .content-image{
+    .content-image {
         display: none;
-        width: 625px;
-        overflow: hidden;
+        max-width: 625px;
 
-        @include lg{
+        @include lg {
             display: block;
         }
 
-        img{
+        img {
             width: 100%;
-            transition: 0.6s ease-in-out;
-
-            &:hover{
-                transform: scale(1.05);        
-            }
         }
     }
 }

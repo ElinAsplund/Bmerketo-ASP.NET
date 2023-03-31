@@ -6,6 +6,7 @@ namespace Bmerketo_WebApp.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["Title"] = "Contacts";
             return View();
         }
     }
