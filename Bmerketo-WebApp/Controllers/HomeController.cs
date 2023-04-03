@@ -24,10 +24,23 @@ namespace Bmerketo_WebApp.Controllers
                         new GridCollectionCardViewModel{ Id ="7", Title = "Apple watch series", Price = 70, ImageUrl = "./images/product.jpg" },
                         new GridCollectionCardViewModel{ Id ="8", Title = "Apple watch series", Price = 80, ImageUrl = "./images/product.jpg" }
                     },
-                    LoadMore = true,
+                    LoadMore = true
                 },
-                NextCollection = new GridCollectionViewModel { Title = "Next Collection" }
-            };
+				TopSellingCollection = new GridCollectionViewModel
+				{
+					Title = "Top selling products in this week",
+					GridCards = new List<GridCollectionCardViewModel>
+					{
+						new GridCollectionCardViewModel{ Id ="1", Title = "Apple watch series", Price = 10, ImageUrl = "./images/product.jpg" },
+						new GridCollectionCardViewModel{ Id ="2", Title = "Apple watch series", Price = 20, ImageUrl = "./images/product.jpg" },
+						new GridCollectionCardViewModel{ Id ="3", Title = "Apple watch series", Price = 30, ImageUrl = "./images/product.jpg" },
+						new GridCollectionCardViewModel{ Id ="4", Title = "Apple watch series", Price = 40, ImageUrl = "./images/product.jpg" },
+						new GridCollectionCardViewModel{ Id ="5", Title = "Apple watch series", Price = 50, ImageUrl = "./images/product.jpg" },
+						new GridCollectionCardViewModel{ Id ="6", Title = "Apple watch series", Price = 60, ImageUrl = "./images/product.jpg" }
+					},
+                    LoadMore = true
+                }
+			};
 
             return View(viewModel);
         }

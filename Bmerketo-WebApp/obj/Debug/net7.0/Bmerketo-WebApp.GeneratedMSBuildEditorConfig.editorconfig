@@ -52,6 +52,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1Nob3djYXNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[c:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Partials/_Spotlight.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1Nwb3RsaWdodC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Partials/_SubscribeForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1N1YnNjcmliZUZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Partials/_TopSelling.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1RvcFNlbGxpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Partials/_UpToSell.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1VwVG9TZWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

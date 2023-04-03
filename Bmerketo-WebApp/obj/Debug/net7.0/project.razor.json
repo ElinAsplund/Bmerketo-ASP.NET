@@ -18660,6 +18660,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_TopSelling.cshtml",
+      "TargetPath": "Views\\Partials\\_TopSelling.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_Footer.cshtml",
       "TargetPath": "Views\\Partials\\_Footer.cshtml",
       "FileKind": "mvc"
@@ -18685,8 +18690,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_SubscribeForm.cshtml",
+      "TargetPath": "Views\\Partials\\_SubscribeForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_GridCollection.cshtml",
       "TargetPath": "Views\\Partials\\_GridCollection.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_Spotlight.cshtml",
+      "TargetPath": "Views\\Partials\\_Spotlight.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18712,6 +18727,11 @@
     {
       "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Products\\Index.cshtml",
       "TargetPath": "Views\\Products\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_UpToSell.cshtml",
+      "TargetPath": "Views\\Partials\\_UpToSell.cshtml",
       "FileKind": "mvc"
     },
     {
