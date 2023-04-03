@@ -18650,13 +18650,38 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_InspirationImages.cshtml",
+      "TargetPath": "Views\\Partials\\_InspirationImages.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_GoogleMaps.cshtml",
+      "TargetPath": "Views\\Partials\\_GoogleMaps.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Login\\Index.cshtml",
       "TargetPath": "Views\\Login\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_RegisterForm.cshtml",
+      "TargetPath": "Views\\Partials\\_RegisterForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_RelatedProducts.cshtml",
+      "TargetPath": "Views\\Partials\\_RelatedProducts.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\ProductDetails\\Index.cshtml",
+      "TargetPath": "Views\\ProductDetails\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18675,6 +18700,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_ReadMore.cshtml",
+      "TargetPath": "Views\\Partials\\_ReadMore.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Cart\\Index.cshtml",
       "TargetPath": "Views\\Cart\\Index.cshtml",
       "FileKind": "mvc"
@@ -18687,6 +18717,16 @@
     {
       "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_Hero.cshtml",
+      "TargetPath": "Views\\Partials\\_Hero.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_ProductDetails.cshtml",
+      "TargetPath": "Views\\Partials\\_ProductDetails.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18707,6 +18747,11 @@
     {
       "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_Showcase.cshtml",
       "TargetPath": "Views\\Partials\\_Showcase.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_ContactForm.cshtml",
+      "TargetPath": "Views\\Partials\\_ContactForm.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18737,6 +18782,11 @@
     {
       "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_LoginForm.cshtml",
+      "TargetPath": "Views\\Partials\\_LoginForm.cshtml",
       "FileKind": "mvc"
     }
   ],

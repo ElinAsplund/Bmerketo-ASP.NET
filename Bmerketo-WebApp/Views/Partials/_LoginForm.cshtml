@@ -1,0 +1,36 @@
+﻿<!-- login-form start -->
+<section class="login-form">
+    <div class="container">
+        <div class="form-content">
+            <div class="form-title">Please Login to Your Account</div>
+            <hr>
+            <form>
+                <div class="col">
+                    <div class="email-content">
+                        <label>E-mail*</label>
+                        <a asp-controller="register" asp-action="Index">Don't have an Account yet?</a>
+                    </div>
+                    <input type="email" required />
+                    <div class="error-msg">Something went wrong!</div>
+                </div>
+                <div class="col">
+                    <div class="password-content">
+                        <label>Password*</label>
+                        <a href="#">Forgot Your Password?</a>
+                    </div>
+                    <input type="text" required />
+                    <div class="error-msg">Something went wrong!</div>
+                </div>
+
+                <label class="custom-checkbox">
+                    Please keep me logged in
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+
+                <button class="btn-theme" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- login-form end -->

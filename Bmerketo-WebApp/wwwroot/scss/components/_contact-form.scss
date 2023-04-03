@@ -5,6 +5,7 @@
 .contact-form {
     margin-top: 80px;
     margin-bottom: 80px;
+    font-family: $font-roboto;
 
     .container {
         display: flex;
@@ -73,6 +74,10 @@
                         outline-color: #f2d8d8;
                     }
                 }
+            }
+
+            button{
+                margin-top: 1rem;
             }
         }
     }

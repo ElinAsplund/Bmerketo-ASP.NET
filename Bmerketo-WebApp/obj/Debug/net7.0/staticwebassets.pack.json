@@ -73,6 +73,10 @@
       "PackagePath": "staticwebassets\\scss\\components\\_header.scss"
     },
     {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_hero.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_hero.scss"
+    },
+    {
       "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_inspiration-images.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_inspiration-images.scss"
     },
@@ -81,8 +85,8 @@
       "PackagePath": "staticwebassets\\scss\\components\\_login-form.scss"
     },
     {
-      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_product-info.scss",
-      "PackagePath": "staticwebassets\\scss\\components\\_product-info.scss"
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_product-details.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_product-details.scss"
     },
     {
       "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_read-more.scss",
@@ -95,10 +99,6 @@
     {
       "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_related-products.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_related-products.scss"
-    },
-    {
-      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_shop-heading.scss",
-      "PackagePath": "staticwebassets\\scss\\components\\_shop-heading.scss"
     },
     {
       "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_showcase.scss",

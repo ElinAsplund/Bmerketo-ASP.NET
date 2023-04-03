@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Bmerketo_WebApp.Models;
+using Bmerketo_WebApp.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Bmerketo_WebApp.Controllers
 {
@@ -6,8 +8,16 @@ namespace Bmerketo_WebApp.Controllers
     {
         public IActionResult Index()
         {
-            ViewData["Title"] = "Contacts";
-            return View();
+            var viewModel = new ContactsIndexViewModel
+            {
+                ContactHero = new HeroModel
+                {
+                    Heading = "CONTACT",
+                    Subheading = "HOME. CONTACT"
+                }
+            };
+
+            return View(viewModel);
         }
     }
 }

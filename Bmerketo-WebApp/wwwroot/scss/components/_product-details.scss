@@ -2,7 +2,7 @@
 @import '../core/_fonts.scss';
 @import '../core/_mixins.scss';
 
-.product-info {
+.product-details {
     padding-top: 50px;
     padding-bottom: 50px;
 
@@ -10,17 +10,14 @@
         display: grid;
         gap: 0.5rem;
         grid-template-areas:
-            "big-img"
-            "small-img"
-            "product-text";
+            "big-img" "small-img" "product-text";
 
         @include lg {
             display: grid;
             grid-template-columns: min-content 1fr;
             grid-template-rows: auto auto;
             grid-template-areas:
-                "big-img product-text"
-                "small-img product-text";
+                "big-img product-text" "small-img product-text";
         }
 
         .big-img {

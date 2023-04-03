@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zWwD17mK46w83l5uOkDuVnRKaC1Z6zNkct3E6ZaOYaQ=",
+  "Hash": "mOMGFlGiwFp+nkK1gtephbB1kW/7VIqT4MtcazsWkDY=",
   "Source": "Bmerketo-WebApp",
   "BasePath": "_content/Bmerketo-WebApp",
   "Mode": "Default",
@@ -323,6 +323,23 @@
       "OriginalItemSpec": "wwwroot\\scss\\components\\_header.scss"
     },
     {
+      "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_hero.scss",
+      "SourceId": "Bmerketo-WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\",
+      "BasePath": "_content/Bmerketo-WebApp",
+      "RelativePath": "scss/components/_hero.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scss\\components\\_hero.scss"
+    },
+    {
       "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_inspiration-images.scss",
       "SourceId": "Bmerketo-WebApp",
       "SourceType": "Discovered",
@@ -357,12 +374,12 @@
       "OriginalItemSpec": "wwwroot\\scss\\components\\_login-form.scss"
     },
     {
-      "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_product-info.scss",
+      "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_product-details.scss",
       "SourceId": "Bmerketo-WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\",
       "BasePath": "_content/Bmerketo-WebApp",
-      "RelativePath": "scss/components/_product-info.scss",
+      "RelativePath": "scss/components/_product-details.scss",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -371,7 +388,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\scss\\components\\_product-info.scss"
+      "OriginalItemSpec": "wwwroot\\scss\\components\\_product-details.scss"
     },
     {
       "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_read-more.scss",
@@ -423,23 +440,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scss\\components\\_related-products.scss"
-    },
-    {
-      "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_shop-heading.scss",
-      "SourceId": "Bmerketo-WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\",
-      "BasePath": "_content/Bmerketo-WebApp",
-      "RelativePath": "scss/components/_shop-heading.scss",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\scss\\components\\_shop-heading.scss"
     },
     {
       "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_showcase.scss",

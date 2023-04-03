@@ -10,6 +10,14 @@ body {
     color: $color-dark-3;
 }
 
+.h1-placeholder {
+    padding-top: 60px;
+    height: 100svh;
+    min-height: 425px;
+    display: flex;
+    justify-content: center;
+}
+
 a,
 .link,
 .card-link{
@@ -152,7 +160,7 @@ a.btn-theme {
 //Custom checkbox styling
 //~~ with help of www3school + chatGPT + Hans github ~~
 .custom-checkbox {
-    display: block;
+    display: inline-block;
     position: relative;
     padding-left: 25px;
     margin-bottom: 12px;
