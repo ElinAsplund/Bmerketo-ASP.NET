@@ -2,7 +2,7 @@
 @import '../core/_fonts.scss';
 @import '../core/_mixins.scss';
 
-.best-collection {
+.grid-collection {
     .container {
         padding: 40px 0px;
         display: flex;
@@ -37,7 +37,7 @@
             margin-bottom: 50px;
         }
 
-        li+li:before {
+        li + li:before {
             padding: 0 1rem;
             content: "/";
         }
@@ -55,6 +55,12 @@
         @include lg {
             li:nth-child(n+5) {
                 display: block;
+            }
+        }
+
+        li{
+            .link{
+                font-family: $font-roboto;
             }
         }
     }

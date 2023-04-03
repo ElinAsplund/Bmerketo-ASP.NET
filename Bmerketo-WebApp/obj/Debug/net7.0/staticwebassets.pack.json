@@ -53,10 +53,6 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_best-collection.scss",
-      "PackagePath": "staticwebassets\\scss\\components\\_best-collection.scss"
-    },
-    {
       "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_contact-form.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_contact-form.scss"
     },
@@ -67,6 +63,10 @@
     {
       "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_google-map.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_google-map.scss"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_grid-collection.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_grid-collection.scss"
     },
     {
       "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_header.scss",
