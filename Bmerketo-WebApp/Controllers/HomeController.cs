@@ -1,4 +1,5 @@
 ﻿using Bmerketo_WebApp.Models;
+using Bmerketo_WebApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bmerketo_WebApp.Controllers
@@ -10,20 +11,34 @@ namespace Bmerketo_WebApp.Controllers
             ViewData["Title"] = "Home";
 
             
-            var showcase = new ShowcaseModel()
+            var viewModel = new HomeIndexViewModel()
             {
-                Ingress = "WELCOME TO BMERKETO SHOP",
-                Title = "Exclusive Chair gold Collection.",
-                Button = new LinkButtonModel()
+                Showcase_1 = new ShowcaseModel()
                 {
-                    Url = "/products",
-                    Content = "SHOP NOW"
+                    Ingress = "WELCOME TO BMERKETO SHOP",
+                    Title = "Exclusive Chair gold Collection.",
+                    Button = new LinkButtonModel()
+                    {
+                        Url = "/products",
+                        Content = "SHOP NOW"
+                    },
+                    ImageUrl = "./images/chair.jpg"
                 },
-                ImageUrl = "./images/chair.jpg"
+                Showcase_2 = new ShowcaseModel()
+                {
+                    Ingress = "SHOP SHOP SHOP SHOP SHOP",
+                    Title = "Mighty golden throne Collection.",
+                    Button = new LinkButtonModel()
+                    {
+                        Url = "/products",
+                        Content = "SHOP NOW"
+                    },
+                    ImageUrl = "./images/chair.jpg"
+                }
             };
-            
 
-            return View(showcase);
+
+            return View(viewModel);
         }
     }
 }
