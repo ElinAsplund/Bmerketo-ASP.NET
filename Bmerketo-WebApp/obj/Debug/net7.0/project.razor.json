@@ -18795,11 +18795,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\ProductDetails\\Index.cshtml",
-      "TargetPath": "Views\\ProductDetails\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_Showcase.cshtml",
       "TargetPath": "Views\\Partials\\_Showcase.cshtml",
       "FileKind": "mvc"

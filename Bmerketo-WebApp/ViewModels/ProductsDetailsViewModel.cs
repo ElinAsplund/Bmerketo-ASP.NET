@@ -2,9 +2,9 @@
 
 namespace Bmerketo_WebApp.ViewModels;
 
-public class ProductDetailsViewModel
+public class ProductsDetailsViewModel
 {
 	public string Title { get; set; } = "Product";
 	public HeroModel ShopHero { get; set; } = null!;
-    public RelatedProductsViewModel RelatedShoes { get; set; } = null!;
+	public RelatedProductsViewModel RelatedShoes { get; set; } = null!;
 }
