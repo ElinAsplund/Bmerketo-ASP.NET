@@ -1,0 +1,10 @@
+﻿@model ProductDetailsViewModel
+@{
+	ViewData["Title"] = Model.Title;
+}
+
+<partial name="/Views/Partials/_Hero.cshtml" model="@Model.ShopHero" />
+<partial name="/Views/Partials/_ProductDetails.cshtml" />
+<partial name="/Views/Partials/_ReadMore.cshtml" />
+<partial name="/Views/Partials/_RelatedProducts.cshtml" model="@Model.RelatedShoes" />
+<partial name="/Views/Partials/_InspirationImages.cshtml" />

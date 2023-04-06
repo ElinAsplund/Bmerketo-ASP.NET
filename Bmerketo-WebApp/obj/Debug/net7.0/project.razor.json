@@ -18660,11 +18660,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Register\\Index.cshtml",
-      "TargetPath": "Views\\Register\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_RegisterForm.cshtml",
       "TargetPath": "Views\\Partials\\_RegisterForm.cshtml",
       "FileKind": "mvc"
@@ -18765,11 +18760,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Login\\Index.cshtml",
-      "TargetPath": "Views\\Login\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Partials\\_GoogleMaps.cshtml",
       "TargetPath": "Views\\Partials\\_GoogleMaps.cshtml",
       "FileKind": "mvc"
@@ -18787,6 +18777,11 @@
     {
       "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Contacts\\Index.cshtml",
       "TargetPath": "Views\\Contacts\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\Views\\Products\\Details.cshtml",
+      "TargetPath": "Views\\Products\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
