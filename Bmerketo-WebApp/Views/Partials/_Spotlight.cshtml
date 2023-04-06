@@ -1,66 +1,19 @@
-﻿<!-- shotlight start -->
+﻿@model SpotlightViewModel
+
+<!-- shotlight start -->
 <section class="spotlight">
     <div class="container">
-        <div class="row row-cols-3">
 
-            <div class="col">
-                <div class="card">
-                    <div class="img-holder">
-                        <img src="./images/wall-lamp.jpg" class="card-img-top" alt="">
-                    </div>
-                    <div class="card-body">
-                        <a class="card-link" asp-controller="products" asp-action="Index">Wall lamp 1562 LTG modal</a>
-                        <p class="card-text">
-                            Best dress for everyone ed totam velit risus viverra nobis donec
-                            recusandae perspiciatis incididuno
-                        </p>
-                        <div class="info-holder d-flex">
-                            <p class="card-post">POST BY: ADMIN</p>
-                            <p class="card-comment">COMMENTS 13</p>
-                        </div>
-                    </div>
-                </div>
+        @if (Model.SpotlightCards != null)
+        {
+            <div class="row row-cols-3">
+
+                @foreach (var card in Model.SpotlightCards)
+                {
+                    <partial name="/Views/Partials/_SpotlightCard.cshtml" model="card" />
+                }
             </div>
-
-            <div class="col">
-                <div class="card">
-                    <div class="img-holder">
-                        <img src="./images/wall-lamp.jpg" class="card-img-top" alt="">
-                    </div>
-                    <div class="card-body">
-                        <a class="card-link" asp-controller="products" asp-action="Index">Wall lamp 1562 LTG modal</a>
-                        <p class="card-text">
-                            Best dress for everyone ed totam velit risus viverra nobis donec
-                            recusandae perspiciatis incididuno
-                        </p>
-                        <div class="info-holder d-flex">
-                            <p class="card-post">POST BY: ADMIN</p>
-                            <p class="card-comment">COMMENTS 13</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col last">
-                <div class="card">
-                    <div class="img-holder">
-                        <img src="./images/wall-lamp.jpg" class="card-img-top" alt="">
-                    </div>
-                    <div class="card-body">
-                        <a class="card-link" asp-controller="products" asp-action="Index">Wall lamp 1562 LTG modal</a>
-                        <p class="card-text">
-                            Best dress for everyone ed totam velit risus viverra nobis donec
-                            recusandae perspiciatis incididuno
-                        </p>
-                        <div class="info-holder d-flex">
-                            <p class="card-post">POST BY: ADMIN</p>
-                            <p class="card-comment">COMMENTS 13</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        }
     </div>
 </section>
 <!-- shotlight end -->

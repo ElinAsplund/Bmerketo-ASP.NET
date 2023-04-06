@@ -1,10 +1,9 @@
-﻿using Bmerketo_WebApp.Models;
-
-namespace Bmerketo_WebApp.ViewModels;
+﻿namespace Bmerketo_WebApp.ViewModels;
 
 public class HomeIndexViewModel
 {
     public string Title { get; set; } = "Home";
     public GridCollectionViewModel BestCollection { get; set; } = null!;
     public GridCollectionViewModel TopSellingCollection { get; set; } = null!;
+    public SpotlightViewModel LampSpotlight { get; set; } = null!;
 }

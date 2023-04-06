@@ -36,6 +36,18 @@
         @include sm {
             width: 370px;
         }
+
+        @include lg{
+            &:last-child{
+                display: none;
+            }
+        }
+        
+        @include xxl{
+            &:last-child{
+                display: block;
+            }
+        }
     }
 
     .card {
