@@ -214,22 +214,28 @@ a.btn-theme {
 
 //Error styling of forms
 .error-msg {
-    display: none;
+    display: block !important;
+    color: $color-theme-1;
 }
 
-.error {
 
-    input,
-    textarea {
-        border: $color-theme-1 1px solid !important;
+//.error-msg {
+//    display: none;
+//}
 
-        &:focus {
-            outline-color: #f2d8d8;
-        }
-    }
+//.error {
 
-    .error-msg {
-        display: block !important;
-        color: $color-theme-1;
-    }
-}
+//    input,
+//    textarea {
+//        border: $color-theme-1 1px solid !important;
+
+//        &:focus {
+//            outline-color: #f2d8d8;
+//        }
+//    }
+
+//    .error-msg {
+//        display: block !important;
+//        color: $color-theme-1;
+//    }
+//}
