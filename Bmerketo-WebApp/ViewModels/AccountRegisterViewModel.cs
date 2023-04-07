@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Bmerketo_WebApp.Models.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace Bmerketo_WebApp.ViewModels;
 
@@ -36,7 +37,7 @@ public class AccountRegisterViewModel
 
 
 	[Display(Name = "Company (optional)")]
-	public string? Company { get; set; }
+	public string? CompanyName { get; set; }
 
 
 	[Display(Name = "E-mail*")]
@@ -55,7 +56,7 @@ public class AccountRegisterViewModel
 
 	[Display(Name = "Confirm Password*")]
 	[DataType(DataType.Password)]
-	[Required(ErrorMessage = "Please Confirm the Password.")]
+	[Required(ErrorMessage = "Please confirm the Password.")]
 	[Compare(nameof(Password), ErrorMessage = "The Passwords don't match.")]
 	public string ConfirmPassword { get; set; } = null!;
 
@@ -65,4 +66,31 @@ public class AccountRegisterViewModel
 
 	[Required(ErrorMessage = "Please Accept the Terms.")]
 	public bool AcceptsTerms { get; set; } = false;
+
+
+	#region implicit operators
+
+	public static implicit operator UserEntity(AccountRegisterViewModel accountRegisterViewModel)
+	{
+		var userEntity = new UserEntity { Email = accountRegisterViewModel.Email };
+		userEntity.GenerateSecurePassword(accountRegisterViewModel.Password);
+		return userEntity;
+	}
+	
+	public static implicit operator ProfileEntity(AccountRegisterViewModel accountRegisterViewModel)
+	{
+		return new ProfileEntity
+		{
+			FirstName = accountRegisterViewModel.FirstName,
+			LastName = accountRegisterViewModel.LastName,
+			StreetName = accountRegisterViewModel.StreetName,
+			PostalCode = accountRegisterViewModel.PostalCode,
+			City = accountRegisterViewModel.City,
+			PhoneNumber = accountRegisterViewModel.PhoneNumber,
+			CompanyName = accountRegisterViewModel.CompanyName,
+			ProfileImage = accountRegisterViewModel.ProfileImage
+		};
+	}
+
+	#endregion
 }

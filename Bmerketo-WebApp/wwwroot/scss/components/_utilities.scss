@@ -213,29 +213,33 @@ a.btn-theme {
 }
 
 //Error styling of forms
-.error-msg {
+.error-text {
     display: block !important;
     color: $color-theme-1;
+
+    ul{
+        list-style: none;
+        padding: 0;
+    }
 }
 
+.error-msg {
+    display: none;
+}
 
-//.error-msg {
-//    display: none;
-//}
+.error {
 
-//.error {
+    input,
+    textarea {
+        border: $color-theme-1 1px solid !important;
 
-//    input,
-//    textarea {
-//        border: $color-theme-1 1px solid !important;
+        &:focus {
+            outline-color: #f2d8d8;
+        }
+    }
 
-//        &:focus {
-//            outline-color: #f2d8d8;
-//        }
-//    }
-
-//    .error-msg {
-//        display: block !important;
-//        color: $color-theme-1;
-//    }
-//}
+    .error-msg {
+        display: block !important;
+        color: $color-theme-1;
+    }
+}

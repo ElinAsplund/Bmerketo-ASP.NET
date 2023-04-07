@@ -7,36 +7,41 @@
             <div class="form-title">Please Register Your new Account</div>
             <hr>
             <form method="post" novalidate>
+
+                <div class="line">
+                    <div asp-validation-summary="ModelOnly" class="error-text"></div>
+                </div>
+
                 <div class="line grid">
                     <div class="column">
                         <label asp-for="FirstName"></label>
                         <input asp-for="FirstName" required />
-                        <span asp-validation-for="FirstName" class="error-msg"></span>
+                        <span asp-validation-for="FirstName" class="error-text"></span>
                     </div>
 
                     <div class="column">
                         <label asp-for="LastName"></label>
                         <input asp-for="LastName" required />
-                        <span asp-validation-for="LastName" class="error-msg"></span>
+                        <span asp-validation-for="LastName" class="error-text"></span>
                     </div>
                 </div>
 
                 <div class="line">
                     <label asp-for="StreetName"></label>
                     <input asp-for="StreetName" required />
-                    <span asp-validation-for="StreetName" class="error-msg"></span>
+                    <span asp-validation-for="StreetName" class="error-text"></span>
                 </div>
 
                 <div class="line grid">
                     <div class="column">
                         <label asp-for="PostalCode"></label>
                         <input asp-for="PostalCode" required />
-                        <span asp-validation-for="PostalCode" class="error-msg"></span>
+                        <span asp-validation-for="PostalCode" class="error-text"></span>
                     </div>
                     <div class="column">
                         <label asp-for="City"></label>
                         <input asp-for="City" required />
-                        <span asp-validation-for="City" class="error-msg"></span>
+                        <span asp-validation-for="City" class="error-text"></span>
                     </div>
                 </div>
 
@@ -44,44 +49,44 @@
                     <div class="column">
                         <label asp-for="PhoneNumber"></label>
                         <input asp-for="PhoneNumber" />
-                        <span asp-validation-for="PhoneNumber" class="error-msg"></span>
+                        <span asp-validation-for="PhoneNumber" class="error-text"></span>
                     </div>
                     <div class="column">
-                        <label asp-for="Company"></label>
-                        <input asp-for="Company" />
-                        <span asp-validation-for="Company" class="error-msg"></span>
+                        <label asp-for="CompanyName"></label>
+                        <input asp-for="CompanyName" />
+                        <span asp-validation-for="CompanyName" class="error-text"></span>
                     </div>
                 </div>
 
                 <div class="line">
                     <label asp-for="Email"></label>
                     <input asp-for="Email" required />
-                    <span asp-validation-for="Email" class="error-msg"></span>
+                    <span asp-validation-for="Email" class="error-text"></span>
                 </div>
 
                 <div class="line">
                     <label asp-for="Password"></label>
                     <input asp-for="Password" required />
-                    <span asp-validation-for="Password" class="error-msg"></span>
+                    <span asp-validation-for="Password" class="error-text"></span>
                 </div>
 
                 <div class="line">
                     <label asp-for="ConfirmPassword"></label>
                     <input asp-for="ConfirmPassword" required />
-                    <span asp-validation-for="ConfirmPassword" class="error-msg"></span>
+                    <span asp-validation-for="ConfirmPassword" class="error-text"></span>
                 </div>
 
                 <div class="line">
                     <label asp-for="ProfileImage"></label>
                     <input asp-for="ProfileImage" type="file" accept="image/*" />
-                    <span asp-validation-for="ProfileImage" class="error-msg"></span>
+                    <span asp-validation-for="ProfileImage" class="error-text"></span>
                 </div>
 
                 <label class="custom-checkbox">
                     I have read and accepts the terms and agreements
                     <input asp-for="AcceptsTerms" type="checkbox" checked="checked">
                     <span class="checkmark"></span>
-                    <span asp-validation-for="AcceptsTerms" class="error-msg"></span>
+                    <span asp-validation-for="AcceptsTerms" class="error-text"></span>
                 </label>
 
                 <button class="btn-theme" type="submit">Submit</button>
