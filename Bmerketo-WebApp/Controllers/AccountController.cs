@@ -30,7 +30,7 @@ public class AccountController : Controller
 	[HttpPost]
 	public async Task<IActionResult> Register(AccountRegisterViewModel accountRegisterViewModel)
 	{
-		ViewData["Title"] = "Register";
+		ViewData["Title"] = "Register Account";
 
 		if (ModelState.IsValid)
 		{

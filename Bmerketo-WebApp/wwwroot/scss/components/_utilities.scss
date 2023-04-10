@@ -10,7 +10,8 @@ body {
     color: $color-dark-3;
 }
 
-.h1-placeholder {
+.h1-placeholder,
+.placeholder {
     padding-top: 60px;
     height: 100svh;
     min-height: 425px;
@@ -52,6 +53,7 @@ button,
 a.btn-white,
 a.btn-dark,
 a.btn-theme {
+    display: inline-block;
     padding: 10px 35px;
     font-family: $font-poppins !important;
     border: 1px solid $color-dark-1;

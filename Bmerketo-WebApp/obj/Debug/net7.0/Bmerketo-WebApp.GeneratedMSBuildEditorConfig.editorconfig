@@ -80,6 +80,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1Byb2R1Y3REZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Partials/_ProductHeader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1Byb2R1Y3RIZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Partials/_ReadMore.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1JlYWRNb3JlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -122,6 +126,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Products/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Products/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Search/Index.cshtml]

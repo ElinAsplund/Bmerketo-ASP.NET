@@ -1,4 +1,5 @@
 ﻿using Bmerketo_WebApp.Models;
+using Bmerketo_WebApp.Services;
 using Bmerketo_WebApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -58,5 +59,43 @@ namespace Bmerketo_WebApp.Controllers
 
 			return View(viewModel);
         }
-    }
+
+		public IActionResult Register()
+		{
+			ViewData["Title"] = "Register Product";
+
+			return View();
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> Register(ProductRegisterViewModel productRegisterViewModel)
+		{
+			ViewData["Title"] = "Register Product";
+
+			if (ModelState.IsValid)
+			{
+				//if (await _userService.UserExist(x => x.Email == accountRegisterViewModel.Email))
+				//{
+				//	ModelState.AddModelError("", "A User with that E-mail already exists.");
+				//}
+				//else
+				//{
+				//	if (await _userService.RegisterAsync(accountRegisterViewModel))
+				//		return RedirectToAction("login", "account");
+				//	else
+				//		ModelState.AddModelError("", "Something went wrong while creating the User.");
+				//}
+			}
+
+			return View(productRegisterViewModel);
+
+		}
+
+		public IActionResult List()
+		{
+			ViewData["Title"] = "Product List";
+
+			return View();
+		}
+	}
 }
