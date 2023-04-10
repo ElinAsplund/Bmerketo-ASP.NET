@@ -7,7 +7,14 @@ namespace Bmerketo_WebApp.Controllers
 {
     public class ProductsController : Controller
     {
-        public IActionResult Index()
+		private readonly ProductService _productService;
+
+		public ProductsController(ProductService productService)
+		{
+			_productService = productService;
+		}
+
+		public IActionResult Index()
         {
             ViewData["Title"] = "Products";
 
@@ -60,6 +67,15 @@ namespace Bmerketo_WebApp.Controllers
 			return View(viewModel);
         }
 
+		public IActionResult List()
+		{
+			ViewData["Title"] = "Product List";
+
+			return View();
+		}
+
+
+		//REISTER PRODUCT
 		public IActionResult Register()
 		{
 			ViewData["Title"] = "Register Product";
@@ -74,28 +90,22 @@ namespace Bmerketo_WebApp.Controllers
 
 			if (ModelState.IsValid)
 			{
-				//if (await _userService.UserExist(x => x.Email == accountRegisterViewModel.Email))
-				//{
-				//	ModelState.AddModelError("", "A User with that E-mail already exists.");
-				//}
-				//else
-				//{
-				//	if (await _userService.RegisterAsync(accountRegisterViewModel))
-				//		return RedirectToAction("login", "account");
-				//	else
-				//		ModelState.AddModelError("", "Something went wrong while creating the User.");
-				//}
+				try 
+				{
+					if (await _productService.RegisterAsync(productRegisterViewModel))
+						return RedirectToAction("register", "products");
+					else
+						ModelState.AddModelError("", "Something went wrong while creating the Product.");
+				}
+				catch 
+				{
+					ModelState.AddModelError("", "Something went wrong while creating the Product.");
+				}
+
 			}
 
 			return View(productRegisterViewModel);
 
-		}
-
-		public IActionResult List()
-		{
-			ViewData["Title"] = "Product List";
-
-			return View();
 		}
 	}
 }

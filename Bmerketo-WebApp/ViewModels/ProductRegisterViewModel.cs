@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Bmerketo_WebApp.Models.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace Bmerketo_WebApp.ViewModels;
 
@@ -16,6 +17,7 @@ public class ProductRegisterViewModel
 
 	[Display(Name = "Product Price*")]
 	[Required(ErrorMessage = "Please enter the Product Price.")]
+	[DataType(DataType.Currency)]
 	public decimal Price { get; set; } = 0;
 
 
@@ -32,4 +34,20 @@ public class ProductRegisterViewModel
 	//[Display(Name = "Categories (optional)")]
 	//public string? Category { get; set; }
 
+
+	#region implicit operators
+
+	public static implicit operator ProductEntity(ProductRegisterViewModel productRegisterViewModel)
+	{
+		return new ProductEntity
+		{
+			Name = productRegisterViewModel.Name,
+			Description = productRegisterViewModel.Description,
+			Price = productRegisterViewModel.Price,
+			LgImgUrl = productRegisterViewModel.LgImgUrl,
+			SmImgUrl = productRegisterViewModel.SmImgUrl
+		};
+	}
+
+	#endregion
 }

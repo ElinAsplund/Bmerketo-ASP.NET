@@ -3,25 +3,10 @@
 
 @*@inject ShowcaseService showcaseService
 *@
+
 @{
     var showcase = showcaseService.GetLatest();
 }
-
-
-@*<!-- showcase start -->
-<section class="showcase">
-    <div class="container">
-        <div class="content">
-            <div class="ingress">HARD CODED</div>
-            <div class="title">Hard coded</div>
-            <a class="btn-theme" asp-controller="products" asp-action="Index">SHOP NOW</a>
-        </div>
-        <div class="content-image">
-            <img src="./images/chair.jpg" alt="golden chair">
-        </div>
-    </div>
-</section>
-<!-- showcase end -->*@
 
 <!-- showcase dynamic start -->
 
