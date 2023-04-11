@@ -7,8 +7,8 @@ public class ProductModel
 	public string Name { get; set; } = null!;
 	public string Description { get; set; } = null!;
 	public decimal Price { get; set; } = 0;
-	public string LgImgUrl { get; set; } = null!;
-	public string SmImgUrl { get; set; } = null!;
+	public string? LgImgUrl { get; set; } = null!;
+	public string? SmImgUrl { get; set; } = null!;
 
 	public IEnumerable<string>? Categories;
 }

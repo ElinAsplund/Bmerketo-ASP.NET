@@ -127,7 +127,6 @@ namespace Bmerketo_WebApp.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LgImgUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -138,7 +137,6 @@ namespace Bmerketo_WebApp.Migrations
                         .HasColumnType("money");
 
                     b.Property<string>("SmImgUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

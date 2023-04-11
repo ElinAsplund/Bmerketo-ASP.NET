@@ -21,14 +21,12 @@ public class ProductRegisterViewModel
 	public decimal Price { get; set; } = 0;
 
 
-	[Display(Name = "Product Image* (501*430px)")]
-	[Required(ErrorMessage = "Please enter a Product Image.")]
-	public string LgImgUrl { get; set; } = null!;
+	[Display(Name = "Product Image (501 x 430px)")]
+	public string? LgImgUrl { get; set; }
 
 
-	[Display(Name = "Product Image* (120*113px)")]
-	[Required(ErrorMessage = "Please enter a Product Image.")]
-	public string SmImgUrl { get; set; } = null!;
+	[Display(Name = "Product Image (120 x 113px)")]
+	public string? SmImgUrl { get; set; }
 
 	//Probably need to make a category model here to make it work...!?
 	//[Display(Name = "Categories (optional)")]

@@ -245,3 +245,15 @@ a.btn-theme {
         color: $color-theme-1;
     }
 }
+
+// Positions
+.position-static {
+    position: static !important;
+}
+
+.position-fixed-bottom {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

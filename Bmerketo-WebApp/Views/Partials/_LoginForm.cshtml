@@ -24,7 +24,7 @@
                 <div class="line">
                     <div class="password-content">
                         <label asp-for="Password"></label>
-                        <a href="#">Forgot Your Password?</a>
+                        <a asp-controller="products" asp-action="list">Forgot Your Password?</a>
                     </div>
                     <input asp-for="Password" required />
                     <span asp-validation-for="Password" class="error-text"></span>

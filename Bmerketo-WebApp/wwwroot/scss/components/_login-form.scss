@@ -4,21 +4,18 @@
 
 .login-form {
     padding-top: 60px;
-    height: 100svh;
-    min-height: 425px;
-    display: flex;
-    justify-content: center;
+    padding-bottom: 60px;
     font-family: $font-roboto;
-    
-    @include lg{
+
+    @include lg {
         padding-top: 100px;
-        // align-items: center;
+        padding-bottom: 100px;
     }
 
-    a{
+    a {
         text-decoration: none;
 
-        &:hover{
+        &:hover {
             text-decoration: underline;
         }
     }
@@ -29,8 +26,8 @@
         width: 100%;
         padding: 30px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        
-        @include sm{            
+
+        @include sm {
             padding: 50px;
         }
 
@@ -42,7 +39,7 @@
         }
 
         form {
-            label{
+            label {
                 margin-bottom: 5px;
             }
 
@@ -50,11 +47,11 @@
                 display: grid;
                 margin-bottom: 1rem;
 
-                a{
+                a {
                     color: $color-theme-1;
                     font-size: 14px;
 
-                    &:hover{
+                    &:hover {
                         color: $color-dark-1;
                     }
                 }
@@ -70,25 +67,26 @@
                     }
                 }
 
-                .email-content{
+                .email-content {
                     display: flex;
                     justify-content: space-between;
 
-                    @include lg{
+                    @include lg {
                         display: block;
                     }
 
-                    a{
+                    a {
                         margin-left: 1.5rem;
                     }
                 }
-                .password-content{
+
+                .password-content {
                     display: flex;
                     justify-content: space-between;
                 }
             }
 
-            button{
+            button {
                 display: block;
                 margin-top: 30px;
             }

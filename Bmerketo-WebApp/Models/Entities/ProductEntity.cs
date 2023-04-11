@@ -12,8 +12,8 @@ public class ProductEntity
 	[Column(TypeName = "money")]
 	public decimal Price { get; set; } = 0;
 
-	public string LgImgUrl { get; set; } = null!;
-	public string SmImgUrl { get; set; } = null!;
+	public string? LgImgUrl { get; set; }
+	public string? SmImgUrl { get; set; }
 
 	public ICollection<ProductCategoryEntity> ProductCategories = new HashSet<ProductCategoryEntity>();
 	public ICollection<CategoryEntity> Categories = new HashSet<CategoryEntity>();
@@ -29,8 +29,8 @@ public class ProductEntity
 			Name = productEntity.Name,
 			Description = productEntity.Description,
 			Price = productEntity.Price,
-			LgImgUrl = productEntity.LgImgUrl,
-			SmImgUrl = productEntity.SmImgUrl,
+			LgImgUrl = productEntity.LgImgUrl!,
+			SmImgUrl = productEntity.SmImgUrl!,
 			//Categories = productEntity.Categories.Select(x => x.Name)
 		};
 	}
