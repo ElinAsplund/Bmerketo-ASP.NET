@@ -54,6 +54,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.4, )"
+            },
+            "microsoft.aspnetcore.identity.entityframeworkcore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "microsoft.aspnetcore.identity.ui": {
+              "target": "Package",
+              "version": "[7.0.5, )"
             }
           },
           "imports": [
