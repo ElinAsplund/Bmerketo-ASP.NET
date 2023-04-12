@@ -54,6 +54,7 @@ a.btn-white,
 a.btn-dark,
 a.btn-theme {
     display: inline-block;
+    max-width: max-content;
     padding: 10px 35px;
     font-family: $font-poppins !important;
     border: 1px solid $color-dark-1;

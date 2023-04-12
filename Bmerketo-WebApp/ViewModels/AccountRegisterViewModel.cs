@@ -1,4 +1,5 @@
 ﻿using Bmerketo_WebApp.Models.Entities;
+using Bmerketo_WebApp.Models.Identity;
 using System.ComponentModel.DataAnnotations;
 
 namespace Bmerketo_WebApp.ViewModels;
@@ -89,6 +90,19 @@ public class AccountRegisterViewModel
 			PhoneNumber = accountRegisterViewModel.PhoneNumber,
 			CompanyName = accountRegisterViewModel.CompanyName,
 			ProfileImage = accountRegisterViewModel.ProfileImage
+		};
+	}
+
+	public static implicit operator CustomIdentityUser(AccountRegisterViewModel accountRegisterViewModel)
+	{
+		return new CustomIdentityUser
+		{
+			UserName = accountRegisterViewModel.Email,
+
+			FirstName = accountRegisterViewModel.FirstName,
+			LastName = accountRegisterViewModel.LastName,
+			Email = accountRegisterViewModel.Email,
+			PhoneNumber = accountRegisterViewModel.PhoneNumber,
 		};
 	}
 

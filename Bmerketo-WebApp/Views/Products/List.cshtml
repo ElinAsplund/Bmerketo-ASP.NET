@@ -10,14 +10,14 @@
         <div class="form-content">
             <div class="form-title">Product List</div>
             <hr>
-            <div>Here will the products in the database be rendered. Remove-btn, do not work atm.</div>
+            <div class="mb-2">Here will the products in the database be rendered. Remove-btn, do not work.</div>
             @if (products != null)
             {
                 foreach (var product in products)
                 {
-                    <div class="d-flex justify-content-between align-items-center bg-danger-subtle mb-2 ps-3 pe-1 py-1">
+                    <div class="d-flex justify-content-between align-items-center bg-body-tertiary mb-2 ps-3 pe-1 py-1">
                         <div>Id: @product.Id , Name: @product.Name , Price: @{ var price = (product.Price).ToString("0.00"); } @price </div>
-                        <button class="btn-white">X</button>
+                        <button class="btn-white" style="padding: 0.5rem;">X</button>
                     </div>
                 }
             }
