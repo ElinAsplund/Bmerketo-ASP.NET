@@ -12,4 +12,12 @@ public class IdentityContext : IdentityDbContext<IdentityUser>
 	}
 
 	public DbSet<UserProfileEntity> UserProfiles { get; set; }
+
+	protected override void OnModelCreating(ModelBuilder builder)
+	{
+		base.OnModelCreating(builder);
+
+		//builder.Entity<IdentityRole>().HasData(new IdentityRole("admin"));
+		//builder.Entity<IdentityRole>().HasData(new IdentityRole("user"));
+	}
 }

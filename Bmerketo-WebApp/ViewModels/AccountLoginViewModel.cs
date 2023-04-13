@@ -16,7 +16,7 @@ public class AccountLoginViewModel
 	[Required(ErrorMessage = "Please enter your Password.")]
 	public string Password { get; set; } = null!;
 
-	public bool KeepLoggedIn { get; set; } = true;
+	public bool KeepLoggedIn { get; set; } = false;
 
 	#region implicit operators
 

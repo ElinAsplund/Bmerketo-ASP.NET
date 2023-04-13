@@ -1,6 +1,7 @@
 ﻿using Bmerketo_WebApp.Models;
 using Bmerketo_WebApp.Services;
 using Bmerketo_WebApp.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bmerketo_WebApp.Controllers
@@ -67,6 +68,8 @@ namespace Bmerketo_WebApp.Controllers
 			return View(viewModel);
         }
 
+		//----PRODUCT LIST----
+		[Authorize]
 		public IActionResult List()
 		{
 			ViewData["Title"] = "Product List";
@@ -75,8 +78,9 @@ namespace Bmerketo_WebApp.Controllers
 		}
 
 
-		//REISTER PRODUCT
-		public IActionResult Register()
+        //----REGISTER PRODUCT----
+        [Authorize]
+        public IActionResult Register()
 		{
 			ViewData["Title"] = "Register Product";
 

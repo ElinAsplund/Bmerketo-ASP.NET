@@ -1,5 +1,4 @@
 ﻿using Bmerketo_WebApp.Models.Entities;
-using Bmerketo_WebApp.Models.Identity;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 

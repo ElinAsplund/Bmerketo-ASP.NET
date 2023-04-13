@@ -1,0 +1,17 @@
+﻿<div class="container-fluid bg-danger-subtle font-poppins">
+	<div class="container d-flex justify-content-between align-items-center py-2 mb-3">
+		<div class="me-3">
+			Hello <a class="link fw-bold" asp-controller="account" asp-action="index">@(User.FindFirst("DisplayName")?.Value)</a>!
+		</div>
+		<div class="">
+			<a class="link me-3" asp-controller="account" asp-action="index">My Account</a>
+
+			@if(User.IsInRole("admin"))
+			{
+				<a class="link me-3" asp-controller="admin" asp-action="index">Admin</a>
+			}
+			
+			<a class="link" asp-controller="account" asp-action="logout">Logout</a>
+		</div>
+	</div>
+</div>

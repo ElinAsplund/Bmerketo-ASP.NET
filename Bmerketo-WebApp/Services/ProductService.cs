@@ -24,12 +24,12 @@ public class ProductService
 	//	return false;
 	//}
 
-	public async Task<bool> RegisterAsync(ProductRegisterViewModel productRegisterViewModel)
+	public async Task<bool> RegisterAsync(ProductRegisterViewModel viewModel)
 	{
 		try
 		{
 			//converts to entity
-			ProductEntity productEntity = productRegisterViewModel;
+			ProductEntity productEntity = viewModel;
 
 			//create user
 			_context.Products.Add(productEntity);

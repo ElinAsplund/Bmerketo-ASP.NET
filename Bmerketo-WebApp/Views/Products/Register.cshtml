@@ -1,5 +1,6 @@
 ﻿@model ProductRegisterViewModel
 
+<partial name="/Views/Partials/_AccountHeader.cshtml" />
 <partial name="/Views/Partials/_ProductHeader.cshtml" />
 
 <!-- register-form start -->
@@ -22,7 +23,7 @@
 
                 <div class="line">
                     <label asp-for="Description"></label>
-                    <input asp-for="Description" required />
+                    <textarea asp-for="Description" required></textarea>
                     <span asp-validation-for="Description" class="error-text"></span>
                 </div>
 

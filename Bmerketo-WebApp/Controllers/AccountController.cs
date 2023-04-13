@@ -1,8 +1,10 @@
 ﻿using Bmerketo_WebApp.Models.Identity;
 using Bmerketo_WebApp.Services;
 using Bmerketo_WebApp.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Bmerketo_WebApp.Controllers;
 
@@ -12,60 +14,75 @@ public class AccountController : Controller
 	//--------------------With Identity--------------------
 	private readonly UserManager<IdentityUser> _userManager;
 	private readonly SignInManager<IdentityUser> _signInManager;
+	private readonly AuthService _auth;
 	private readonly UserService _userService;
 
-    public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, UserService userService)
-    {
-        _userManager = userManager;
-        _signInManager = signInManager;
-        _userService = userService;
-    }
+	public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, UserService userService, AuthService auth)
+	{
+		_userManager = userManager;
+		_signInManager = signInManager;
+		_userService = userService;
+		_auth = auth;
+	}
 
     //--------------------Without Identity--------------------
+	//private readonly UserService _userService;
+
     //public AccountController(UserService userService)
     //{
     //	_userService = userService;
     //}
     //---------------------------END---------------------------
 
-
-    public IActionResult Index()
+    [Authorize]
+	public IActionResult Index()
 	{
-		ViewData["Title"] = "Account";
+		ViewData["Title"] = "My Account";
 
-		if (_signInManager.IsSignedIn(User))
-		{
-			return View();
-		}
+		return View();
 
-		return RedirectToAction("index", "home");
+        //------------------BEFORE [Authorize]------------------
+        //if (_signInManager.IsSignedIn(User))
+        //{
+        //	return View();
+        //}
 
-	}
-	
-	//REGISTER
-	public IActionResult Register()
+        //return RedirectToAction("index", "home");
+        //---------------------------END---------------------------
+
+    }
+
+    //----REGISTER----
+    public IActionResult Register()
 	{
 		ViewData["Title"] = "Register";
 		return View();
 	}
 
 	[HttpPost]
-	public async Task<IActionResult> Register(AccountRegisterViewModel accountRegisterViewModel)
+	public async Task<IActionResult> Register(AccountRegisterViewModel viewModel)
 	{
 		ViewData["Title"] = "Register Account";
 
 		if (ModelState.IsValid)
 		{
-			//--------------------With Identity--------------------
-			if (await _userManager.FindByNameAsync(accountRegisterViewModel.Email) == null)
-			{
-				var result = await _userManager.CreateAsync(accountRegisterViewModel, accountRegisterViewModel.Password);
-
-				if (result.Succeeded)
-					return RedirectToAction("login", "account");
-			}
+			//---------------With Identity, AuthService---------------
+			if (await _auth.RegisterAsync(viewModel))
+				return RedirectToAction("login", "account");
 
 			ModelState.AddModelError("", "A User with that E-mail already exists.");
+
+
+			//---------------With Identity, _userManager---------------
+			//if (await _userManager.FindByNameAsync(viewModel.Email) == null)
+			//{
+			//	var result = await _userManager.CreateAsync(viewModel, viewModel.Password);
+
+			//	if (result.Succeeded)
+			//		return RedirectToAction("login", "account");
+			//}
+
+			//ModelState.AddModelError("", "A User with that E-mail already exists.");
 
 
 			//--------------------Without Identity--------------------
@@ -80,15 +97,15 @@ public class AccountController : Controller
 			//	else
 			//		ModelState.AddModelError("", "Something went wrong while creating the User.");
 			//}
-            //---------------------------END---------------------------
+			//---------------------------END---------------------------
 
-        }
+		}
 
-        return View(accountRegisterViewModel);
+        return View(viewModel);
 
 	}
-	
-	//LOGIN
+
+	//----LOGIN----
 	public IActionResult Login()
 	{
 		ViewData["Title"] = "Login";
@@ -96,41 +113,61 @@ public class AccountController : Controller
 	}
 
 	[HttpPost]
-	public async Task<IActionResult> Login(AccountLoginViewModel accountLoginViewModel)
+	public async Task<IActionResult> Login(AccountLoginViewModel viewModel)
 	{
 		ViewData["Title"] = "Login";
 
 		if (ModelState.IsValid)
 		{
-			//--------------------With Identity--------------------
-			var result = await _signInManager.PasswordSignInAsync(accountLoginViewModel.Email, accountLoginViewModel.Password, false, false);
+			//---------------With Identity, AuthService---------------
+			if (await _auth.LoginAsync(viewModel))
+				return RedirectToAction("index", "account");
 
-			if(result.Succeeded)
-                return RedirectToAction("index", "account");
+			ModelState.AddModelError("", "Incorrect E-mail or Password.");
 
-            ModelState.AddModelError("", "Incorrect E-mail or Password.");
 
-            //--------------------Without Identity--------------------
-            //if (await _userService.LoginAsync(accountLoginViewModel))
-            //	return RedirectToAction("index", "account");
+			//---------------With Identity, _userManager---------------
+			//var result = await _signInManager.PasswordSignInAsync(viewModel.Email, viewModel.Password, false, false);
 
-            //ModelState.AddModelError("", "Incorrect E-mail or Password.");
-            //---------------------------END---------------------------
+			//if(result.Succeeded)
+			//             return RedirectToAction("index", "account");
 
-        }
+			//         ModelState.AddModelError("", "Incorrect E-mail or Password.");
 
-        return View(accountLoginViewModel);
-	}
 
-	//LOGOUT
-	public async Task<IActionResult> Logout()
-	{
-		if(_signInManager.IsSignedIn(User))
-		{
-			await _signInManager.SignOutAsync();
-			return RedirectToAction("index", "home");
+			//--------------------Without Identity--------------------
+			//if (await _userService.LoginAsync(accountLoginViewModel))
+			//	return RedirectToAction("index", "account");
+
+			//ModelState.AddModelError("", "Incorrect E-mail or Password.");
+			//---------------------------END---------------------------
+
 		}
 
-        return RedirectToAction("login", "account");
+        return View(viewModel);
+	}
+
+    //----LOGOUT----
+    [Authorize]
+    public async Task<IActionResult> Logout()
+	{
+		//---------------With Identity, AuthService---------------
+		if(await _auth.LogoutAsync(User))
+		{
+            return RedirectToAction("index", "home");
+        }
+
+		return RedirectToAction("login", "account");
+
+
+        //---------------With Identity, _userManager---------------
+        //if (_signInManager.IsSignedIn(User))
+        //{
+        //	await _signInManager.SignOutAsync();
+        //	return RedirectToAction("index", "home");
+        //}
+
+        //return RedirectToAction("login", "account");
+        //---------------------------END---------------------------
     }
 }

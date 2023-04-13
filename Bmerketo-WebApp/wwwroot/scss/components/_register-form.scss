@@ -9,8 +9,8 @@
     justify-content: center;
     align-items: center;
     font-family: $font-roboto;
-    
-    @include lg{
+
+    @include lg {
         padding-top: 80px;
     }
 
@@ -20,8 +20,8 @@
         width: 100%;
         padding: 30px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        
-        @include sm{            
+
+        @include sm {
             padding: 50px;
         }
 
@@ -33,20 +33,20 @@
 
         form {
 
-            label{
+            label {
                 margin-bottom: 5px;
             }
 
-            .grid{
+            .grid {
                 gap: 1rem;
-                
-                @include lg{
+
+                @include lg {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                     gap: 1.5rem;
                 }
 
-                .column{
+                .column {
                     display: grid;
                 }
             }
@@ -55,49 +55,52 @@
                 display: grid;
                 margin-bottom: 1rem;
 
-                a{
+                a {
                     color: $color-theme-1;
                     font-size: 14px;
 
-                    &:hover{
+                    &:hover {
                         color: $color-dark-1;
                     }
                 }
 
-                input {
+                input,
+                textarea {
                     padding: 5px 10px;
                     border: none;
                     background: #FAFAFA;
                     font-family: $font-poppins;
+                    resize: none;
 
                     &:focus {
                         outline-color: #f2d8d8;
                     }
                 }
 
-                input[type="file"]{
+                input[type="file"] {
                     padding: 10px;
                 }
 
-                .email-content{
+                .email-content {
                     display: flex;
                     justify-content: space-between;
 
-                    @include lg{
+                    @include lg {
                         display: block;
                     }
 
-                    a{
+                    a {
                         margin-left: 1.5rem;
                     }
                 }
-                .password-content{
+
+                .password-content {
                     display: flex;
                     justify-content: space-between;
                 }
             }
 
-            button{
+            button {
                 display: block;
                 margin-top: 30px;
             }

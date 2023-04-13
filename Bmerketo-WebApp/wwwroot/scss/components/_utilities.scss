@@ -10,13 +10,20 @@ body {
     color: $color-dark-3;
 }
 
-.h1-placeholder,
-.placeholder {
+.h1-placeholder{
     padding-top: 60px;
-    height: 100svh;
+    //height: 100svh;
     min-height: 425px;
     display: flex;
     justify-content: center;
+}
+
+.font-poppins {
+    font-family: $font-poppins;
+}
+
+.font-roboto {
+    font-family: $font-roboto;
 }
 
 a,

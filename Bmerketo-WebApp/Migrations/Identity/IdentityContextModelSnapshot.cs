@@ -83,6 +83,18 @@ namespace Bmerketo_WebApp.Migrations.Identity
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "ab18f504-7bb6-4e27-84fb-244bf3ca5e7e",
+                            Name = "admin"
+                        },
+                        new
+                        {
+                            Id = "9b246ec2-12df-4401-b20a-2d1e2e137d40",
+                            Name = "user"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
