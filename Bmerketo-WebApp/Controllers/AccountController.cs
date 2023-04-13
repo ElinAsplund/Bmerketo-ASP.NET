@@ -10,11 +10,11 @@ public class AccountController : Controller
 {
 
 	//--------------------With Identity--------------------
-	private readonly UserManager<CustomIdentityUser> _userManager;
-	private readonly SignInManager<CustomIdentityUser> _signInManager;
+	private readonly UserManager<IdentityUser> _userManager;
+	private readonly SignInManager<IdentityUser> _signInManager;
 	private readonly UserService _userService;
 
-    public AccountController(UserManager<CustomIdentityUser> userManager, SignInManager<CustomIdentityUser> signInManager, UserService userService)
+    public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, UserService userService)
     {
         _userManager = userManager;
         _signInManager = signInManager;

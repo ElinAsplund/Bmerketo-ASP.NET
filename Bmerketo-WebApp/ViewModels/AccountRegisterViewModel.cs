@@ -1,5 +1,6 @@
 ﻿using Bmerketo_WebApp.Models.Entities;
 using Bmerketo_WebApp.Models.Identity;
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
 namespace Bmerketo_WebApp.ViewModels;
@@ -70,41 +71,70 @@ public class AccountRegisterViewModel
 
 
 	#region implicit operators
-
-	public static implicit operator UserEntity(AccountRegisterViewModel accountRegisterViewModel)
+	
+	//Standard Identity
+	public static implicit operator IdentityUser(AccountRegisterViewModel viewModel)
 	{
-		var userEntity = new UserEntity { Email = accountRegisterViewModel.Email };
-		userEntity.GenerateSecurePassword(accountRegisterViewModel.Password);
+		return new IdentityUser
+		{
+			UserName = viewModel.Email,
+			Email = viewModel.Email,
+			PhoneNumber = viewModel.PhoneNumber,
+		};
+	}
+
+	public static implicit operator UserProfileEntity(AccountRegisterViewModel viewModel)
+	{
+		return new UserProfileEntity
+		{
+			FirstName = viewModel.FirstName,
+			LastName = viewModel.LastName,
+			StreetName = viewModel.StreetName,
+			PostalCode = viewModel.PostalCode,
+			City = viewModel.City,
+			CompanyName = viewModel.CompanyName,
+			ProfileImage = viewModel.ProfileImage
+		};
+	}
+
+
+	//Custom Identity
+	//public static implicit operator CustomIdentityUser(AccountRegisterViewModel viewModel)
+	//{
+	//	return new CustomIdentityUser
+	//	{
+	//		UserName = viewModel.Email,
+
+	//		FirstName = viewModel.FirstName,
+	//		LastName = viewModel.LastName,
+	//		Email = viewModel.Email,
+	//		PhoneNumber = viewModel.PhoneNumber,
+	//	};
+	//}
+
+
+	//Vanilla
+	public static implicit operator UserEntity(AccountRegisterViewModel viewModel)
+	{
+		var userEntity = new UserEntity { Email = viewModel.Email };
+		userEntity.GenerateSecurePassword(viewModel.Password);
 		return userEntity;
 	}
 	
-	public static implicit operator ProfileEntity(AccountRegisterViewModel accountRegisterViewModel)
+	public static implicit operator ProfileEntity(AccountRegisterViewModel viewModel)
 	{
 		return new ProfileEntity
 		{
-			FirstName = accountRegisterViewModel.FirstName,
-			LastName = accountRegisterViewModel.LastName,
-			StreetName = accountRegisterViewModel.StreetName,
-			PostalCode = accountRegisterViewModel.PostalCode,
-			City = accountRegisterViewModel.City,
-			PhoneNumber = accountRegisterViewModel.PhoneNumber,
-			CompanyName = accountRegisterViewModel.CompanyName,
-			ProfileImage = accountRegisterViewModel.ProfileImage
+			FirstName = viewModel.FirstName,
+			LastName = viewModel.LastName,
+			StreetName = viewModel.StreetName,
+			PostalCode = viewModel.PostalCode,
+			City = viewModel.City,
+			PhoneNumber = viewModel.PhoneNumber,
+			CompanyName = viewModel.CompanyName,
+			ProfileImage = viewModel.ProfileImage
 		};
 	}
-
-	public static implicit operator CustomIdentityUser(AccountRegisterViewModel accountRegisterViewModel)
-	{
-		return new CustomIdentityUser
-		{
-			UserName = accountRegisterViewModel.Email,
-
-			FirstName = accountRegisterViewModel.FirstName,
-			LastName = accountRegisterViewModel.LastName,
-			Email = accountRegisterViewModel.Email,
-			PhoneNumber = accountRegisterViewModel.PhoneNumber,
-		};
-	}
-
+	
 	#endregion
 }
