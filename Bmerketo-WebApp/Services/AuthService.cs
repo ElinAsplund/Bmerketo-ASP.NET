@@ -28,7 +28,7 @@ public class AuthService
 	{
 		try
 		{
-			await _seedService.SeedRoles();
+			//await _seedService.SeedRoles();
 			var roleName = "user";
 
 			if(!await _userManager.Users.AnyAsync())

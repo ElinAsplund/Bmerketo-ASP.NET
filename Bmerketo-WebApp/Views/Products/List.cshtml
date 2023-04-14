@@ -17,7 +17,14 @@
                 foreach (var product in products)
                 {
                     <div class="d-flex justify-content-between align-items-center bg-body-tertiary mb-2 ps-3 pe-1 py-1">
-                        <div>Id: @product.Id , Name: @product.Name , Price: @{ var price = (product.Price).ToString("0.00"); } @price </div>
+                        <div>
+                            <span class="fw-bold">Id:</span> @product.Id ,
+                            <span class="fw-bold">Name:</span> @product.Name ,
+                            <span class="fw-bold">Price:</span>
+                                @{
+                                var price = (product.Price).ToString("0.00");
+                            } @price 
+                        </div>
                         <button class="btn-white" style="padding: 0.5rem;">X</button>
                     </div>
                 }

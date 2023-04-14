@@ -17,7 +17,7 @@ public class IdentityContext : IdentityDbContext<IdentityUser>
 	{
 		base.OnModelCreating(builder);
 
-		//builder.Entity<IdentityRole>().HasData(new IdentityRole("admin"));
-		//builder.Entity<IdentityRole>().HasData(new IdentityRole("user"));
+		builder.Entity<IdentityRole>().HasData(new IdentityRole { Name = "admin", NormalizedName = "ADMIN" });
+		builder.Entity<IdentityRole>().HasData(new IdentityRole { Name = "user", NormalizedName = "USER" });
 	}
 }

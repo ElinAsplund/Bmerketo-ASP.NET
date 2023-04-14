@@ -1,1 +1,3 @@
-﻿<h1 class="h1-placeholder">Admin: @(User.FindFirst("DisplayName")?.Value)</h1>
+﻿<partial name="/Views/Partials/_AccountHeader.cshtml" />
+
+<h1 class="h1-placeholder">Admin: @(User.FindFirst("DisplayName")?.Value)</h1>
