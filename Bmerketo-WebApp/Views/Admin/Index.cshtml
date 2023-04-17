@@ -1,3 +1,5 @@
-﻿<partial name="/Views/Partials/_AccountHeader.cshtml" />
-
-<h1 class="h1-placeholder">Admin: @(User.FindFirst("DisplayName")?.Value)</h1>
+﻿<div class="container mt-4 d-grid justify-content-center" style="text-align: center">
+	<h1>Admin: @(User?.FindFirst("DisplayName")?.Value)</h1>
+	<p class="mt-4 mb-0 font-roboto">What do you wanna do?</p>
+	<partial name="/Views/Partials/_ProductHeader.cshtml" />
+</div>

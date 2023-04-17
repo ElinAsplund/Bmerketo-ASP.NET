@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lL8vKXdpo6ft9lY30niQ/BgVVTOpO+6m0c17O8SHKC4=",
+  "Hash": "tZVIxXxpQq3AnrlHfGVLD+WZYAuIWGUXwYS1VZan/kU=",
   "Source": "Bmerketo-WebApp",
   "BasePath": "_content/Bmerketo-WebApp",
   "Mode": "Default",
@@ -1256,6 +1256,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_account-header.scss",
+      "SourceId": "Bmerketo-WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\",
+      "BasePath": "_content/Bmerketo-WebApp",
+      "RelativePath": "scss/components/_account-header.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scss\\components\\_account-header.scss"
     },
     {
       "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_contact-form.scss",

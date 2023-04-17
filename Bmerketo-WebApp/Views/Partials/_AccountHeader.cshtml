@@ -1,14 +1,14 @@
-﻿<div class="container-fluid bg-danger-subtle font-poppins" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
-	<div class="container d-flex justify-content-between align-items-center py-2 mb-3">
-		<div class="me-3">
+﻿<div class="account-header container-fluid">
+	<div class="container">
+		<div class="left-link">
 			Hello <a class="link fw-bold" asp-controller="account" asp-action="index">@(User.FindFirst("DisplayName")?.Value)</a>!
 		</div>
-		<div class="">
-			<a class="link me-3" asp-controller="account" asp-action="index">My Account</a>
+		<div class="right-link">
+			<a class="link" asp-controller="account" asp-action="index">My Account</a>
 
 			@if(User.IsInRole("admin"))
 			{
-				<a class="link me-3" asp-controller="admin" asp-action="index">Admin</a>
+				<a class="link" asp-controller="admin" asp-action="index">Admin</a>
 			}
 			
 			<a class="link" asp-controller="account" asp-action="logout">Logout</a>

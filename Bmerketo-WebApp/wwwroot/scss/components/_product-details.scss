@@ -97,6 +97,7 @@
 
             .product-description {
                 color: $color-dark-2;
+                font-family: $font-roboto;
             }
 
             .review {
@@ -116,6 +117,7 @@
                 .review-count {
                     margin-left: 1rem;
                     margin-top: 5px;
+                    font-family: $font-roboto;
                 }
             }
 
@@ -220,6 +222,7 @@
                 margin-top: 1rem;
                 margin-bottom: 1rem;
                 margin-left: 30px;
+                font-family: $font-roboto;
             }
 
             .btn-white {
@@ -235,6 +238,7 @@
 
             .product-category {
                 color: $color-dark-2;
+                font-family: $font-roboto;
             }
         }
     }

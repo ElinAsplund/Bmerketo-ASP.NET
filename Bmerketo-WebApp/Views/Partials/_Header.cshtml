@@ -14,8 +14,8 @@
 
                 @if (signInManager.IsSignedIn(User))
                 {
-                    <a class="link" asp-controller="account" asp-action="index">My Account</a>
-                }
+@*                    <a class="link" asp-controller="account" asp-action="index">My Account</a>
+*@                }
                 else
                 {
                     <a class="link" asp-controller="account" asp-action="login">Login</a>
@@ -29,5 +29,11 @@
             <button class="btn-white btn-toggle" data-option="toggle" data-target="#menu-links"><i class="fa-regular fa-bars"></i></button>
         </div>
     </div>
+
+    @if(signInManager.IsSignedIn(User))
+    {
+        <partial name="/Views/Partials/_AccountHeader.cshtml" />
+    }
+
 </header>
 <!-- header end -->

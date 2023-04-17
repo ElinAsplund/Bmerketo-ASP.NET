@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_account-header.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_account-header.scss"
+    },
+    {
       "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\scss\\components\\_contact-form.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_contact-form.scss"
     },

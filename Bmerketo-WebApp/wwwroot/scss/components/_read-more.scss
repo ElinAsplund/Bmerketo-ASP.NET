@@ -4,7 +4,8 @@
 
 .read-more {
 
-    .container {}
+    .container {
+    }
 
     .btn-grid {
         display: grid;
@@ -23,6 +24,7 @@
 
         button {
             width: 100%;
+            max-width: inherit;
             border-color: transparent;
             border-right: $color-dark-4 1px solid;
             padding: 10px 25px;
@@ -138,6 +140,7 @@
     }
 
     hr {
-        margin-top: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 0;
     }
 }
