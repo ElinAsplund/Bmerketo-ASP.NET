@@ -7,29 +7,29 @@ namespace Bmerketo_WebApp.ViewModels;
 public class AccountRegisterViewModel
 {
 	[Display(Name = "First Name*")]
-	[Required(ErrorMessage = "Please enter your First Name.")]
+	[Required(ErrorMessage = "Please enter your first name.")]
 	[RegularExpression(@"^[a-öA-Ö]+(?:[ é'-][a-öA-Ö]+)*$", ErrorMessage = "You need to enter a valid First Name.")]
 	public string FirstName { get; set; } = null!;
 	
 
 	[Display(Name = "Last Name*")]
-	[Required(ErrorMessage = "Please enter your Last Name.")]
+	[Required(ErrorMessage = "Please enter your last name.")]
 	[RegularExpression(@"^[a-öA-Ö]+(?:[ é'-][a-öA-Ö]+)*$", ErrorMessage = "You need to enter a valid Last Name.")]
 	public string LastName { get; set; } = null!;
 	
 
 	[Display(Name = "Street Name*")]
-	[Required(ErrorMessage = "Please enter your Street Name.")]
+	[Required(ErrorMessage = "Please enter your street name.")]
 	public string StreetName { get; set; } = null!;
 
 
 	[Display(Name = "Postal Code*")]
-	[Required(ErrorMessage = "Please enter your Postal Code.")]
+	[Required(ErrorMessage = "Please enter your postal code.")]
 	public string PostalCode { get; set; } = null!;
 
 
 	[Display(Name = "City*")]
-	[Required(ErrorMessage = "Please enter your City.")]
+	[Required(ErrorMessage = "Please enter your city.")]
 	public string City { get; set; } = null!;
 
 
@@ -43,22 +43,22 @@ public class AccountRegisterViewModel
 
 	[Display(Name = "E-mail*")]
 	[DataType(DataType.EmailAddress)]
-	[Required(ErrorMessage = "Please enter your E-mail.")]
+	[Required(ErrorMessage = "Please enter your e-mail.")]
 	[RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", ErrorMessage = "You need to enter a valid E-mail.")]
 	public string Email { get; set; } = null!;
 
 
 	[Display(Name = "Password*")]
 	[DataType(DataType.Password)]
-	[Required(ErrorMessage = "Please enter a Password.")]
+	[Required(ErrorMessage = "Please enter a password.")]
 	[RegularExpression(@"^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{8,}$", ErrorMessage = "You need to enter a valid Password.")]
 	public string Password { get; set; } = null!;
 
 
 	[Display(Name = "Confirm Password*")]
 	[DataType(DataType.Password)]
-	[Required(ErrorMessage = "Please confirm the Password.")]
-	[Compare(nameof(Password), ErrorMessage = "The Passwords don't match.")]
+	[Required(ErrorMessage = "Please confirm the password.")]
+	[Compare(nameof(Password), ErrorMessage = "The passwords don't match.")]
 	public string ConfirmPassword { get; set; } = null!;
 
 

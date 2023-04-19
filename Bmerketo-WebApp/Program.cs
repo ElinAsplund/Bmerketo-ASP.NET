@@ -1,13 +1,11 @@
 using Bmerketo_WebApp.Contexts;
 using Bmerketo_WebApp.Factories;
-using Bmerketo_WebApp.Models.Identity;
 using Bmerketo_WebApp.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Sql")));
 builder.Services.AddDbContext<IdentityContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("IdentitySql")));
@@ -27,13 +25,6 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(x =>
 })
     .AddEntityFrameworkStores<IdentityContext>()
     .AddClaimsPrincipalFactory<CustomClaimsPrincipalFactory>();
-
-//builder.Services.AddIdentity<CustomIdentityUser, IdentityRole>(x =>
-//{
-//    x.SignIn.RequireConfirmedAccount = false;
-//    x.User.RequireUniqueEmail = true;
-//    x.Password.RequiredLength = 8;
-//}).AddEntityFrameworkStores<IdentityContext>();
 
 
 var app = builder.Build();

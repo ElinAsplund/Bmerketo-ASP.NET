@@ -1,10 +1,8 @@
-﻿using Bmerketo_WebApp.Models.Identity;
-using Bmerketo_WebApp.Services;
+﻿using Bmerketo_WebApp.Services;
 using Bmerketo_WebApp.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace Bmerketo_WebApp.Controllers;
 
@@ -70,7 +68,7 @@ public class AccountController : Controller
 			if (await _auth.RegisterAsync(viewModel))
 				return RedirectToAction("login", "account");
 
-			ModelState.AddModelError("", "A User with that E-mail already exists.");
+			ModelState.AddModelError("", "A user with that e-mail already exists.");
 
 
 			//---------------With Identity, _userManager---------------
@@ -123,7 +121,7 @@ public class AccountController : Controller
 			if (await _auth.LoginAsync(viewModel))
 				return RedirectToAction("index", "account");
 
-			ModelState.AddModelError("", "Incorrect E-mail or Password.");
+			ModelState.AddModelError("", "Incorrect e-mail or password.");
 
 
 			//---------------With Identity, _userManager---------------

@@ -20,7 +20,7 @@ public class CustomClaimsPrincipalFactory : UserClaimsPrincipalFactory<IdentityU
 
 		//Add custom claims
 		var userProfileEntity = await _userProfileService.GetUserProfileAsync(user.Id);
-		claimsIdentity.AddClaim(new Claim("DisplayName", $"{userProfileEntity.FirstName} {userProfileEntity.FirstName}"));
+		claimsIdentity.AddClaim(new Claim("DisplayName", $"{userProfileEntity.FirstName} {userProfileEntity.LastName}"));
 
 		// Add user roles to claims
 		var roles = await UserManager.GetRolesAsync(user);
