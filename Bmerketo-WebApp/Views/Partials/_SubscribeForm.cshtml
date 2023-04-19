@@ -1,10 +1,11 @@
 ﻿<!-- subscribe-form start -->
 <section class="subscribe-form">
     <div class="container">
-        <form class="content" novalidate>
-            <input type="text" placeholder="Enter your mail here" />
+        <form class="content" onsubmit="validateSubscribe(event)" novalidate>
+            <input type="text" onkeyup="validateInput(event)" id="subscribe-email" placeholder="Enter your mail here" />
             <button class="btn-theme" type="submit">SUBSCRIBE FOR NEWSLETTER</button>
-            <div class="error-msg">Something went wrong!</div>
+            <span id="subscribe-email-span" class="error-text"></span>
+            <div id="subscribe-email-error" class="error-text"></div>
         </form>
     </div>
 </section>

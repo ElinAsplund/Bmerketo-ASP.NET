@@ -1,4 +1,4 @@
-﻿//Header-menu
+﻿//Header menu tiggle on small screens
 try {
     const toggleBtn = document.querySelector('[data-option="toggle"]')
     toggleBtn.addEventListener('click', function () {
@@ -34,6 +34,24 @@ function footerPosition(element, scrollHeight, innerHeight) {
 }
 footerPosition('footer', document.body.scrollHeight, window.innerHeight)
 
+//For subscribe-form
+function removeAddClassSubscribe() {
+    try {
+        const subscribeError = document.querySelector(`#subscribe-email-error`);
+        const subscribeSpan = document.querySelector(`#subscribe-email-span`);
+
+        if (subscribeError.innerText !== "") 
+                subscribeError.classList.add('subscribe-error')
+        else
+            subscribeError.classList.remove('subscribe-error')
+
+        if (subscribeSpan.innerText !== "")
+            subscribeSpan.classList.add('subscribe-error')
+        else
+            subscribeSpan.classList.remove('subscribe-error')
+
+    } catch { }
+}
 
 //Validations
 function removeAspValidation(errorSpan) {
@@ -48,7 +66,6 @@ function validateInputSwitch(element, errorMsg, label) {
     const regExEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 
-
     if (element.value === "")
         errorMsg.innerText = `Please enter a ${label}.`;
 
@@ -59,10 +76,6 @@ function validateInputSwitch(element, errorMsg, label) {
 
             if (!regExName.test(element.value))
                 errorMsg.innerText = `Please enter a ${label}.`;
-
-            if (errorMsg.innerText === "")
-                firstNameOK = true;
-
             break;
 
         case "last name":
@@ -71,10 +84,6 @@ function validateInputSwitch(element, errorMsg, label) {
 
             if (!regExName.test(element.value))
                 errorMsg.innerText = `Please enter a ${label}.`;
-
-            if (errorMsg.innerText === "")
-                lastNameOK = true;
-
             break;
 
         case "street name":
@@ -92,10 +101,6 @@ function validateInputSwitch(element, errorMsg, label) {
 
             if (element.value === "")
                 errorMsg.innerText = `Please enter an ${label}.`;
-
-            if (errorMsg.innerText === "")
-                emailOK = true;
-
             break;
 
         case "password":
@@ -104,10 +109,6 @@ function validateInputSwitch(element, errorMsg, label) {
 
             if (element.value === "")
                 errorMsg.innerText = `Please enter a ${label}.`;
-
-            if (errorMsg.innerText === "")
-                passwordOK = true;
-
             break;
 
         case "confirm password":
@@ -116,13 +117,35 @@ function validateInputSwitch(element, errorMsg, label) {
 
             if (element.value === "")
                 errorMsg.innerText = `Please confirm the password.`;
+            break;
 
-            if (errorMsg.innerText === "")
-                passwordOK = true;
+        case "login email":
+            //if (!regExEmail.test(element.value))
+            //    errorMsg.innerText = `Please enter a valid email.`;
 
+            if (element.value === "")
+                errorMsg.innerText = `Please enter a email.`;
+            break;
+
+        case "login password":
+            //if (element.value.length < 8)
+            //    errorMsg.innerText = `Your password contains at least 8 characters!`;
+
+            if (element.value === "")
+                errorMsg.innerText = `Please enter a password.`;
+            break;
+
+        case "subscribe email":
+            //if (!regExEmail.test(element.value))
+            //    errorMsg.innerText = `Please enter a valid email.`;
+
+            if (element.value === "")
+                errorMsg.innerText = `Please enter an email.`;
             break;
 
     }
+
+    removeAddClassSubscribe()
 }
 
 function validateInput(event) {
@@ -158,67 +181,92 @@ function validationErrorMsgPresent(label) {
     }
 }
 
-
-function validateErrorFirstName() {
-
-    return validationErrorMsgPresent("first-name");
-}
-
-function validateErrorLastName() {
-
-    return validationErrorMsgPresent("last-name");
-}
-
-function validateErrorStreetName() {
-
-    return validationErrorMsgPresent("street-name");
-}
-
-function validateErrorPostalCode() {
-
-    return validationErrorMsgPresent("postal-code");
-}
-
-function validateErrorCity() {
-
-    return validationErrorMsgPresent("city");
-}
-
-function validateErrorEmail() {
-
-    return validationErrorMsgPresent("email");
-}
-
-function validateErrorPassword() {
-
-    return validationErrorMsgPresent("password");
-}
-
-function validateErrorConfirmPassword() {
-
-    return validationErrorMsgPresent("confirm-password");
-}
-
-//Validation of all inputs
+//Validation of all inputs, register-form
 function validateAll(event) {
     try {
         event.preventDefault();
 
         const errorMsg = document.querySelector('#form-error');
 
-        var firstNameOK = validateErrorFirstName();
-        var lastNameOK = validateErrorLastName();
-        var streetNameOK = validateErrorStreetName();
-        var postalCodeOK = validateErrorPostalCode();
-        var cityOK = validateErrorCity();
-        var emailOK = validateErrorEmail();
-        var passwordOK = validateErrorPassword();
-        var confirmPasswordOK = validateErrorConfirmPassword();
+        var firstNameOK = validationErrorMsgPresent("first-name");
+        var lastNameOK = validationErrorMsgPresent("last-name");
+        var streetNameOK = validationErrorMsgPresent("street-name");
+        var postalCodeOK = validationErrorMsgPresent("postal-code");
+        var cityOK = validationErrorMsgPresent("city");;
+        var emailOK = validationErrorMsgPresent("email");
+        var passwordOK = validationErrorMsgPresent("password");
+        var confirmPasswordOK = validationErrorMsgPresent("confirm-password");
 
         if (firstNameOK && lastNameOK && streetNameOK && postalCodeOK && cityOK && emailOK && passwordOK && confirmPasswordOK)
             event.target.submit();
         else
             errorMsg.innerText = "Please enter the form correctly.";
+
+    } catch { }
+}
+
+//Validation of all inputs, login-form
+function validateAllLogin(event) {
+    try {
+        event.preventDefault();
+
+        const errorMsg = document.querySelector('#form-error');
+
+        var emailOK = validationErrorMsgPresent("login-email")
+        var passwordOK = validationErrorMsgPresent("login-password")
+
+        if (emailOK && passwordOK)
+            event.target.submit();
+        else
+            errorMsg.innerText = "Please enter the form correctly.";
+
+    } catch { }
+}
+
+//Validation of all inputs, contact-form
+function validateAllContact(event) {
+    try {
+        event.preventDefault();
+
+        console.log("onSubmit")
+
+        //const errorMsg = document.querySelector('#form-error');
+
+
+        //var nameOK = validationErrorMsgPresent("contact-name")
+        //var emailOK = validationErrorMsgPresent("contact-email")
+        //var phoneNumberOK = validationErrorMsgPresent("contact-phone-number")
+        //var commentOK = validationErrorMsgPresent("contact-comment")
+
+        //if (nameOK && emailOK && phoneNumberOK && commentOK)
+        //    event.target.submit();
+        //else
+        //    errorMsg.innerText = "Please enter the form correctly.";
+
+    } catch { }
+}
+
+//Validation of input, subscribe-form
+function validateSubscribe(event) {
+    try {
+        event.preventDefault();
+
+        const regExEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const errorMsg = document.querySelector('#subscribe-email-error');
+        const subscribeInput = document.querySelector('#subscribe-email');
+
+        if (subscribeInput.value === "") {
+            errorMsg.innerText = `Please enter an email.`;
+        } else if (!regExEmail.test(subscribeInput.value)) {
+            errorMsg.innerText = `Please enter a valid email.`;
+            errorMsg.classList.remove('text-white', 'bg-success')
+        } else {
+            errorMsg.innerText = `You are now subscribed for the newsletter.`;
+            errorMsg.classList.add('text-white', 'bg-success')
+            subscribeInput.value = "";
+        }
+
+        removeAddClassSubscribe()
 
     } catch { }
 }
