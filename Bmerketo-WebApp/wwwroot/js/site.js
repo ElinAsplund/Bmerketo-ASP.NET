@@ -42,6 +42,30 @@ function removeAspValidation(errorSpan) {
         errorSpan.classList.add("d-none")
 }
 
+//Build a switch here, do make a more readable code!?
+function validateInput(element, errorDiv, label) {
+    errorDiv.innerText = ""
+
+    //if (errorDiv.innerText !== null || errorDiv.innerText !== "")
+    //    errorDiv.classList.add('mt-1')
+
+    if (element.value === null || element.value === "") {
+        errorDiv.innerText = `Please enter a ${label}!`
+
+        if (label === "confirm password")
+            errorDiv.innerText = `Please confirm the password!`
+    } else if (label === "password") {
+        if (element.value.length < 8)
+            errorDiv.innerText = `Your password must contain at least 8 characters!`;
+    } else if (label === "confirm password") {
+        if (element.value.length < 8)
+            errorDiv.innerText = `Your confirm password must contain at least 8 characters!`;
+    }
+
+    if (errorDiv.innerText === null || errorDiv.innerText === "")
+        return true;
+}
+
 
 function validateName(element, errorDiv, label) {
     errorDiv.innerText = ""
@@ -55,7 +79,7 @@ function validateName(element, errorDiv, label) {
         errorDiv.innerText = `Please enter a ${label}!`
 
     } else if (element.value.length < 2) {
-        errorDiv.innerText = `Your ${label} must contain at least 2 letters!`;
+        errorDiv.innerText = `Your ${label} must contain at least 2 characters!`;
 
     } else if (!regEx.test(element.value)) {
         errorDiv.innerText = `Please enter a valid ${label}.`;
@@ -96,22 +120,6 @@ function validateLastName(event) {
     } catch { }
 }
 
-function validateInput(element, errorDiv, label) {
-    errorDiv.innerText = ""
-
-    //if (errorDiv.innerText !== null || errorDiv.innerText !== "")
-    //    errorDiv.classList.add('mt-1')
-
-    if (element.value === null || element.value === "") {
-        errorDiv.innerText = `Please enter a ${label}!`
-
-        if (label === "confirm password")
-            errorDiv.innerText = `Please confirm the password!`
-    }
-
-    if (errorDiv.innerText === null || errorDiv.innerText === "")
-        return true;
-}
 
 
 function validateStreetName(event) {
@@ -155,7 +163,6 @@ function validateCity(event) {
 
     } catch { }
 }
-
 
 function validateEmail(event) {
     try {
@@ -377,5 +384,225 @@ function validateAll(event) {
         else
             errorDiv.innerText = "Please enter the form correctly.";
 
+    } catch { }
+}
+
+
+
+
+//MAKING THE SWITCH
+function validateInputSwitch(element, errorMsg, label) {
+    errorMsg.innerText = "";
+
+    //THIS PART NOT NEEDED?
+    firstNameOK = false;
+    lastNameOK = false;
+    streetNameOK = false;
+    postalCodeOK = false;
+    cityOK = false;
+    emailOK = false;
+    passwordOK = false;
+
+    const regExName = /^[a-öA-Ö]+(?:[ é'-][a-öA-Ö]+)*$/;
+    const regExEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+
+
+    if (element.value === "")
+        errorMsg.innerText = `Please enter a ${label}!`;
+
+    switch (label) {
+        case "first name":
+            if (element.value.length < 2)
+                errorMsg.innerText = `Your ${label} must contain at least 2 characters!`;
+
+            if (!regExName.test(element.value))
+                errorMsg.innerText = `Please enter a valid ${label}!`;
+
+            if (errorMsg.innerText === "")
+                firstNameOK = true;
+
+            break;
+
+        case "last name":
+            if (element.value.length < 2)
+                errorMsg.innerText = `Your ${label} must contain at least 2 characters!`;
+
+            if (!regExName.test(element.value))
+                errorMsg.innerText = `Please enter a valid ${label}!`;
+
+            if (errorMsg.innerText === "")
+                lastNameOK = true;
+
+            break;
+
+        case "street name":
+            if (errorMsg.innerText === "")
+                streetNameOK = true;
+
+            break;
+
+        case "postal code":
+            if (errorMsg.innerText === "")
+                postalCodeOK = true;
+
+            break;
+
+        case "city":
+            if (errorMsg.innerText === "")
+                cityOK = true;
+
+            break;
+
+        case "email":
+            if (element.value === "")
+                errorMsg.innerText = `Please enter an ${label}!`;
+
+            if (!regExEmail.test(element.value)) 
+                errorMsg.innerText = `Please enter a valid ${label}.`;
+
+            if (errorMsg.innerText === "")
+                emailOK = true;
+
+            break;
+
+        case "password":
+            if (element.value.length < 8) 
+                errorMsg.innerText = `Your ${label} must contain at least 8 characters!`;
+
+            if (errorMsg.innerText === "")
+                passwordOK = true;
+
+            break;
+
+        case "confirm password":
+            if (element.value.length < 8) 
+                errorMsg.innerText = `Your confirmed password must contain at least 8 characters!`;
+
+            if (errorMsg.innerText === "")
+                passwordOK = true;
+
+            break;
+
+    }
+
+    //if (firstNameOK && lastNameOK && streetNameOK && postalCodeOK && cityOK && emailOK && passwordOK && confirmPasswordOK) {
+    //    console.log("true")
+    //    return true;
+    //}
+}
+
+
+//function test(event) {
+
+//    console.log("click");
+
+//}
+
+
+function validateFirstNameSwitch(event) {
+    try {
+        const errorMsg = document.querySelector('#first-name-error');
+        const errorSpan = document.querySelector('#first-name-span');
+        let element = event.target;
+
+        removeAspValidation(errorSpan)
+
+        if (validateInputSwitch(element, errorMsg, "first name"))
+            return true;
+
+    } catch { }
+}
+
+function validateLastNameSwitch(event) {
+    try {
+        const errorMsg = document.querySelector('#last-name-error');
+        const errorSpan = document.querySelector('#last-name-span');
+        let element = event.target;
+
+        removeAspValidation(errorSpan)
+
+        if (validateInputSwitch(element, errorMsg, "last name"))
+            return true;
+
+    } catch { }
+}
+
+function validateStreetNameSwitch(event) {
+    try {
+        const errorMsg = document.querySelector('#street-name-error');
+        const errorSpan = document.querySelector('#street-name-span');
+        let element = event.target;
+
+        removeAspValidation(errorSpan)
+
+        if (validateInputSwitch(element, errorMsg, "street name"))
+            return true;
+
+    } catch { }
+}
+
+function validatePostalCodeSwitch(event) {
+    try {
+        const errorMsg = document.querySelector('#postal-code-error');
+        const errorSpan = document.querySelector('#postal-code-span');
+        let element = event.target;
+
+        removeAspValidation(errorSpan)
+
+        if (validateInputSwitch(element, errorMsg, "postal code"))
+            return true;
+
+    } catch { }
+}
+
+function validateCitySwitch(event) {
+    try {
+        const errorMsg = document.querySelector('#city-error');
+        const errorSpan = document.querySelector('#city-span');
+        let element = event.target;
+
+        removeAspValidation(errorSpan)
+
+        if (validateInputSwitch(element, errorMsg, "city"))
+            return true;
+    } catch { }
+}
+
+function validateEmailSwitch(event) {
+    try {
+        const errorMsg = document.querySelector('#email-error');
+        const errorSpan = document.querySelector('#email-span');
+        let element = event.target;
+
+        removeAspValidation(errorSpan)
+
+        if (validateInputSwitch(element, errorMsg, "email"))
+            return true;
+    } catch { }
+}
+function validatePasswordSwitch(event) {
+    try {
+        const errorMsg = document.querySelector('#password-error');
+        const errorSpan = document.querySelector('#password-span');
+        let element = event.target;
+
+        removeAspValidation(errorSpan)
+
+        if (validateInputSwitch(element, errorMsg, "password"))
+            return true;
+    } catch { }
+}
+
+function validateConfirmPasswordSwitch(event) {
+    try {
+        const errorMsg = document.querySelector('#confirm-password-error');
+        const errorSpan = document.querySelector('#confirm-password-span');
+        let element = event.target;
+
+        removeAspValidation(errorSpan)
+
+        if (validateInputSwitch(element, errorMsg, "confirm password"))
+            return true;
     } catch { }
 }
