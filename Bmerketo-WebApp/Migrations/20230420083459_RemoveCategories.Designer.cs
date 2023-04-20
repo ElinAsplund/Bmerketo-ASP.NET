@@ -4,6 +4,7 @@ using Bmerketo_WebApp.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bmerketo_WebApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230420083459_RemoveCategories")]
+    partial class RemoveCategories
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,23 +43,6 @@ namespace Bmerketo_WebApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "new"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "popular"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "featured"
-                        });
                 });
 
             modelBuilder.Entity("Bmerketo_WebApp.Models.Entities.ProductCategoryEntity", b =>
