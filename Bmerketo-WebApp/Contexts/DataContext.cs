@@ -5,6 +5,7 @@ namespace Bmerketo_WebApp.Contexts;
 
 public class DataContext : DbContext
 {
+	//PROBABLY WILL TRY TO REMOVE THIS CONTEXT!?
 	public DataContext(DbContextOptions<DataContext> options) : base(options)
 	{
 	}

@@ -21,7 +21,7 @@ public class UserProfileEntity
 	public string? CompanyName { get; set; }
 	public string? ProfileImage { get; set; }
 
-	//public bool AcceptsTerms { get; set; } <-- No need? Confirms in the frontend!? (it's always "true" in db.)
+	//public bool AcceptsTerms { get; set; } <-- No need? Confirms in the frontend!? (it will always "true" in db?)
 
 	public IdentityUser User { get; set; } = null!;
 }
