@@ -88,7 +88,7 @@ namespace Bmerketo_WebApp.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Register(ProductRegisterViewModel productRegisterViewModel)
+		public async Task<IActionResult> Register(ProductRegisterViewModel viewModel)
 		{
 			ViewData["Title"] = "Register Product";
 
@@ -96,20 +96,19 @@ namespace Bmerketo_WebApp.Controllers
 			{
 				try 
 				{
-					if (await _productService.RegisterAsync(productRegisterViewModel))
+					if (await _productService.RegisterAsync(viewModel))
 						return RedirectToAction("register", "products");
 					else
-						ModelState.AddModelError("", "Something went wrong while creating the Product.");
+						ModelState.AddModelError("", "Something went wrong while creating the product.");
 				}
 				catch 
 				{
-					ModelState.AddModelError("", "Something went wrong while creating the Product.");
+					ModelState.AddModelError("", "Something went wrong while creating the product.");
 				}
 
 			}
 
-			return View(productRegisterViewModel);
-
+			return View(viewModel);
 		}
 	}
 }

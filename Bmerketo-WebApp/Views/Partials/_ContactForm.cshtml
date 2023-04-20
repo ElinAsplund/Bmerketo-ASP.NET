@@ -1,31 +1,40 @@
-﻿<!-- contact-form start -->
+﻿@model ContactRegisterViewModel
+
+<!-- contact-form start -->
 <section class="contact-form">
     <div class="container">
         <div class="form-content">
             <div class="form-title">Write something</div>
             <hr>
-            <form onsubmit="validateAllContact(event)" novalidate>
+            <form method="post" onsubmit="validateAllContact(event)" novalidate>
+                <div asp-validation-summary="ModelOnly" class="error-text"></div>
+
                 <div class="grid">
                     <div class="col name">
-                        <label>Your Name*</label>
-                        <input type="text" required />
-                        <div class="error-msg">Something went wrong!</div>
+                        <label asp-for="FullName"></label>
+                        <input asp-for="FullName" onkeyup="" id="contact-full-name" required />
+                        <span asp-validation-for="FullName" id="contact-full-name-span" class="error-text"></span>
+                        <div id="contact-full-name-error" class="error-text"></div>
                     </div>
                     <div class="col email">
-                        <label>Your E-mail*</label>
-                        <input type="email" required />
-                        <div class="error-msg">Something went wrong!</div>
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" onkeyup="" id="contact-email" required />
+                        <span asp-validation-for="FullName" id="contact-email-span" class="error-text"></span>
+                        <div id="contact-email-error" class="error-text"></div>
                     </div>
                     <div class="col phone-number">
-                        <label>Phone Number*</label>
-                        <input type="text" required />
-                        <div class="error-msg">Something went wrong!</div>
+                        <label asp-for="PhoneNumber"></label>
+                        <input asp-for="PhoneNumber" onkeyup="" id="contact-phone-number" required />
+                        <span asp-validation-for="PhoneNumber" id="contact-phone-number-span" class="error-text"></span>
+                        <div id="contact-phone-number-error" class="error-text"></div>
                     </div>
                     <div class="col company">
-                        <label>Company (optional)</label>
-                        <input type="text" />
-                        <div class="error-msg">Something went wrong!</div>
-                    </div>
+
+                        <label asp-for="CompanyName"></label>
+                        <input asp-for="CompanyName" onkeyup="" id="contact-company" required />
+@*                        <span asp-validation-for="CompanyName" id="contact-company-span" class="error-text"></span>
+                        <div id="contact-company-error" class="error-text"></div>
+*@                    </div>
                 </div>
 
 @*                <input asp-for="Email" onkeyup="validateInput(event)" id="login-email" required />
@@ -33,9 +42,10 @@
                 <div id="login-email-error" class="error-text"></div>*@
 
                 <div class="text-area">
-                    <label>Write something*</label>
-                    <textarea required></textarea>
-                    <div class="error-msg">Something went wrong!</div>
+                    <label asp-for="Comment"></label>
+                    <textarea asp-for="Comment" onkeyup="" id="contact-comment" required></textarea>
+                    <span asp-validation-for="Comment" id="contact-comment-span" class="error-text"></span>
+                    <div id="contact-comment-error" class="error-text"></div>
                 </div>
 
                 @* DONT HAVE FUNCTIONALITY YET!

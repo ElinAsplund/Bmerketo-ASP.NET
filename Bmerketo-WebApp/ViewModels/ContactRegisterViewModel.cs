@@ -6,7 +6,7 @@ namespace Bmerketo_WebApp.ViewModels;
 public class ContactRegisterViewModel
 {
 
-	[Display(Name = "Name*")]
+	[Display(Name = "Your Name*")]
 	[Required(ErrorMessage = "Please enter your name.")]
 	[RegularExpression(@"^[a-öA-Ö]+(?:[ é'-][a-öA-Ö]+)*$", ErrorMessage = "You need to enter a valid First Name.")]
 	public string FullName { get; set; } = null!;

@@ -226,7 +226,7 @@ function validateAllLogin(event) {
 //Validation of all inputs, contact-form
 function validateAllContact(event) {
     try {
-        event.preventDefault();
+        //event.preventDefault();
 
         console.log("onSubmit")
 

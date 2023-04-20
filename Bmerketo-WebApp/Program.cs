@@ -16,6 +16,7 @@ builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<SeedService>();
 builder.Services.AddScoped<UserProfileService>();
+builder.Services.AddScoped<ContactService>();
 
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(x =>
