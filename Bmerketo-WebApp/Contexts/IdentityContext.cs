@@ -7,7 +7,7 @@ namespace Bmerketo_WebApp.Contexts;
 
 public class IdentityContext : IdentityDbContext<IdentityUser>
 {
-	public IdentityContext(DbContextOptions options) : base(options)
+	public IdentityContext(DbContextOptions<IdentityContext> options) : base(options)
 	{
 	}
 

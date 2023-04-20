@@ -9,9 +9,9 @@ namespace Bmerketo_WebApp.Services;
 
 public class ProductService
 {
-	private readonly DataContext _context;
+	private readonly ProductContext _context;
 
-	public ProductService(DataContext context)
+	public ProductService(ProductContext context)
 	{
 		_context = context;
 	}
