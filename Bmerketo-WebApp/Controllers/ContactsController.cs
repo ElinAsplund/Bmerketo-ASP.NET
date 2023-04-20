@@ -17,17 +17,6 @@ namespace Bmerketo_WebApp.Controllers
 		public IActionResult Index()
         {
 			ViewData["Title"] = "Contact";
-
-			//var viewModel = new ContactsIndexViewModel
-   //         {
-   //             ContactHero = new HeroModel
-   //             {
-   //                 Heading = "CONTACT",
-   //                 Subheading = "HOME. CONTACT"
-   //             }
-   //         };
-
-            //return View(viewModel);
             return View();
         }
 
@@ -41,7 +30,19 @@ namespace Bmerketo_WebApp.Controllers
 				try
 				{
 					if (await _contactService.RegisterAsync(viewModel))
-						return RedirectToAction("index", "contacts");
+					{
+                        ModelState.Clear();
+
+						//Clear form
+						viewModel.FullName = "";
+						viewModel.Email = "";
+						viewModel.PhoneNumber = "";
+						viewModel.CompanyName = "";
+						viewModel.Comment = "";
+
+                        ModelState.AddModelError("", "Your comment has now been sent!");
+                        return View(viewModel);
+                    }
 					else
 						ModelState.AddModelError("", "Something went wrong while posting the comment.");
 				}

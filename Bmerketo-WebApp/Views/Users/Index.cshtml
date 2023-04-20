@@ -1,0 +1,29 @@
+﻿@{
+    var userProfiles = await userProfileService.GetAllUserProfileAsync();
+}
+
+<section class="register-form">
+    <div class="container">
+    <h1 class="">Users</h1>
+        <div class="form-content">
+            <div class="form-title">User List</div>
+            <hr>
+            <div class="mb-2">Here will the users in the database be rendered.</div>
+            @if (userProfiles != null)
+            {
+                foreach (var profile in userProfiles)
+                {
+                    <div class="d-flex justify-content-between align-items-center bg-body-tertiary mb-2 ps-3 pe-1 py-1">
+                        <div>
+                            <span class="fw-bold">Id:</span> @profile.UserId ,
+                            <span class="fw-bold">Name:</span> @profile.FirstName @profile.LastName ,
+                            <span class="fw-bold">City:</span> @profile.City
+                            <span class="fw-bold">Role:</span> RENDER ROLE HERE
+                        </div>
+                        @*<button class="btn-white" style="padding: 0.5rem;">X</button>*@
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>

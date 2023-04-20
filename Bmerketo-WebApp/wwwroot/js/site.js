@@ -53,6 +53,23 @@ function removeAddClassSubscribe() {
     } catch { }
 }
 
+//For contact-form
+function removeAddClassContact() {
+    try {
+        const aspError = document.querySelector(`#contact-asp-validation`);
+
+        if (aspError.innerText === "Your comment has now been sent!") {
+            aspError.classList.add('text-success')
+            aspError.classList.remove('text-danger')
+        } else {
+            aspError.classList.remove('text-success')
+            aspError.classList.add('text-danger')
+        }
+
+    } catch { }
+}
+removeAddClassContact()
+
 //Validations
 function removeAspValidation(errorSpan) {
     if (errorSpan.innerText !== null)
