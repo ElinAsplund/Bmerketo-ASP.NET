@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Bmerketo_WebApp.Models.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace Bmerketo_WebApp.ViewModels;
 
@@ -31,16 +32,30 @@ public class ContactRegisterViewModel
 
 
 	#region implicit operators
-	//EXAMPLE:
-	//public static implicit operator IdentityUser(AccountRegisterViewModel viewModel)
-	//{
-	//	return new IdentityUser
-	//	{
-	//		UserName = viewModel.Email,
-	//		Email = viewModel.Email,
-	//		PhoneNumber = viewModel.PhoneNumber,
-	//	};
-	//}
+
+	public static implicit operator ContactEntity(ContactRegisterViewModel viewModel)
+	{
+		return new ContactEntity
+		{
+			FullName = viewModel.FullName,
+			Email = viewModel.Email,
+			PhoneNumber = viewModel.PhoneNumber,
+			CompanyName = viewModel.CompanyName,
+			Comment = viewModel.Comment
+		};
+	}
+	
+	public static implicit operator ContactRegisterViewModel(ContactEntity entity)
+	{
+		return new ContactRegisterViewModel
+		{
+			FullName = entity.FullName,
+			Email = entity.Email,
+			PhoneNumber = entity.PhoneNumber,
+			CompanyName = entity.CompanyName,
+			Comment = entity.Comment
+		};
+	}
 
 	#endregion
 }
