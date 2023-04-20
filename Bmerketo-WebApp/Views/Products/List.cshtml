@@ -10,7 +10,7 @@
         <div class="form-content">
             <div class="form-title">Product List</div>
             <hr>
-            <div class="mb-2">Here will the products in the database be rendered. Remove-btn, do not work.</div>
+            <div class="mb-2">Here are the products in the database. Remove-btn, do not work.</div>
             @if (products != null)
             {
                 foreach (var product in products)
@@ -20,9 +20,10 @@
                             <span class="fw-bold">Id:</span> @product.Id ,
                             <span class="fw-bold">Name:</span> @product.Name ,
                             <span class="fw-bold">Price:</span>
-                                @{
+                            @{
                                 var price = (product.Price).ToString("0.00");
-                            } @price 
+                            } 
+                            @price 
                         </div>
                         <button class="btn-white" style="padding: 0.5rem;">X</button>
                     </div>

@@ -1,5 +1,5 @@
 ﻿@{
-    var userProfiles = await userProfileService.GetAllUserProfileAsync();
+    var userModels = await userProfileService.GetAllUserModelAsync();
 }
 
 <section class="register-form">
@@ -8,17 +8,28 @@
         <div class="form-content">
             <div class="form-title">User List</div>
             <hr>
-            <div class="mb-2">Here will the users in the database be rendered.</div>
-            @if (userProfiles != null)
+            <div class="mb-2">Here are users in the database.</div>
+            @if (userModels != null)
             {
-                foreach (var profile in userProfiles)
+                foreach (var user in userModels)
                 {
                     <div class="d-flex justify-content-between align-items-center bg-body-tertiary mb-2 ps-3 pe-1 py-1">
                         <div>
-                            <span class="fw-bold">Id:</span> @profile.UserId ,
-                            <span class="fw-bold">Name:</span> @profile.FirstName @profile.LastName ,
-                            <span class="fw-bold">City:</span> @profile.City
-                            <span class="fw-bold">Role:</span> RENDER ROLE HERE
+                            <span class="fw-bold">Id:</span> @user.Id 
+                            <span class="fw-bold">Name:</span> @user.FirstName @user.LastName 
+                            <span class="fw-bold">Email:</span> @user.Email 
+                            <span class="fw-bold">Phone Number:</span> 
+                            @{
+                                var phoneNumber = "";
+
+                                if (user.PhoneNumber == null || user.PhoneNumber == "")
+                                    phoneNumber = "No phone number was entered";
+                                else
+                                    phoneNumber = user.PhoneNumber;
+                            }
+                            @phoneNumber
+                            @*<span class="fw-bold">City:</span> @user.City*@
+                            <span class="fw-bold">Role:</span> @user.Role.ToUpper()
                         </div>
                         @*<button class="btn-white" style="padding: 0.5rem;">X</button>*@
                     </div>
