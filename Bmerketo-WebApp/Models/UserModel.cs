@@ -24,17 +24,6 @@ public class UserModel
 
     #region implicit operators
 
-    //EXAMPLE
-    //public static implicit operator IdentityUser(AccountRegisterViewModel viewModel)
-    //{
-    //    return new IdentityUser
-    //    {
-    //        UserName = viewModel.Email,
-    //        Email = viewModel.Email,
-    //        PhoneNumber = viewModel.PhoneNumber,
-    //    };
-    //}
-
     public static implicit operator UserModel(UserProfileEntity entity)
     {
         return new UserModel
@@ -44,6 +33,16 @@ public class UserModel
             LastName = entity.LastName,
             Email = entity.User.Email!,
             PhoneNumber = entity.User.PhoneNumber
+        };
+    }
+
+    public static implicit operator UserModel(IdentityUser entity)
+    {
+        return new UserModel
+        {
+            Id = entity.Id,
+            Email = entity.Email!,
+            PhoneNumber = entity.PhoneNumber
         };
     }
 

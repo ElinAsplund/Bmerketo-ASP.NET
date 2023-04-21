@@ -1,5 +1,4 @@
 ﻿using Bmerketo_WebApp.Contexts;
-using Bmerketo_WebApp.Migrations;
 using Bmerketo_WebApp.Models;
 using Bmerketo_WebApp.Models.Entities;
 using Microsoft.AspNetCore.Identity;
@@ -11,12 +10,12 @@ public class UserProfileService
 {
 	private readonly IdentityContext _identityContext;
 
-	public UserProfileService(IdentityContext identityContext)
-	{
-		_identityContext = identityContext;
-	}
+    public UserProfileService(IdentityContext identityContext)
+    {
+        _identityContext = identityContext;
+    }
 
-	public async Task<UserProfileEntity> GetUserProfileAsync(string userId)
+    public async Task<UserProfileEntity> GetUserProfileAsync(string userId)
 	{
 		var userProfileEntity = await _identityContext.UserProfiles.Include(x => x.User).FirstOrDefaultAsync(x => x.UserId == userId);
 		return userProfileEntity!;
@@ -42,7 +41,14 @@ public class UserProfileService
 		return userProfiles!;
 	}
 
-    public async Task<IEnumerable<UserRoleModel>> GetRolesAsync()
+    public async Task<IEnumerable<IdentityRole>> GetRolesAsync()
+    {
+        var roles = await _identityContext.Roles.ToListAsync();
+
+        return roles!;
+    }
+
+    public async Task<IEnumerable<UserRoleModel>> GetUserRolesAsync()
     {
         var userRoleModels = new List<UserRoleModel>();
         var roles = await _identityContext.Roles.ToListAsync();
@@ -73,10 +79,11 @@ public class UserProfileService
         var userModels = new List<UserModel>();
         var userProfileEntities = await _identityContext.UserProfiles.Include(x => x.User).ToListAsync();
 
-        var roles = await GetRolesAsync();
+        var roles = await GetUserRolesAsync();
 
         foreach (var user in userProfileEntities)
         {
+
             UserModel userModel = user;
 
             var foundRole = roles.FirstOrDefault(x => x.Id == userModel.Id);

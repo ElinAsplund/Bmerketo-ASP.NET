@@ -1,5 +1,7 @@
-﻿@{
+﻿@model UsersIndexViewModel
+@{
     var userModels = await userProfileService.GetAllUserModelAsync();
+    var allRoles = await userProfileService.GetRolesAsync();
 }
 
 <section class="register-form">
@@ -8,30 +10,49 @@
         <div class="form-content">
             <div class="form-title">User List</div>
             <hr>
-            <div class="mb-2">Here are users in the database.</div>
+            <div class="mb-2">Here are the users in the database.</div>
             @if (userModels != null)
             {
                 foreach (var user in userModels)
                 {
                     <div class="d-flex justify-content-between align-items-center bg-body-tertiary mb-2 ps-3 pe-1 py-1">
-                        <div>
-                            <span class="fw-bold">Id:</span> @user.Id 
-                            <span class="fw-bold">Name:</span> @user.FirstName @user.LastName 
-                            <span class="fw-bold">Email:</span> @user.Email 
-                            <span class="fw-bold">Phone Number:</span> 
-                            @{
-                                var phoneNumber = "";
+                        <form method="post" novalidate>
+                            <div>
+                                <label asp-for="@Model.UserId" class="fw-bold"></label> @user.Id
+                                <input type="hidden" asp-for="@Model.UserId" value="@user.Id" />
+                                @*<span class="fw-bold">Id:</span> @user.Id *@
+                                <span class="fw-bold">Name:</span> @user.FirstName @user.LastName 
+                                <span class="fw-bold">Email:</span> @user.Email 
+                                <span class="fw-bold">Phone Number:</span> 
+                                @{
+                                    var phoneNumber = "";
 
-                                if (user.PhoneNumber == null || user.PhoneNumber == "")
-                                    phoneNumber = "No phone number was entered";
-                                else
-                                    phoneNumber = user.PhoneNumber;
-                            }
-                            @phoneNumber
-                            @*<span class="fw-bold">City:</span> @user.City*@
-                            <span class="fw-bold">Role:</span> @user.Role.ToUpper()
-                        </div>
-                        @*<button class="btn-white" style="padding: 0.5rem;">X</button>*@
+                                    if (user.PhoneNumber == null || user.PhoneNumber == "")
+                                        phoneNumber = "No phone number was entered";
+                                    else
+                                        phoneNumber = user.PhoneNumber;
+                                }
+                                @phoneNumber
+                                @*<span class="fw-bold">City:</span> @user.City*@
+                                @*<span class="fw-bold">Role:</span> @user.Role.ToUpper()*@
+                            </div>
+                            <div class="d-flex align-items-center" method="post" novalidate>
+                                <div class="d-grid">
+                                    <label asp-for="@Model.Role" class="fw-bold"></label>
+                                    <select asp-for="@Model.Role">
+                                        <option selected>@user.Role.ToUpper()</option>
+                                        @foreach (var role in allRoles)
+                                        {
+                                            if (user.Role.ToUpper() != @role.Name!.ToUpper())
+                                            {
+                                                <option value="@role.Name!.ToUpper()">@role.Name!.ToUpper()</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <button class="btn-theme mt-0 ms-2" style="padding: 5px;" type="submit">SAVE</button>
+                            </div>
+                        </form>
                     </div>
                 }
             }

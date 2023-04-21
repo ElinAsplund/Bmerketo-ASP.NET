@@ -1,6 +1,7 @@
 ﻿<div class="container mt-4 d-grid justify-content-center" style="text-align: center">
-	<h1>Admin: @(User?.FindFirst("DisplayName")?.Value)</h1>
-	<p class="mt-4 mb-0 font-roboto">What do you wanna do?</p>
+	<h1>Admin: @*@(User?.FindFirst("DisplayName")?.Value)*@</h1>
+	<h1>Back-Office</h1>
+	<p class="mt-3 mb-0 font-roboto">What do you wanna do?</p>
 	<partial name="/Views/Partials/_ProductHeader.cshtml" />
 	<div class="container mt-3">
 		<a class="btn-white" asp-controller="users" asp-action="index">USERS</a>
