@@ -9,10 +9,12 @@ namespace Bmerketo_WebApp.Services;
 public class UserProfileService
 {
 	private readonly IdentityContext _identityContext;
+	private readonly RoleService _roleService;
 
-    public UserProfileService(IdentityContext identityContext)
+    public UserProfileService(IdentityContext identityContext, RoleService roleService = null)
     {
         _identityContext = identityContext;
+        _roleService = roleService;
     }
 
     public async Task<UserProfileEntity> GetUserProfileAsync(string userId)
@@ -28,58 +30,25 @@ public class UserProfileService
 		return identityUser!;
 	}
 
-    public async Task<IEnumerable<UserProfileEntity>> GetAllUserProfileAsync()
-    {
-        var userProfiles = new List<UserProfileEntity>();
-        var userProfileEntity = await _identityContext.UserProfiles.ToListAsync();
+ //   public async Task<IEnumerable<UserProfileEntity>> GetAllUserProfileAsync()
+ //   {
+ //       var userProfiles = new List<UserProfileEntity>();
+ //       var userProfileEntity = await _identityContext.UserProfiles.ToListAsync();
 
-        foreach (var profile in userProfileEntity)
-        {
-            userProfiles.Add(profile);
-        }
+ //       foreach (var profile in userProfileEntity)
+ //       {
+ //           userProfiles.Add(profile);
+ //       }
 
-		return userProfiles!;
-	}
-
-    public async Task<IEnumerable<IdentityRole>> GetRolesAsync()
-    {
-        var roles = await _identityContext.Roles.ToListAsync();
-
-        return roles!;
-    }
-
-    public async Task<IEnumerable<UserRoleModel>> GetUserRolesAsync()
-    {
-        var userRoleModels = new List<UserRoleModel>();
-        var roles = await _identityContext.Roles.ToListAsync();
-        var usersRoles = await _identityContext.UserRoles.ToListAsync();
-
-
-        foreach (var user in usersRoles)
-        {
-            var userAdd = new UserRoleModel 
-            { 
-                Id = user.UserId, 
-                RoleName = user.RoleId 
-            };
-
-            var foundRole = roles.FirstOrDefault(x => x.Id == userAdd.RoleName);
-
-            userAdd.RoleName = foundRole!.Name!;
-
-            userRoleModels.Add(userAdd);
-        }
-
-        return userRoleModels!;
-    }
-
+	//	return userProfiles!;
+	//}
 
     public async Task<IEnumerable<UserModel>> GetAllUserModelAsync()
     {
         var userModels = new List<UserModel>();
         var userProfileEntities = await _identityContext.UserProfiles.Include(x => x.User).ToListAsync();
 
-        var roles = await GetUserRolesAsync();
+        var roles = await _roleService.GetUserRolesAsync();
 
         foreach (var user in userProfileEntities)
         {

@@ -1,12 +1,13 @@
 ﻿@model UsersIndexViewModel
 @{
     var userModels = await userProfileService.GetAllUserModelAsync();
-    var allRoles = await userProfileService.GetRolesAsync();
+    var allRoles = await roleService.GetRolesAsync();
 }
+
+<partial name="/Views/Partials/_UserHeader.cshtml" />
 
 <section class="register-form">
     <div class="container">
-    <h1 class="">Users</h1>
         <div class="form-content">
             <div class="form-title">User List</div>
             <hr>
@@ -15,8 +16,8 @@
             {
                 foreach (var user in userModels)
                 {
-                    <div class="d-flex justify-content-between align-items-center bg-body-tertiary mb-2 ps-3 pe-1 py-1">
-                        <form method="post" novalidate>
+                    <div class="bg-body-tertiary mb-2 ps-3 pe-1 py-1">
+                        <form class="d-flex align-items-center justify-content-between" method="post" novalidate>
                             <div>
                                 <label asp-for="@Model.UserId" class="fw-bold"></label> @user.Id
                                 <input type="hidden" asp-for="@Model.UserId" value="@user.Id" />
@@ -37,7 +38,7 @@
                                 @*<span class="fw-bold">Role:</span> @user.Role.ToUpper()*@
                             </div>
                             <div class="d-flex align-items-center" method="post" novalidate>
-                                <div class="d-grid">
+                                <div class="d-grid my-2">
                                     <label asp-for="@Model.Role" class="fw-bold"></label>
                                     <select asp-for="@Model.Role">
                                         <option selected>@user.Role.ToUpper()</option>
@@ -50,7 +51,7 @@
                                         }
                                     </select>
                                 </div>
-                                <button class="btn-theme mt-0 ms-2" style="padding: 5px;" type="submit">SAVE</button>
+                                <button class="btn-theme mt-0 ms-3" style="padding: 5px;" type="submit">SAVE</button>
                             </div>
                         </form>
                     </div>

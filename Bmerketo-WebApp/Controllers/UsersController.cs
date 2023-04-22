@@ -1,15 +1,23 @@
-﻿using Bmerketo_WebApp.ViewModels;
+﻿using Bmerketo_WebApp.Services;
+using Bmerketo_WebApp.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 
 namespace Bmerketo_WebApp.Controllers
 {
-    //REMOVED THIS DURING DEVELOPMENT, I HOPE I REMEBER TO TURN IT ON!
-	//[Authorize(Roles = "admin")]
-	public class UsersController : Controller
+    //REMOVED THIS DURING DEVELOPMENT, I HOPE I REMEBER TO TURN IT ON! :D
+    //[Authorize(Roles = "admin")]
+    public class UsersController : Controller
 	{
-		public IActionResult Index()
+        public readonly RoleService _roleService;
+
+        public UsersController(RoleService roleService)
+        {
+            _roleService = roleService;
+        }
+
+        public IActionResult Index()
 		{
             ViewData["Title"] = "Users";
 
@@ -21,27 +29,32 @@ namespace Bmerketo_WebApp.Controllers
         {
             ViewData["Title"] = "Users";
 
-            //ERROR! ALL THE USERS ROLES CHANGES WHEN THE VIEWMODEL CHANGES... ofc.
-            //Maybe it will work with the service going? 
-            //Or just the RedirectToAction("index", "users") solves the problem!? 
-            //--By rerendering the page with the changes taken from the database?
-
-            //The right information go through:
-            var role = viewModel.Role;
-            var userId = viewModel.UserId;
+            //Check's if the right information go through:
+            //var roleChange = viewModel.Role;
+            //var userId = viewModel.UserId;
 
             if (ModelState.IsValid)
             {
-                //MOCK-UP CODE
-                //if (await _roleService.ChangeRoleAsync(viewModel))
-                //    return RedirectToAction("index", "users");
-
+                //POSSIBLE ERROR-MSGs:
                 //ModelState.AddModelError("", "No changes have been made, and the role remains the same as before.");
                 //ModelState.AddModelError("", "Something went wrong!");
-            }
 
+                if(await _roleService.ChangeRoleAsync(viewModel.UserId, viewModel.Role))
+                    return RedirectToAction("index", "users");
+
+            }
+            
+            //THIS RENDERS ALL THE USERS ROLE TO THE VIEWMODELS ROLE. Example, all user get the ADMIN role (NOT IN DB, just in the frontend):
             //return View(viewModel);
+
             return RedirectToAction("index", "users");
+        }
+
+        public IActionResult Register()
+        {
+            ViewData["Title"] = "Register User";
+
+            return View();
         }
     }
 }
