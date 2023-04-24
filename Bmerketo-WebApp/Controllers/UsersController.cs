@@ -7,7 +7,7 @@ using System.Data;
 namespace Bmerketo_WebApp.Controllers
 {
     //REMOVED THIS DURING DEVELOPMENT, I HOPE I REMEBER TO TURN IT ON! :D
-    //[Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     public class UsersController : Controller
 	{
         public readonly RoleService _roleService;

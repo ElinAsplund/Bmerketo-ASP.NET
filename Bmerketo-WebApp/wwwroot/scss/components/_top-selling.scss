@@ -77,22 +77,31 @@
                 display: block;
             }
         }
-    }
 
-    .button-holder {
-        display: none;
-        margin-top: 40px;
+        .card { //
+            width: 270px; //
 
-        @include sm {
-            display: block;
-        }
+            .img-holder {
+                width: 270px; //
+                height: 295px; //
+            } //
+        } //
 
-        button {
-            // font-weight: $font-weight-medium;
-            font-size: 1.3rem;
-            border-radius: 3px;
-            padding: 0px 10px;
-            margin-left: 10px;
+        .button-holder {
+            display: none;
+            margin-top: 40px;
+
+            @include sm {
+                display: block;
+            }
+
+            button {
+                // font-weight: $font-weight-medium;
+                font-size: 1.3rem;
+                border-radius: 3px;
+                padding: 0px 10px;
+                margin-left: 10px;
+            }
         }
     }
 }

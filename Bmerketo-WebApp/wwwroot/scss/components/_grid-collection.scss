@@ -58,8 +58,8 @@
             }
         }
 
-        li{
-            .link{
+        li {
+            .link {
                 font-family: $font-roboto;
             }
         }
@@ -81,6 +81,13 @@
     }
 
     .card {
+        width: 270px; //
+
+        .img-holder {
+            width: 270px; //
+            height: 295px; //
+        }
+
         .card-icon {
             color: $color-black;
 
