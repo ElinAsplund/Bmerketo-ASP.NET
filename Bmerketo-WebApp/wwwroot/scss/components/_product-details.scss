@@ -24,17 +24,32 @@
             grid-area: big-img;
             width: 100%;
 
+            @include lg {
+            }
+
             .img-holder {
                 max-width: 100%;
                 height: auto;
+                max-height: 430px;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @include lg {
+                    width: 501px;
+                    height: 430px;
+                }
 
                 img {
                     width: 100%;
+                    height: 100%;
                     object-fit: cover;
-
-                    @include lg {
-                        width: auto;
-                    }
+                    //@include lg {
+                    //width: auto;
+                    //    width: 100%;
+                    //    height: 100%;
+                    //}
                 }
             }
         }
@@ -50,11 +65,20 @@
             }
 
             .img-holder {
-                max-width: 100%;
-                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 113px;
+                //height: auto;
+                //height: 113px;
 
                 @include md {
                     margin-right: 0rem;
+                    height: 130px;
+                }
+
+                @include lg {
+                    height: 113px;
                 }
 
                 &:last-child {
@@ -69,6 +93,7 @@
 
                 img {
                     width: 100%;
+                    height: 100%;
                     object-fit: cover;
                 }
             }
