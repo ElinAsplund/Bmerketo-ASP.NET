@@ -10,7 +10,7 @@
         <div class="form-content">
             <div class="form-title">Product List</div>
             <hr>
-            <div class="mb-2">Here are the products in the database. Remove-btn, do not work.</div>
+            <div class="mb-2">Here are the products in the database. @*Remove-btn, do not work.*@</div>
             @if (products != null)
             {
                 foreach (var product in products)
@@ -23,9 +23,55 @@
                             @{
                                 var price = (product.Price).ToString("0.00");
                             } 
-                            @price 
+                            @price
+
+                            @if(product.Categories.Count > 0)
+                            {
+                                <span class="fw-bold">Category:</span>
+
+                                @foreach(var category in product.Categories)
+                                {
+                                    @category.Name.Trim();
+                                    
+                                    @if (category != product.Categories.Last())
+                                    {
+                                        <span>, </span>
+                                    }
+                                }                           
+                            }
                         </div>
-                        <button class="btn-white" style="padding: 0.5rem;">X</button>
+                        <div class="d-flex">
+                            @if(product.SmImgUrl != null)
+                            {
+                                <div class="fw-bold me-2">SM: 
+                                    <div style="width: 50px; height: 50px; overflow: hidden;" class="d-flex justify-content-center align-items-center">
+                                        <img src="@product.SmImgUrl" style="object-fit:cover; width: 100%; height: 100%; "/>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class=" me-2">
+                                    <span class="fw-bold">SM: </span> No image!
+                                </div>
+                            }
+                            @if(product.LgImgUrl != null)
+                            {
+                                <div class="fw-bold">
+                                    LG:
+                                    <div style="width: 50px; height: 50px; overflow: hidden;" class="d-flex justify-content-center align-items-center">
+                                        <img src="@product.LgImgUrl" style="object-fit:cover; width: 100%; height: 100%; "/>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="">
+                                    <span class="fw-bold">LG: </span> No image!
+                                </div>
+                            }
+                        </div>
+                        @*<button class="btn-white" style="padding: 0.5rem;">X</button>*@
                     </div>
                 }
             }

@@ -21,16 +21,18 @@ public class ProductRegisterViewModel
 	public decimal Price { get; set; } = 0;
 
 
-	[Display(Name = "Product Image (501 x 430px)")]
+	[Display(Name = "Large Product Image")]
 	public string? LgImgUrl { get; set; }
 
 
-	[Display(Name = "Product Image (120 x 113px)")]
+	[Display(Name = "Small Product Image")]
 	public string? SmImgUrl { get; set; }
 
-	//Probably need to make a category model here to make it work...!?
-	//[Display(Name = "Categories (optional)")]
-	//public string? Category { get; set; }
+	[Display(Name = "Product category:")]
+	public string Category { get; set; } = null!;
+
+	//[Display(Name = "Category (optional)")]
+	//public string[] Category { get; set; } = null!;
 
 
 	#region implicit operators

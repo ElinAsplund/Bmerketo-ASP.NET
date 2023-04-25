@@ -1,4 +1,6 @@
-﻿namespace Bmerketo_WebApp.Models;
+﻿using Bmerketo_WebApp.Models.Entities;
+
+namespace Bmerketo_WebApp.Models;
 
 public class ProductModel
 {
@@ -7,8 +9,8 @@ public class ProductModel
 	public string Name { get; set; } = null!;
 	public string Description { get; set; } = null!;
 	public decimal Price { get; set; } = 0;
-	public string? LgImgUrl { get; set; } = null!;
-	public string? SmImgUrl { get; set; } = null!;
+	public string? LgImgUrl { get; set; }
+	public string? SmImgUrl { get; set; }
 
-	public IEnumerable<string>? Categories;
+	public List<CategoryEntity> Categories = new();
 }

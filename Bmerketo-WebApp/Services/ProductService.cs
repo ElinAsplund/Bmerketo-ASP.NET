@@ -4,6 +4,7 @@ using Bmerketo_WebApp.Models.Entities;
 using Bmerketo_WebApp.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Bmerketo_WebApp.Services;
 
@@ -31,8 +32,21 @@ public class ProductService
 			//converts to entity
 			ProductEntity productEntity = viewModel;
 
-			//create user
-			_context.Products.Add(productEntity);
+            //create product
+            _context.Products.Add(productEntity);
+            await _context.SaveChangesAsync();
+
+			//get the currentCategory so the id can be used
+			var currentCategory = await _context.Categories.FirstOrDefaultAsync(x => x.Name == viewModel.Category);
+
+			//converts to ProductCategoryEntity
+			var productCategoryEntity = new ProductCategoryEntity
+			{
+				ProductId = productEntity.Id,
+				CategoryId = currentCategory!.Id
+			};
+
+			_context.ProductsCategories.Add(productCategoryEntity);
 			await _context.SaveChangesAsync();
 
 			return true;
@@ -46,12 +60,22 @@ public class ProductService
 	public async Task<IEnumerable<ProductModel>> GetAllAsync()
 	{
 		var products = new List<ProductModel>();
+		var categoriesEntities = new List<CategoryEntity>();
 		var items = await _context.Products.ToListAsync();
+		var productCategories = await _context.ProductsCategories.Include(x => x.Category).ToListAsync();
 
-		foreach (var item in items)
+        foreach (var product in items)
 		{
-			ProductModel productModel = item;
+			ProductModel productModel = product;
 
+			foreach (var item in productCategories)
+			{
+				if (item.ProductId == product.Id)
+				{
+                    productModel.Categories.Add(item.Category);
+				}
+			}
+			
 			products.Add(productModel);
 		}
 

@@ -69,7 +69,7 @@ namespace Bmerketo_WebApp.Controllers
         }
 
         //----PRODUCT LIST----
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public IActionResult List()
 		{
 			ViewData["Title"] = "Product List";
@@ -79,7 +79,7 @@ namespace Bmerketo_WebApp.Controllers
 
 
         //----REGISTER PRODUCT----
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public IActionResult Register()
 		{
 			ViewData["Title"] = "Register Product";
@@ -87,7 +87,7 @@ namespace Bmerketo_WebApp.Controllers
 			return View();
 		}
 
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         [HttpPost]
 		public async Task<IActionResult> Register(ProductRegisterViewModel viewModel)
 		{

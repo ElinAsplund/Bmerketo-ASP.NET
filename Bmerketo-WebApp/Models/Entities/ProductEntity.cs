@@ -19,7 +19,6 @@ public class ProductEntity
 	public ICollection<CategoryEntity> Categories = new HashSet<CategoryEntity>();
 
 
-
 	#region implicit operators
 	public static implicit operator ProductModel(ProductEntity productEntity)
 	{
@@ -31,7 +30,7 @@ public class ProductEntity
 			Price = productEntity.Price,
 			LgImgUrl = productEntity.LgImgUrl!,
 			SmImgUrl = productEntity.SmImgUrl!,
-			//Categories = productEntity.Categories.Select(x => x.Name)
+			//Categories = productEntity.Categories
 		};
 	}
 	
@@ -45,7 +44,7 @@ public class ProductEntity
 			Price = productModel.Price,
 			LgImgUrl = productModel.LgImgUrl,
 			SmImgUrl = productModel.SmImgUrl,
-			//Categories = productModel.Categories.Select(x => x.Name)
+			//Categories = productModel.Categories.Name
 		};
 	}
 	#endregion

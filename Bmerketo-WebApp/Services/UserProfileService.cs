@@ -11,7 +11,7 @@ public class UserProfileService
 	private readonly IdentityContext _identityContext;
 	private readonly RoleService _roleService;
 
-    public UserProfileService(IdentityContext identityContext, RoleService roleService = null)
+    public UserProfileService(IdentityContext identityContext, RoleService roleService)
     {
         _identityContext = identityContext;
         _roleService = roleService;

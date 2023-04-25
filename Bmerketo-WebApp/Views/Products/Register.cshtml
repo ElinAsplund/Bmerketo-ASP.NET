@@ -1,4 +1,7 @@
 ﻿@model ProductRegisterViewModel
+@{
+    var categories = await categoryService.GetCategoriesAsync();
+}
 
 <partial name="/Views/Partials/_ProductHeader.cshtml" />
 
@@ -32,7 +35,7 @@
                     <span asp-validation-for="Price" class="error-text"></span>
                 </div>
 
-@*                <div class="line">
+                <div class="line">
                     <label asp-for="LgImgUrl"></label>
                     <input asp-for="LgImgUrl" />
                     <span asp-validation-for="LgImgUrl" class="error-text"></span>
@@ -42,7 +45,32 @@
                     <label asp-for="SmImgUrl"></label>
                     <input asp-for="SmImgUrl" required />
                     <span asp-validation-for="SmImgUrl" class="error-text"></span>
-                </div>*@
+                </div>
+
+              @*This one is working, but you can only select ONE category!              *@
+                <div class="line">
+                    <label asp-for="Category" class=""></label>
+                    <select asp-for="Category">
+                        @foreach (var category in categories)
+                        {
+                            <option value="@category.Name">@category.Name</option>
+                        }
+                    </select>
+                </div>
+
+@*                <label asp-for="Category" class="">Product category:</label>
+                @foreach (var category in categories)
+                {
+                    <label class="" style="width: min-content;">@category.Name</label>
+                    @if(category.Name == "new")
+                    {
+                        <input asp-for="Category" type="checkbox" value="@category.Name" checked="checked" />
+                    }
+                    else
+                    {
+                        <input asp-for="Category" type="checkbox" value="@category.Name" />
+                    }
+                }*@
 
                 <button class="btn-theme" type="submit">Submit</button>
             </form>
