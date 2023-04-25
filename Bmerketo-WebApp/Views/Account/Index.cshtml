@@ -11,11 +11,10 @@
 		<p class="mt-4 mb-0 font-roboto"><span class="fw-bold">Id: </span>@userProfile.UserId</p>
 		<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Street Name: </span>@userProfile.StreetName</p>
 		<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Postal Code: </span>@userProfile.PostalCode</p>
-		<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">City: </span>@userProfile.City</p>
-		<p class="mt-4 mb-0 font-roboto">What do you wanna do?</p>
-				
+		<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">City: </span>@userProfile.City</p>	
 		@if (User.IsInRole("admin"))
 		{
+			<p class="mt-4 mb-0 font-roboto">What do you wanna do?</p>
 			<div class="d-flex justify-content-center mt-3">
 				<a class="btn-dark" asp-controller="admin" asp-action="index">ADMIN PAGE</a>
 			</div>

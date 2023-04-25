@@ -1,4 +1,4 @@
-﻿//Header menu tiggle on small screens
+﻿//Header menu toggle on small screens
 try {
     const toggleBtn = document.querySelector('[data-option="toggle"]')
     toggleBtn.addEventListener('click', function () {
@@ -41,7 +41,7 @@ function removeAddClassSubscribe() {
         const subscribeSpan = document.querySelector(`#subscribe-email-span`);
 
         if (subscribeError.innerText !== "") 
-                subscribeError.classList.add('subscribe-error')
+            subscribeError.classList.add('subscribe-error')
         else
             subscribeError.classList.remove('subscribe-error')
 
@@ -81,6 +81,7 @@ function validateInputSwitch(element, errorMsg, label) {
 
     const regExName = /^[a-öA-Ö]+(?:[ é'-][a-öA-Ö]+)*$/;
     const regExEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const regExPhoneNumber = /^(?=.{7})\+?\d[\d\s-]*\d$/;
 
 
     if (element.value === "")
@@ -160,6 +161,38 @@ function validateInputSwitch(element, errorMsg, label) {
                 errorMsg.innerText = `Please enter an email.`;
             break;
 
+        case "contact full name":
+            if (element.value === "")
+                errorMsg.innerText = `Please enter a name.`;
+
+            if (element.value.length < 2)
+                errorMsg.innerText = `Your name must contain at least 2 characters!`;
+
+            if (!regExName.test(element.value))
+                errorMsg.innerText = `Please enter a name.`;
+            break;
+
+        case "contact email":
+            if (!regExEmail.test(element.value))
+                errorMsg.innerText = `Please enter a valid email.`;
+            if (element.value === "")
+                errorMsg.innerText = `Please enter an email.`;
+            break;
+
+        case "contact phone number":
+            if (!regExPhoneNumber.test(element.value))
+                errorMsg.innerText = `Please enter a valid phone number.`;
+            if (element.value === "")
+                errorMsg.innerText = `Please enter a phone number.`;
+            break;
+
+        case "contact comment":
+            if (element.value === "")
+                errorMsg.innerText = `Please enter a comment.`;
+
+            if (element.value.length < 10)
+                errorMsg.innerText = `Your name must contain at least 10 characters!`;
+            break;
     }
 
     removeAddClassSubscribe()
@@ -171,7 +204,7 @@ function validateInput(event) {
         const errorMsg = document.querySelector(`#${element.id}-error`);
         const errorSpan = document.querySelector(`#${element.id}-span`);
 
-        let inputName = (element.id).replace("-", " ");
+        let inputName = (element.id).replace(/-/g, " ");
 
         removeAspValidation(errorSpan)
 
@@ -243,22 +276,19 @@ function validateAllLogin(event) {
 //Validation of all inputs, contact-form
 function validateAllContact(event) {
     try {
-        //event.preventDefault();
+        event.preventDefault();
 
-        console.log("onSubmit")
+        const errorMsg = document.querySelector('#form-error');
 
-        //const errorMsg = document.querySelector('#form-error');
+        var nameOK = validationErrorMsgPresent("contact-full-name")
+        var emailOK = validationErrorMsgPresent("contact-email")
+        var phoneNumberOK = validationErrorMsgPresent("contact-phone-number")
+        var commentOK = validationErrorMsgPresent("contact-comment")
 
-
-        //var nameOK = validationErrorMsgPresent("contact-name")
-        //var emailOK = validationErrorMsgPresent("contact-email")
-        //var phoneNumberOK = validationErrorMsgPresent("contact-phone-number")
-        //var commentOK = validationErrorMsgPresent("contact-comment")
-
-        //if (nameOK && emailOK && phoneNumberOK && commentOK)
-        //    event.target.submit();
-        //else
-        //    errorMsg.innerText = "Please enter the form correctly.";
+        if (nameOK && emailOK && phoneNumberOK && commentOK)
+            event.target.submit();
+        else
+            errorMsg.innerText = "Please enter the form correctly.";
 
     } catch { }
 }
