@@ -38,7 +38,7 @@ namespace Bmerketo_WebApp.Migrations.Product
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
 
                     b.HasData(
                         new
@@ -70,7 +70,7 @@ namespace Bmerketo_WebApp.Migrations.Product
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("ProductsCategories");
+                    b.ToTable("ProductsCategories", (string)null);
                 });
 
             modelBuilder.Entity("Bmerketo_WebApp.Models.Entities.ProductEntity", b =>
@@ -100,7 +100,7 @@ namespace Bmerketo_WebApp.Migrations.Product
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Bmerketo_WebApp.Models.Entities.ProductCategoryEntity", b =>

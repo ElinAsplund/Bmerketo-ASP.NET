@@ -16,7 +16,7 @@ public class ProductEntity
 	public string? SmImgUrl { get; set; }
 
 	public ICollection<ProductCategoryEntity> ProductCategories = new HashSet<ProductCategoryEntity>();
-	public ICollection<CategoryEntity> Categories = new HashSet<CategoryEntity>(); //Dont need?
+	//public ICollection<CategoryEntity> Categories = new HashSet<CategoryEntity>(); //Dont need?
 
 
     #region implicit operators

@@ -36,18 +36,40 @@ public class ProductService
             _context.Products.Add(productEntity);
             await _context.SaveChangesAsync();
 
-			//get the currentCategory so the id can be used
-			var currentCategory = await _context.Categories.FirstOrDefaultAsync(x => x.Name == viewModel.Category);
-
-			//converts to ProductCategoryEntity
-			var productCategoryEntity = new ProductCategoryEntity
+            //---WITH JUST MULTIPLE CATEGORY---
+            foreach (var categoryId in viewModel.CheckboxCategoryId)
 			{
-				ProductId = productEntity.Id,
-				CategoryId = currentCategory!.Id
-			};
+                //get the currentCategory so the id can be used
+                var currentCategory = await _context.Categories.FirstOrDefaultAsync(x => x.Id == categoryId);
 
-			_context.ProductsCategories.Add(productCategoryEntity);
-			await _context.SaveChangesAsync();
+                //converts to ProductCategoryEntity
+                var productCategoryEntity = new ProductCategoryEntity
+                {
+                    ProductId = productEntity.Id,
+                    CategoryId = currentCategory!.Id
+                };
+
+                _context.ProductsCategories.Add(productCategoryEntity);
+            }
+            //---WITH JUST MULTIPLE CATEGORY---
+
+
+            //---WITH JUST ONE CATEGORY---
+            //get the currentCategory so the id can be used
+            //var currentCategory = await _context.Categories.FirstOrDefaultAsync(x => x.Name == viewModel.Category);
+
+            //converts to ProductCategoryEntity
+            //var productCategoryEntity = new ProductCategoryEntity
+            //{
+            //	ProductId = productEntity.Id,
+            //	CategoryId = currentCategory!.Id
+            //};
+
+            //_context.ProductsCategories.Add(productCategoryEntity);
+            //---WITH JUST ONE CATEGORY---
+
+
+            await _context.SaveChangesAsync();
 
 			return true;
 		}

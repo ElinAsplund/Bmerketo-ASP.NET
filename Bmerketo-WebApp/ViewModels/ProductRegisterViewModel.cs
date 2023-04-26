@@ -1,4 +1,5 @@
-﻿using Bmerketo_WebApp.Models.Entities;
+﻿using Bmerketo_WebApp.Models;
+using Bmerketo_WebApp.Models.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace Bmerketo_WebApp.ViewModels;
@@ -28,11 +29,18 @@ public class ProductRegisterViewModel
 	[Display(Name = "Small Product Image")]
 	public string? SmImgUrl { get; set; }
 
-	[Display(Name = "Product category:")]
-	public string Category { get; set; } = null!;
+	//[Display(Name = "Product category:")]
+	//public string Category { get; set; } = null!;
 
 	//[Display(Name = "Category (optional)")]
 	//public string[] Category { get; set; } = null!;
+
+	//public bool IsActive { get; set; } = false;
+
+    //public List<CheckboxOptionModel> Checkboxes { get; set; } = new(); NO NEED?
+
+    public List<int> CheckboxCategoryId { get; set; } = new();
+
 
 
 	#region implicit operators

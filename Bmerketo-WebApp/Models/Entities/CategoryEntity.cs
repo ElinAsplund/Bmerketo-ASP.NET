@@ -7,6 +7,6 @@ public class CategoryEntity
 	public string Name { get; set; } = null!;
 	public string? Description { get; set; }
 
-	public ICollection<ProductEntity> Products = new HashSet<ProductEntity>(); //Dont need?
+	//public ICollection<ProductEntity> Products = new HashSet<ProductEntity>(); //Dont need?
 	public ICollection<ProductCategoryEntity> ProductCategories = new HashSet<ProductCategoryEntity>();
 }
