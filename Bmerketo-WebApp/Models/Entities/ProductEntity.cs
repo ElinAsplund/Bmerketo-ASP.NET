@@ -16,11 +16,11 @@ public class ProductEntity
 	public string? SmImgUrl { get; set; }
 
 	public ICollection<ProductCategoryEntity> ProductCategories = new HashSet<ProductCategoryEntity>();
-	public ICollection<CategoryEntity> Categories = new HashSet<CategoryEntity>();
+	public ICollection<CategoryEntity> Categories = new HashSet<CategoryEntity>(); //Dont need?
 
 
-	#region implicit operators
-	public static implicit operator ProductModel(ProductEntity productEntity)
+    #region implicit operators
+    public static implicit operator ProductModel(ProductEntity productEntity)
 	{
 		return new ProductModel
 		{

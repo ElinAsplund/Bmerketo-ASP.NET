@@ -6,8 +6,6 @@ namespace Bmerketo_WebApp.Models.Entities;
 
 public class UserProfileEntity
 {
-	//THIS IS A "COPY" OF ProfileEntity.cs
-
 	[Key, ForeignKey("User")]
 	public string UserId { get; set; } = null!;
 

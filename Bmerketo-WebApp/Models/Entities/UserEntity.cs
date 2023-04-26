@@ -5,6 +5,8 @@ namespace Bmerketo_WebApp.Models.Entities;
 
 public class UserEntity
 {
+	//not in use(?)
+
 	public Guid Id { get; set; } = Guid.NewGuid();
 	public string Email { get; set; } = null!;
 	public byte[] Password { get; private set; } = null!;
