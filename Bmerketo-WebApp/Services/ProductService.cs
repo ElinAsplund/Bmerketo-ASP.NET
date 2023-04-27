@@ -3,8 +3,6 @@ using Bmerketo_WebApp.Models;
 using Bmerketo_WebApp.Models.Entities;
 using Bmerketo_WebApp.ViewModels;
 using Microsoft.EntityFrameworkCore;
-using System;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Bmerketo_WebApp.Services;
 
@@ -54,23 +52,6 @@ public class ProductService
                     _context.ProductsCategories.Add(productCategoryEntity);
                 }
             }
-            //---WITH JUST MULTIPLE CATEGORY---
-
-
-            //---WITH JUST ONE CATEGORY---
-            //get the currentCategory so the id can be used
-            //var currentCategory = await _context.Categories.FirstOrDefaultAsync(x => x.Name == viewModel.Category);
-
-            //converts to ProductCategoryEntity
-            //var productCategoryEntity = new ProductCategoryEntity
-            //{
-            //	ProductId = productEntity.Id,
-            //	CategoryId = currentCategory!.Id
-            //};
-
-            //_context.ProductsCategories.Add(productCategoryEntity);
-            //---WITH JUST ONE CATEGORY---
-
 
             await _context.SaveChangesAsync();
 

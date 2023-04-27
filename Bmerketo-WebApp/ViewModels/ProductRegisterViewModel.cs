@@ -31,16 +31,6 @@ public class ProductRegisterViewModel
 	[Display(Name = "Small Product Image")]
 	public string? SmImgUrl { get; set; }
 
-	//[Display(Name = "Product category:")]
-	//public string Category { get; set; } = null!;
-
-	//[Display(Name = "Category (optional)")]
-	//public string[] Category { get; set; } = null!;
-
-	//public bool IsActive { get; set; } = false;
-
-	//public IEnumerable<CategoryEntity>? Categories { get; set; }
-
     public List<CheckboxOptionModel> Checkboxes { get; set; } = new();
 
     public List<int> CheckboxCategoryId { get; set; } = new();

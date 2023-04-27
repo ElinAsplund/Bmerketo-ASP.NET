@@ -6,21 +6,29 @@ using Microsoft.AspNetCore.Mvc;
 namespace Bmerketo_WebApp.Controllers
 {
     //REMOVED THIS DURING DEVELOPMENT, I HOPE I REMEBER TO TURN IT ON! :D
-    [Authorize(Roles = "admin")]
+    //[Authorize(Roles = "admin")]
     public class UsersController : Controller
 	{
         public readonly RoleService _roleService;
+        public readonly UserProfileService _userProfileService;
 
-        public UsersController(RoleService roleService)
+        public UsersController(RoleService roleService, UserProfileService userProfileService)
         {
             _roleService = roleService;
+            _userProfileService = userProfileService;
         }
 
-        public IActionResult Index()
-		{
-            ViewData["Title"] = "Users";
+        public async Task<IActionResult> Index()
+        {
+            var viewModel = new UsersIndexViewModel
+            {
+                Title = "Users",
+                UserModels = await _userProfileService.GetAllUserModelAsync(),
+                AllRoles = await _roleService.GetRolesAsync()
+            };
 
-            return View();
+            ViewData["Title"] = viewModel.Title;
+            return View(viewModel);
 		}
 
         [HttpPost]

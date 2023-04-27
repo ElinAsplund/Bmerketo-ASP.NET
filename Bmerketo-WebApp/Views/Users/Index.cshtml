@@ -1,8 +1,4 @@
 ﻿@model UsersIndexViewModel
-@{
-    var userModels = await userProfileService.GetAllUserModelAsync();
-    var allRoles = await roleService.GetRolesAsync();
-}
 
 <partial name="/Views/Partials/_UserHeader.cshtml" />
 
@@ -12,16 +8,15 @@
             <div class="form-title">User List</div>
             <hr>
             <div class="mb-2">Here are the users in the database.</div>
-            @if (userModels != null)
+            @if (Model.UserModels != null)
             {
-                foreach (var user in userModels)
+                foreach (var user in Model.UserModels)
                 {
                     <div class="bg-body-tertiary mb-2 ps-3 pe-1 py-1">
                         <form class="d-flex align-items-center justify-content-between" method="post" novalidate>
                             <div>
                                 <label asp-for="@Model.UserId" class="fw-bold"></label> @user.Id
                                 <input type="hidden" asp-for="@Model.UserId" value="@user.Id" />
-                                @*<span class="fw-bold">Id:</span> @user.Id *@
                                 <span class="fw-bold">Name:</span> @user.FirstName @user.LastName 
                                 <span class="fw-bold">Email:</span> @user.Email 
                                 <span class="fw-bold">Phone Number:</span> 
@@ -42,11 +37,14 @@
                                     <label asp-for="@Model.Role" class="fw-bold"></label>
                                     <select asp-for="@Model.Role">
                                         <option selected>@user.Role.ToUpper()</option>
-                                        @foreach (var role in allRoles)
+                                        @if(Model.AllRoles != null)
                                         {
-                                            if (user.Role.ToUpper() != @role.Name!.ToUpper())
+                                            @foreach (var role in Model.AllRoles)
                                             {
-                                                <option value="@role.Name!.ToUpper()">@role.Name!.ToUpper()</option>
+                                                if (user.Role.ToUpper() != @role.Name!.ToUpper())
+                                                {
+                                                    <option value="@role.Name!.ToUpper()">@role.Name!.ToUpper()</option>
+                                                }
                                             }
                                         }
                                     </select>
