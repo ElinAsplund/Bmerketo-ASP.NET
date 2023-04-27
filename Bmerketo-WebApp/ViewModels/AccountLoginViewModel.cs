@@ -1,10 +1,11 @@
-﻿using Bmerketo_WebApp.Models.Entities;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Bmerketo_WebApp.ViewModels;
 
 public class AccountLoginViewModel
 {
+	public string Title { get; set; } = null!;
+
 	[Display(Name = "E-mail*")]
 	[DataType(DataType.EmailAddress)]
 	[Required(ErrorMessage = "Please enter your E-mail.")]

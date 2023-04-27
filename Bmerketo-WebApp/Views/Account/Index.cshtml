@@ -1,30 +1,17 @@
-﻿@{
-	var identityUser = await userProfileService.GetIdentityUserAsync(User?.Identity?.Name!);
-	var userProfile = await userProfileService.GetUserProfileAsync(identityUser.Id);
-}
+﻿@model AccountIndexViewModel
 
+<div class="container d-grid justify-content-center text-center mt-4">
+	<h1>Welcome to your account, @(User!.FindFirst("DisplayName")?.Value)!</h1>
+	<p class="mt-4 mb-0 font-roboto"><span class="fw-bold">Id: </span>@Model.UserProfile.UserId</p>
+	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Street Name: </span>@Model.UserProfile.StreetName</p>
+	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Postal Code: </span>@Model.UserProfile.PostalCode</p>
+	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">City: </span>@Model.UserProfile.City</p>
 
-@if (signInManager.IsSignedIn(User!))
-{
-	<div class="container d-grid justify-content-center text-center mt-4">
-		<h1>Welcome to your account, @(User!.FindFirst("DisplayName")?.Value)!</h1>
-		<p class="mt-4 mb-0 font-roboto"><span class="fw-bold">Id: </span>@userProfile.UserId</p>
-		<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Street Name: </span>@userProfile.StreetName</p>
-		<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Postal Code: </span>@userProfile.PostalCode</p>
-		<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">City: </span>@userProfile.City</p>	
-		@if (User.IsInRole("admin"))
-		{
-			<p class="mt-4 mb-0 font-roboto">What do you wanna do?</p>
-			<div class="d-flex justify-content-center mt-3">
-				<a class="btn-white" asp-controller="admin" asp-action="index">ADMIN PAGE</a>
-			</div>
-		}
-	</div>
-}
-else
-{
-	<div class="container d-grid text-center mt-5 mb-3">
-		<h1>You are not logged in right now!</h1>
-	</div>
-}
-
+	@if (User.IsInRole("admin"))
+	{
+		<p class="mt-4 mb-0 font-roboto">What do you wanna do?</p>
+		<div class="d-flex justify-content-center mt-3">
+			<a class="btn-white" asp-controller="admin" asp-action="index">ADMIN PAGE</a>
+		</div>
+	}
+</div>

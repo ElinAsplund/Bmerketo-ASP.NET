@@ -2,6 +2,7 @@
 using Bmerketo_WebApp.Services;
 using Bmerketo_WebApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 
 namespace Bmerketo_WebApp.Controllers
 {
@@ -16,32 +17,44 @@ namespace Bmerketo_WebApp.Controllers
 
 		public IActionResult Index()
         {
-			ViewData["Title"] = "Contact";
-            return View();
+			var viewModel = new ContactsIndexViewModel
+			{
+				Title = "Contact",
+				ContactHero = new HeroModel { Heading = "CONTACT", Subheading = "HOME. CONTACT" },
+			};
+
+			ViewData["Title"] = viewModel.Title;
+			return View(viewModel);
         }
 
 	    [HttpPost]
-	    public async Task<IActionResult> Index(ContactRegisterViewModel viewModel)
+	    public async Task<IActionResult> Index(ContactFormViewModel contactFormViewModel)
 	    {
-		    ViewData["Title"] = "Contact";
+			var viewModel = new ContactsIndexViewModel
+			{
+				Title = "Contact",
+				ContactHero = new HeroModel { Heading = "CONTACT", Subheading = "HOME. CONTACT" },
+				ContactForm = contactFormViewModel
+			};
 
 			if (ModelState.IsValid)
 			{
 				try
 				{
-					if (await _contactService.RegisterAsync(viewModel))
+					if (await _contactService.RegisterAsync(viewModel.ContactForm))
 					{
                         ModelState.Clear();
 
 						//Clear form
-						viewModel.FullName = "";
-						viewModel.Email = "";
-						viewModel.PhoneNumber = "";
-						viewModel.CompanyName = "";
-						viewModel.Comment = "";
-
+						viewModel.ContactForm.FullName = "";
+						viewModel.ContactForm.Email = "";
+						viewModel.ContactForm.PhoneNumber = "";
+						viewModel.ContactForm.CompanyName = "";
+						viewModel.ContactForm.Comment = "";
+						
                         ModelState.AddModelError("", "Your comment has now been sent!");
-                        return View(viewModel);
+						ViewData["Title"] = "Successfully sent comment";
+						return View(viewModel);
                     }
 					else
 						ModelState.AddModelError("", "Something went wrong while posting the comment.");
@@ -50,9 +63,9 @@ namespace Bmerketo_WebApp.Controllers
 				{
 					ModelState.AddModelError("", "Something went wrong while posting the comment.");
 				}
-
 			}
 
+			ViewData["Title"] = viewModel.Title;
 			return View(viewModel);
 	    }
     }

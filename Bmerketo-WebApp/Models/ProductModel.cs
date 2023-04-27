@@ -1,4 +1,5 @@
 ﻿using Bmerketo_WebApp.Models.Entities;
+using Bmerketo_WebApp.ViewModels;
 
 namespace Bmerketo_WebApp.Models;
 
@@ -12,5 +13,21 @@ public class ProductModel
 	public string? LgImgUrl { get; set; }
 	public string? SmImgUrl { get; set; }
 
-	public List<CategoryEntity> Categories = new();
+	public List<CategoryEntity> Categories = new(); //NO NEED?
+
+
+    #region implicit operators
+
+    public static implicit operator GridCollectionCardViewModel(ProductModel model)
+    {
+		return new GridCollectionCardViewModel
+		{
+			Id = model.Id,
+			Title = model.Name,
+			ImageUrl = model.LgImgUrl!,
+			Price = model.Price
+		};
+    }
+
+    #endregion
 }

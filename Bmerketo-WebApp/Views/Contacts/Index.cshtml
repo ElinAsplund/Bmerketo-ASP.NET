@@ -1,9 +1,5 @@
-﻿@*@model ContactsIndexViewModel
-*@
-@*@{
-	ViewData["Title"] = Model.Title;
-}*@
+﻿@model ContactsIndexViewModel
 
-<partial name="/Views/Partials/_Hero.cshtml" />
-<partial name="/Views/Partials/_ContactForm.cshtml" />
+<partial name="/Views/Partials/_Hero.cshtml" model="@Model.ContactHero" />
+<partial name="/Views/Partials/_ContactForm.cshtml" model="@Model.ContactForm" />
 <partial name="/Views/Partials/_GoogleMaps.cshtml" />

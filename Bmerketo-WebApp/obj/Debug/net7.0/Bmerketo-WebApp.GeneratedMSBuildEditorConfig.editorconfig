@@ -28,10 +28,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Account/Logout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Account/NewPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxOZXdQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -90,10 +86,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Partials/_InspirationImages.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0luc3BpcmF0aW9uSW1hZ2VzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Partials/_LoginForm.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0xvZ2luRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Elin/Desktop/ECutbildning/6_ASP.NET/Project/Bmerketo-ASP.NET/Bmerketo-WebApp/Views/Partials/_ProductDetails.cshtml]

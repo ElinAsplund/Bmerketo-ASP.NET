@@ -13,7 +13,7 @@ public class ContactService
 		_context = context;
 	}
 
-	public async Task<bool> RegisterAsync(ContactRegisterViewModel viewModel)
+	public async Task<bool> RegisterAsync(ContactFormViewModel viewModel)
 	{
 		try
 		{

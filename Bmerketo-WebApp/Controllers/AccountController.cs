@@ -10,19 +10,30 @@ public class AccountController : Controller
 {
 	private readonly SignInManager<IdentityUser> _signInManager;
 	private readonly AuthService _auth;
+	private readonly UserProfileService _userProfileService;
 
-	public AccountController( SignInManager<IdentityUser> signInManager, AuthService auth)
-	{
-		_signInManager = signInManager;
-		_auth = auth;
-	}
 
+    public AccountController(SignInManager<IdentityUser> signInManager, AuthService auth, UserProfileService userProfileService)
+    {
+        _signInManager = signInManager;
+        _auth = auth;
+        _userProfileService = userProfileService;
+    }
+
+    //----INDEX----
     [Authorize]
-	public IActionResult Index()
+	public async Task<IActionResult> Index()
 	{
-		ViewData["Title"] = "My Account";
+		var _identityUser = await _userProfileService.GetIdentityUserAsync(User!.Identity!.Name!);
 
-		return View();
+		var viewModel = new AccountIndexViewModel
+		{
+			Title = "My Account",
+			UserProfile = await _userProfileService.GetUserProfileAsync(_identityUser.Id)
+        };
+
+        ViewData["Title"] = viewModel.Title;
+		return View(viewModel);
     }
 
     //----REGISTER----
@@ -55,12 +66,17 @@ public class AccountController : Controller
 	//----LOGIN----
 	public IActionResult Login()
 	{
-		ViewData["Title"] = "Login";
+		var viewModel = new AccountLoginViewModel
+		{
+			Title = "Login"
+		};
 
+		
 		if (_signInManager.IsSignedIn(User))
             return RedirectToAction("index", "account");
 
-        return View();
+		ViewData["Title"] = viewModel.Title;
+		return View(viewModel);
 	}
 
 	[HttpPost]
@@ -91,14 +107,16 @@ public class AccountController : Controller
 		return RedirectToAction("login", "account");
     }
 
-    [Authorize]
+	//----ACCESS DENIED----
+	[Authorize]
     public IActionResult AccessDenied()
     {
         ViewData["Title"] = "Access Denied";
         return View();
     }
-	
-    public IActionResult NewPassword()
+
+	//----NEW PASSWORD----
+	public IActionResult NewPassword()
     {
         ViewData["Title"] = "New Password";
         return View();

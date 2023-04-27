@@ -1,11 +1,12 @@
 ﻿//Disable negative numbers on input-fields of type number
-document.querySelector("#price-input").addEventListener("input", function () {
+let element = document.querySelector("#price-input");
 
-    let element = document.querySelector("#price-input");
-
-    if (element.value < 0)
-        element.value = Math.abs(element.value);
-});
+if (element) {
+    element.addEventListener("input", function () {
+        if (element.value < 0)
+            element.value = Math.abs(element.value);
+    });
+}
 
 //Header menu toggle on small screens
 try {

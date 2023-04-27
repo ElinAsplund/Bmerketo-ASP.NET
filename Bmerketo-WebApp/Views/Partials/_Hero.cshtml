@@ -1,19 +1,13 @@
-﻿@{
-    var viewModel = new ContactsIndexViewModel
-    {
-        ContactHero = new HeroModel
-        {
-            Heading = "CONTACT",
-            Subheading = "HOME. CONTACT"
-        }
-    };
-}
+﻿@*
+    NO NEED?
+    @model HeroModel
+*@
 
 <!-- hero start -->
 <section class="hero">
     <div class="container-fluid">
         <div class="shop-heading">
-            @viewModel.ContactHero.Heading<br><span>@viewModel.ContactHero.Subheading</span>
+            @Model.Heading<br><span>@Model.Subheading</span>
         </div>
     </div>
 </section>
