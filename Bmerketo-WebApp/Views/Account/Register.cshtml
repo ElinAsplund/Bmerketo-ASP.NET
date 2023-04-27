@@ -86,19 +86,18 @@
                     <div id="confirm-password-error" class="error-text"></div>
                 </div>
 
-                @* DONT HAVE FUNCTIONALITY YET!
                 <div class="line">
                     <label asp-for="ProfileImage"></label>
-                    <input asp-for="ProfileImage" />
-                    <input asp-for="ProfileImage" type="file" accept="image/*" />
-                 <span asp-validation-for="ProfileImage" class="error-text"></span>
+                    <input asp-for="ProfileImage" id="profile-image" />
+                    <span asp-validation-for="ProfileImage" id="profile-image-span" class="error-text"></span>
+                    <div id="profile-image-error" class="error-text"></div>
                 </div>
 
-                <label class="custom-checkbox">
-                    I have read and accepts the terms and agreements
-                    <input asp-for="AcceptsTerms" type="checkbox" checked="checked">
-                    <span class="checkmark"></span>
-                    <span asp-validation-for="AcceptsTerms" class="error-text"></span>
+                @*<label class="custom-checkbox">
+                I have read and accepts the terms and agreements
+                <input asp-for="AcceptsTerms" type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+                <span asp-validation-for="AcceptsTerms" class="error-text"></span>
                 </label>*@
 
                 <button class="btn-theme" type="submit">Submit</button>

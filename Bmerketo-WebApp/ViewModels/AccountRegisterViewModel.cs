@@ -62,7 +62,7 @@ public class AccountRegisterViewModel
 	public string ConfirmPassword { get; set; } = null!;
 
 
-	[Display(Name = "Upload Profile Image (optional)")]
+	[Display(Name = "Profile Image (optional)")]
 	public string? ProfileImage { get; set; }
 
 	[Required(ErrorMessage = "Please Accept the Terms.")]

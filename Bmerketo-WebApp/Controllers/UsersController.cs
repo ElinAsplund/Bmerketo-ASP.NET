@@ -11,11 +11,13 @@ namespace Bmerketo_WebApp.Controllers
 	{
         public readonly RoleService _roleService;
         public readonly UserProfileService _userProfileService;
+        public readonly AuthService _authService;
 
-        public UsersController(RoleService roleService, UserProfileService userProfileService)
+        public UsersController(RoleService roleService, UserProfileService userProfileService, AuthService authService)
         {
             _roleService = roleService;
             _userProfileService = userProfileService;
+            _authService = authService;
         }
 
         public async Task<IActionResult> Index()
@@ -57,11 +59,48 @@ namespace Bmerketo_WebApp.Controllers
             return RedirectToAction("index", "users");
         }
 
-        public IActionResult Register()
+        public async Task<IActionResult> Register()
         {
-            ViewData["Title"] = "Register User";
+            var viewModel = new UsersRegisterViewModel
+            {
+                Title = "Register User",
+                AllRoles = await _roleService.GetRolesAsync()
+                //Checkboxes = await _checkBoxOptionService.PopulateRoleCheckBoxesAsync()
+            };
 
-            return View();
+            ViewData["Title"] = viewModel.Title;
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(UsersRegisterViewModel viewModel)
+        {
+            ViewData["Title"] = "Register Account";
+
+            if (ModelState.IsValid)
+            {
+                if (await _authService.RegisterAsync(viewModel))
+                {
+                    ModelState.Clear();
+
+                    //Clear form:
+                    viewModel.FirstName = "";
+                    viewModel.LastName = "";
+                    viewModel.StreetName = "";
+                    viewModel.PostalCode = "";
+                    viewModel.City = "";
+                    viewModel.PhoneNumber = "";
+                    viewModel.CompanyName = "";
+                    viewModel.Email = "";
+                    viewModel.ProfileImage = "";
+
+                    return View(viewModel);
+                }
+
+                ModelState.AddModelError("", "A user with that e-mail already exists.");
+            }
+
+            return View(viewModel);
         }
     }
 }

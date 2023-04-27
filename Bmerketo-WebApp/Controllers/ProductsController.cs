@@ -94,7 +94,7 @@ namespace Bmerketo_WebApp.Controllers
 			var viewModel = new ProductRegisterViewModel
 			{
 				Title = "Register Product",
-				Checkboxes = await _checkBoxOptionService.PopulateCheckBoxesAsync()
+				Checkboxes = await _checkBoxOptionService.PopulateCategoryCheckBoxesAsync()
 			};
 
 			ViewData["Title"] = viewModel.Title;

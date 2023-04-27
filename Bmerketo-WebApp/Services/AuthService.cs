@@ -24,7 +24,6 @@ public class AuthService
 	{
 		try
 		{
-			//await _seedService.SeedRoles();
 			var roleName = "user";
 
 			if(!await _userManager.Users.AnyAsync())
@@ -34,6 +33,27 @@ public class AuthService
 			await _userManager.CreateAsync(identityUser, viewModel.Password);
 
 			await _userManager.AddToRoleAsync(identityUser, roleName);
+
+			UserProfileEntity userProfileEntity = viewModel;
+			userProfileEntity.UserId = identityUser.Id;
+
+			_identityContext.UserProfiles.Add(userProfileEntity);
+			await _identityContext.SaveChangesAsync();
+			
+			return true;
+		}
+		catch { return false; }
+	}
+
+	public async Task<bool> RegisterAsync(UsersRegisterViewModel viewModel)
+	{
+		try
+		{
+			IdentityUser identityUser = viewModel;
+			await _userManager.CreateAsync(identityUser, viewModel.Password);
+
+			if(viewModel.Role != null)
+				await _userManager.AddToRoleAsync(identityUser, viewModel.Role);
 
 			UserProfileEntity userProfileEntity = viewModel;
 			userProfileEntity.UserId = identityUser.Id;

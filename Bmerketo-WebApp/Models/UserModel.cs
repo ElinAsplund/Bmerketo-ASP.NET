@@ -20,7 +20,7 @@ public class UserModel
     //public string StreetName { get; set; } = null!;
     //public string PostalCode { get; set; } = null!;
     //public string City { get; set; } = null!;
-    //public string? ProfileImage { get; set; }
+    public string? ProfileImage { get; set; }
 
     #region implicit operators
 
@@ -32,7 +32,8 @@ public class UserModel
             FirstName = entity.FirstName,
             LastName = entity.LastName,
             Email = entity.User.Email!,
-            PhoneNumber = entity.User.PhoneNumber
+            PhoneNumber = entity.User.PhoneNumber,
+            ProfileImage = entity.ProfileImage
         };
     }
 

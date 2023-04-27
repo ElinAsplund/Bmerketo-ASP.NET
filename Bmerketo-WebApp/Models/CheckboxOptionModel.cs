@@ -4,5 +4,5 @@ public class CheckboxOptionModel
 {
     public bool IsChecked { get; set; } = false;
     public string Description { get; set; } = null!;
-    public int Value { get; set; }
+    public string Value { get; set; } = null!;
 }
