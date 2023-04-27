@@ -1,10 +1,25 @@
-﻿//Disable negative numbers on input-fields of type number
+﻿//At register product-view
+//Disable negative numbers on input-fields of type number and removing the 0 at first view.
 let element = document.querySelector("#price-input");
+let button = document.querySelector("#btn-product-submit");
+
+if (element) {
+    if (element.value == 0)
+        element.value = "";
+}
 
 if (element) {
     element.addEventListener("input", function () {
         if (element.value < 0)
             element.value = Math.abs(element.value);
+    });
+}
+
+//This should be taken care of by validating properly
+if (button) {
+    button.addEventListener("click", function () {
+        if (element.value == "")
+            element.value = 0;
     });
 }
 

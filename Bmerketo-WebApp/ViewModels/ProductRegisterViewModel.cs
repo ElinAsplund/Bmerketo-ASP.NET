@@ -6,20 +6,22 @@ namespace Bmerketo_WebApp.ViewModels;
 
 public class ProductRegisterViewModel
 {
+	public string? Title { get; set; }
+
 	[Display(Name = "Product Name*")]
-	[Required(ErrorMessage = "Please enter the Product Name.")]
+	[Required(ErrorMessage = "Please enter the product name.")]
 	public string Name { get; set; } = null!;
 
 
 	[Display(Name = "Product Description*")]
-	[Required(ErrorMessage = "Please enter the Product Description.")]
+	[Required(ErrorMessage = "Please enter the product description.")]
 	public string Description { get; set; } = null!;
 
 
 	[Display(Name = "Product Price*")]
-	[Required(ErrorMessage = "Please enter the Product Price.")]
+	[Required(ErrorMessage = "Please enter the product price.")]
 	[DataType(DataType.Currency)]
-	public decimal Price { get; set; } = 0;
+	public decimal Price { get; set; }
 
 
 	[Display(Name = "Large Product Image")]
@@ -37,7 +39,9 @@ public class ProductRegisterViewModel
 
 	//public bool IsActive { get; set; } = false;
 
-    //public List<CheckboxOptionModel> Checkboxes { get; set; } = new(); NO NEED?
+	//public IEnumerable<CategoryEntity>? Categories { get; set; }
+
+    public List<CheckboxOptionModel> Checkboxes { get; set; } = new();
 
     public List<int> CheckboxCategoryId { get; set; } = new();
 

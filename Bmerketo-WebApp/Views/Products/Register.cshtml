@@ -1,7 +1,4 @@
 ﻿@model ProductRegisterViewModel
-@{
-    var categories = await categoryService.GetCategoriesAsync();
-}
 
 <partial name="/Views/Partials/_ProductHeader.cshtml" />
 
@@ -62,21 +59,8 @@
 
                 @* --------------select MULTIPLE category!-------------- *@
                 <label class="">Product category:</label>
-                @foreach(var category in categories)
+                @foreach(var checkbox in Model.Checkboxes)
                 {
-
-                    @* ----------!nitialize the checkboxes dynamically---------- *@
-                    var checkbox = new CheckboxOptionModel();
-
-                    if(category == categories.First())
-                    {
-                        checkbox.IsChecked = true;
-                    }
-
-                    checkbox.Description = category.Name;
-                    checkbox.Value = category.Id;
-                    @* ----------!nitialize the checkboxes dynamically---------- *@
-
                     @* Using bootstraps standard checkbox!
                     <div class="form-check">
 
@@ -95,7 +79,7 @@
                         </label>
                     </div>*@
 
-                    @* Using custom checkbox!*@
+                    @* Using custom styled checkbox!*@
                     <div class="form-check">
                         <label class="custom-checkbox" for="checkbox_@checkbox.Value">
 
@@ -115,7 +99,7 @@
                 }
                 @* --------------select MULTIPLE category!-------------- *@
 
-                <button class="btn-theme" type="submit">Submit</button>
+                <button class="btn-theme" type="submit" id="btn-product-submit">Submit</button>
             </form>
         </div>
     </div>

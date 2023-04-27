@@ -37,19 +37,22 @@ public class ProductService
             await _context.SaveChangesAsync();
 
             //---WITH JUST MULTIPLE CATEGORY---
-            foreach (var categoryId in viewModel.CheckboxCategoryId)
-			{
-                //get the currentCategory so the id can be used
-                var currentCategory = await _context.Categories.FirstOrDefaultAsync(x => x.Id == categoryId);
+            if(viewModel.CheckboxCategoryId.Any())
+            {
+                foreach (var categoryId in viewModel.CheckboxCategoryId)
+			    {
+                    //get the currentCategory so the id can be used
+                    var currentCategory = await _context.Categories.FirstOrDefaultAsync(x => x.Id == categoryId);
 
-                //converts to ProductCategoryEntity
-                var productCategoryEntity = new ProductCategoryEntity
-                {
-                    ProductId = productEntity.Id,
-                    CategoryId = currentCategory!.Id
-                };
+                    //converts to ProductCategoryEntity
+                    var productCategoryEntity = new ProductCategoryEntity
+                    {
+                        ProductId = productEntity.Id,
+                        CategoryId = currentCategory!.Id
+                    };
 
-                _context.ProductsCategories.Add(productCategoryEntity);
+                    _context.ProductsCategories.Add(productCategoryEntity);
+                }
             }
             //---WITH JUST MULTIPLE CATEGORY---
 

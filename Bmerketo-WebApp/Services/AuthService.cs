@@ -12,16 +12,12 @@ public class AuthService
 	private readonly UserManager<IdentityUser> _userManager;
 	private readonly IdentityContext _identityContext;
 	private readonly SignInManager<IdentityUser> _signInManager;
-	private readonly RoleManager<IdentityRole> _roleManager;
-	private readonly SeedService _seedService;
 
-	public AuthService(UserManager<IdentityUser> userManager, IdentityContext identityContext, SignInManager<IdentityUser> signInManager, SeedService seedService, RoleManager<IdentityRole> roleManager)
+	public AuthService(UserManager<IdentityUser> userManager, IdentityContext identityContext, SignInManager<IdentityUser> signInManager)
 	{
 		_userManager = userManager;
 		_identityContext = identityContext;
 		_signInManager = signInManager;
-		_seedService = seedService;
-		_roleManager = roleManager;
 	}
 
 	public async Task<bool> RegisterAsync(AccountRegisterViewModel viewModel)

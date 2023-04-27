@@ -21,6 +21,7 @@ builder.Services.AddScoped<UserProfileService>();
 builder.Services.AddScoped<ContactService>();
 builder.Services.AddScoped<RoleService>();
 builder.Services.AddScoped<CategoryService>();
+builder.Services.AddScoped<CheckboxOptionService>();
 
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(x =>

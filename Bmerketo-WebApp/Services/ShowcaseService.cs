@@ -4,7 +4,10 @@ namespace Bmerketo_WebApp.Services;
 
 public class ShowcaseService
 {
-    private readonly List<ShowcaseModel> _showcases = new()
+	//FOR LEARNING PURPOSES
+
+	//A LIST
+	private readonly List<ShowcaseModel> _showcases = new()
     {
         new ShowcaseModel()
         {
@@ -30,13 +33,15 @@ public class ShowcaseService
         }
     };
 
-
-    public ShowcaseModel GetLatest()
+	//GET LATEST ENTRY IN THE LIST
+	public ShowcaseModel GetLatest()
     {
         return _showcases.LastOrDefault()!;
     }
 
-    private ShowcaseModel showcase = new ShowcaseModel()
+
+    //GET JUST ONE
+	private readonly ShowcaseModel showcase = new ()
     {
         Ingress = "SHOP SHOP SHOP SHOP SHOP",
         Title = "Mighty golden throne Collection.",
@@ -48,7 +53,7 @@ public class ShowcaseService
         ImageUrl = "./images/chair.jpg"
     };
 
-
+    //GET JUST ONE
     public ShowcaseModel GetShowcase()
     {
         return showcase;

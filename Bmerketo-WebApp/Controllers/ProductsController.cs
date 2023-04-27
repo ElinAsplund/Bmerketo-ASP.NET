@@ -9,18 +9,20 @@ namespace Bmerketo_WebApp.Controllers
     public class ProductsController : Controller
     {
 		private readonly ProductService _productService;
+		private readonly CheckboxOptionService _checkBoxOptionService;
 
-		public ProductsController(ProductService productService)
-		{
-			_productService = productService;
-		}
-
-		public IActionResult Index()
+        public ProductsController(ProductService productService, CheckboxOptionService checkBoxOptionService)
         {
-            ViewData["Title"] = "Products";
+            _productService = productService;
+            _checkBoxOptionService = checkBoxOptionService;
+        }
 
-			var viewmodel = new ProductsIndexViewModel
+        public IActionResult Index()
+        {
+
+			var viewModel = new ProductsIndexViewModel
 			{
+				Title = "Products",
 				All = new GridCollectionViewModel
 				{
 					Title = "All Products",
@@ -39,21 +41,21 @@ namespace Bmerketo_WebApp.Controllers
 				}
 			};
 
-            return View(viewmodel);
+            ViewData["Title"] = viewModel.Title;
+            return View(viewModel);
         }
         
         public IActionResult Details()
         {
-            ViewData["Title"] = "Product Details";
-
 			var viewModel = new ProductsDetailsViewModel
 			{
+				Title = "Product Details",
 				ShopHero = new HeroModel
 				{
 					Heading = "SHOP",
 					Subheading = "HOME. PRODUCT DETAILS"
 				},
-				RelatedShoes = new RelatedProductsViewModel
+				Related = new RelatedProductsViewModel
 				{
 					GridCards = new List<GridCollectionCardViewModel>
 					{
@@ -65,35 +67,48 @@ namespace Bmerketo_WebApp.Controllers
                 }
 			};
 
+            ViewData["Title"] = viewModel.Title;
 			return View(viewModel);
         }
 
         //----PRODUCT LIST----
         //[Authorize(Roles = "admin")]
-        public IActionResult List()
+        public async Task<IActionResult> List()
 		{
-			ViewData["Title"] = "Product List";
+			var viewModel = new ProductListViewModel
+			{
+				Title = "Product List",
+				Products = await _productService.GetAllAsync()
+			};
 
-			return View();
+			ViewData["Title"] = viewModel.Title;
+			return View(viewModel);
 		}
 
 
         //----REGISTER PRODUCT----
         //[Authorize(Roles = "admin")]
-        public IActionResult Register()
+        public async Task<IActionResult> Register()
 		{
-			ViewData["Title"] = "Register Product";
 
-			return View();
+			var viewModel = new ProductRegisterViewModel
+			{
+				Title = "Register Product",
+				Checkboxes = await _checkBoxOptionService.PopulateCheckBoxesAsync()
+			};
+
+			ViewData["Title"] = viewModel.Title;
+			return View(viewModel);
 		}
 
         //[Authorize(Roles = "admin")]
         [HttpPost]
 		public async Task<IActionResult> Register(ProductRegisterViewModel viewModel)
 		{
-			ViewData["Title"] = "Register Product";
 
-			if (ModelState.IsValid)
+			viewModel.Title = "Register Product";
+            
+            if (ModelState.IsValid)
 			{
 				try 
 				{
@@ -109,7 +124,8 @@ namespace Bmerketo_WebApp.Controllers
 
 			}
 
-			return View(viewModel);
+            ViewData["Title"] = viewModel.Title;
+            return View(viewModel);
 		}
 	}
 }
