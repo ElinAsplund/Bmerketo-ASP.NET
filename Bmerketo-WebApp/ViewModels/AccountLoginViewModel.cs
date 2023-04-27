@@ -4,7 +4,7 @@ namespace Bmerketo_WebApp.ViewModels;
 
 public class AccountLoginViewModel
 {
-	public string Title { get; set; } = null!;
+	public string? Title { get; set; }
 
 	[Display(Name = "E-mail*")]
 	[DataType(DataType.EmailAddress)]

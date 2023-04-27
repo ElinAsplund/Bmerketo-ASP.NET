@@ -39,7 +39,7 @@ public class AccountController : Controller
     //----REGISTER----
     public IActionResult Register()
 	{
-		ViewData["Title"] = "Register";
+		ViewData["Title"] = "Register Account";
 
         if (_signInManager.IsSignedIn(User))
             return RedirectToAction("index", "account");
@@ -66,24 +66,19 @@ public class AccountController : Controller
 	//----LOGIN----
 	public IActionResult Login()
 	{
-		var viewModel = new AccountLoginViewModel
-		{
-			Title = "Login"
-		};
+		ViewData["Title"] = "Login";
 
-		
 		if (_signInManager.IsSignedIn(User))
             return RedirectToAction("index", "account");
 
-		ViewData["Title"] = viewModel.Title;
-		return View(viewModel);
+		return View();
 	}
 
 	[HttpPost]
 	public async Task<IActionResult> Login(AccountLoginViewModel viewModel)
 	{
-		ViewData["Title"] = "Login";
-
+		ViewData["Title"] = "Try again";
+		
 		if (ModelState.IsValid)
 		{
 			if (await _auth.LoginAsync(viewModel))

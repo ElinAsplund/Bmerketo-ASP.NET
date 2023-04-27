@@ -51,7 +51,8 @@ namespace Bmerketo_WebApp.Controllers
                 }
 			};
 
-            return View(viewModel);
+			ViewData["Title"] = viewModel.Title;
+			return View(viewModel);
         }
     }
 }
