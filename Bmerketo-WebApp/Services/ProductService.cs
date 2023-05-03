@@ -99,44 +99,46 @@ public class ProductService
 		return products;
 	}
 
-   // public async Task<bool> RemoveAsync(ProductModel productModel)
-   // {
-   //     try
-   //     {
-   //         //converts to entity
-   //         ProductEntity selectedProductEntity = productModel;
+	public async Task<bool> RemoveAsync(int productId)
+	{
+		try
+		{
+			var poductEntity = await _productContext.Products.FirstOrDefaultAsync(x => x.Id == productId);
 
-   //         var dbProductEntity = await _productContext.Products.FirstOrDefaultAsync(x => x.Id == productModel.Id);
+			if (poductEntity != null)
+			{
+				_productContext.Products.Remove(poductEntity);
+				await _productContext.SaveChangesAsync();
 
-   //         //create user
-			//if(dbProductEntity != null)
-			//{
-   //             _productContext.Products.Remove(dbProductEntity);
-			//	await _productContext.SaveChangesAsync();
+				return true;
+			}
 
-			//	return true;
-			//}
-
-			//return false;
-   //     }
-   //     catch
-   //     {
-   //         return false;
-   //     }
-   // }
+			return false;
+		}
+		catch
+		{
+			return false;
+		}
+	}
 
 	public async Task<ProductModel> GetAsync(Expression<Func<ProductEntity, bool>> predicate)
 	{
-		var productEntity = await _productContext.Products.FirstAsync(predicate);
+		try
+		{
+			var productEntity = await _productContext.Products.FirstAsync(predicate);
 
-		ProductModel product = productEntity;
+			ProductModel product = productEntity;
 
-		var categories = await _categoryService.GetProductCategoriesAsync(product);
+			var categories = await _categoryService.GetProductCategoriesAsync(product);
 
-		product.Categories = categories;
+			product.Categories = categories;
 
-
-        return product!;
+			return product!;
+		} 
+		catch 
+		{
+			return null!;
+		}
 	}
 	
 	public async Task<List<ProductModel>> GetProductsByCategoryIdAsync(Expression<Func<ProductCategoryEntity, bool>> predicate)

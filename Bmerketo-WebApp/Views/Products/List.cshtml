@@ -1,4 +1,13 @@
 ﻿@model ProductListViewModel
+@*@{
+    var products = new List<ProductModel>();
+
+    foreach (var product in Model.Products)
+    {
+        products.Add(product);
+    }
+}*@
+
 
 <partial name="/Views/Partials/_ProductHeader.cshtml" />
 
@@ -9,6 +18,7 @@
             <div class="form-title">Product List</div>
             <hr>
             <div class="mb-2">Here are the products in the database. @*Remove-btn, do not work.*@</div>
+            <div asp-validation-summary="ModelOnly" class="error-text"></div>
             @if (Model.Products != null)
             {
                 foreach (var product in Model.Products)
@@ -47,7 +57,7 @@
                             }
                             else
                             {
-                                <div class=" me-2">
+                                <div class="d-grid me-2">
                                     <span class="fw-bold">SM: </span> No image!
                                 </div>
                             }
@@ -62,12 +72,18 @@
                             }
                             else
                             {
-                                <div class="">
+                                <div class="d-grid">
                                     <span class="fw-bold">LG: </span> No image!
                                 </div>
                             }
+
+                            <form method="post" novalidate>
+                                <input type="hidden" asp-for="Title" value="@Model.Title" />
+                                <input type="hidden" asp-for="Products" value="@Model.Products" />
+                                <input type="hidden" asp-for="ProductId" value="@product.Id" />
+                                <button type="submit" class="btn-white ms-2" style="padding: 0.5rem;">X</button>
+                            </form>
                         </div>
-                        @*<button class="btn-white" style="padding: 0.5rem;">X</button>*@
                     </div>
                 }
             }

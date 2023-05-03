@@ -32,8 +32,7 @@ namespace Bmerketo_WebApp.Controllers
                 },
                 NewCollection = new GridCollectionViewModel 
                 {
-                    Title = "News",
-                    Categories = new List<string> {"Bags", "Dress", "Decoration", "Beauty" },
+                    Title = "New arrivals",
                     GridCards = await _gridCollectionCardService.PopulateCardsByCategoryIdAsync(x => x.CategoryId == 1), //CategoryId = 1 => "new"
                     LoadMore = false
                 },

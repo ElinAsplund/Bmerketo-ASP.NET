@@ -15,33 +15,47 @@ public class GridCollectionCardService
 		_productService = productService;
 	}
 
-	public async Task<IEnumerable<GridCollectionCardViewModel>> PopulateCardsAsync()
+	public async Task<IEnumerable<GridCollectionCardViewModel>> PopulateCardsWithAllProductsAsync()
 	{
-		var cards = new List<GridCollectionCardViewModel>();
-		var products = await _productService.GetAllAsync();
-
-		foreach (var product in products)
+		try
 		{
-			GridCollectionCardViewModel card = product;
+			var cards = new List<GridCollectionCardViewModel>();
+			var products = await _productService.GetAllAsync();
 
-			cards.Add(card);
+			foreach (var product in products)
+			{
+				GridCollectionCardViewModel card = product;
+
+				cards.Add(card);
+			}
+
+			return cards;
 		}
-
-		return cards;
+		catch
+		{
+			return null!;
+		}
 	}
 	
 	public async Task<IEnumerable<GridCollectionCardViewModel>> PopulateCardsByCategoryIdAsync(Expression<Func<ProductCategoryEntity, bool>> predicate)
 	{
-		var cards = new List<GridCollectionCardViewModel>();
-		var products = await _productService.GetProductsByCategoryIdAsync(predicate);
-
-		foreach (var product in products)
+		try
 		{
-			GridCollectionCardViewModel card = product;
+			var cards = new List<GridCollectionCardViewModel>();
+			var products = await _productService.GetProductsByCategoryIdAsync(predicate);
 
-			cards.Add(card);
+			foreach (var product in products)
+			{
+				GridCollectionCardViewModel card = product;
+
+				cards.Add(card);
+			}
+
+			return cards;
 		}
-
-		return cards;
+		catch 
+		{
+			return null!;
+		}
 	}
 }
