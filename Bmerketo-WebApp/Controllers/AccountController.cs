@@ -29,7 +29,8 @@ public class AccountController : Controller
 		var viewModel = new AccountIndexViewModel
 		{
 			Title = "My Account",
-			UserProfile = await _userProfileService.GetUserProfileAsync(_identityUser.Id)
+			UserProfile = await _userProfileService.GetUserProfileAsync(_identityUser.Id),
+			User = await _userProfileService.GetIdentityUserAsync(User!.Identity!.Name!)
         };
 
         ViewData["Title"] = viewModel.Title;

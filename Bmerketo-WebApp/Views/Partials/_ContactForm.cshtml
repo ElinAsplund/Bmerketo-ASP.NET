@@ -7,7 +7,13 @@
             <div class="form-title">Write something</div>
             <hr>
             <form method="post" onsubmit="validateAllContact(event)" novalidate>
-                <div asp-validation-summary="ModelOnly" id="contact-asp-validation" class="error-text-asp"></div>
+                @*<div asp-validation-summary="ModelOnly" id="contact-asp-validation" class="error-text-asp"></div>*@
+
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger no-bullets"></div>
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+                }
 
                 <div class="grid">
                     <div class="col name">

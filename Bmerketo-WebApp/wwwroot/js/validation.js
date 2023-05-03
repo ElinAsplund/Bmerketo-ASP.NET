@@ -19,21 +19,21 @@ function removeAddClassSubscribe() {
 }
 
 //For contact-form
-function removeAddClassContact() {
-    try {
-        const aspError = document.querySelector(`#contact-asp-validation`);
+//function removeAddClassContact() {
+//    try {
+//        const aspError = document.querySelector(`#contact-asp-validation`);
 
-        if (aspError.innerText === "Your comment has now been sent!") {
-            aspError.classList.add('text-success')
-            aspError.classList.remove('text-danger')
-        } else {
-            aspError.classList.remove('text-success')
-            aspError.classList.add('text-danger')
-        }
+//        if (aspError.innerText === "Your comment has now been sent!") {
+//            aspError.classList.add('text-success')
+//            aspError.classList.remove('text-danger')
+//        } else {
+//            aspError.classList.remove('text-success')
+//            aspError.classList.add('text-danger')
+//        }
 
-    } catch { }
-}
-removeAddClassContact()
+//    } catch { }
+//}
+//removeAddClassContact()
 
 //For asp-validation
 function removeAspValidation(errorSpan) {

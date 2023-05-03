@@ -10,7 +10,18 @@ body {
     color: $color-dark-3;
 }
 
-.h1-placeholder{
+.no-bullets{
+    ul{
+        margin: 0;
+        padding: 0;
+
+        li{
+            list-style: none;
+        }
+    }
+}
+
+.h1-placeholder {
     padding-top: 60px;
     //height: 100svh;
     min-height: 425px;

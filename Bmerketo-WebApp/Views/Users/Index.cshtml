@@ -8,6 +8,12 @@
             <div class="form-title">User List</div>
             <hr>
             <div class="mb-2">Here are the users in the database.</div>
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger no-bullets"></div>
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+            }
+
             @if (Model.UserModels != null)
             {
                 foreach (var user in Model.UserModels)

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Bmerketo_WebApp.Controllers
 {
     //REMOVED THIS DURING DEVELOPMENT, I HOPE I REMEBER TO TURN IT ON! :D
-    //[Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     public class UsersController : Controller
 	{
         public readonly RoleService _roleService;
@@ -36,27 +36,28 @@ namespace Bmerketo_WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(UsersIndexViewModel viewModel)
         {
-            ViewData["Title"] = "Users";
+            viewModel.Title = "Users";
+            viewModel.UserModels = await _userProfileService.GetAllUserModelAsync();
+            viewModel.AllRoles = await _roleService.GetRolesAsync();
 
-            //Check's if the right information go through:
-            //var roleChange = viewModel.Role;
-            //var userId = viewModel.UserId;
+            ViewData["Title"] = viewModel.Title;
 
             if (ModelState.IsValid)
             {
-                //POSSIBLE ERROR-MSGs:
-                //ModelState.AddModelError("", "No changes have been made, and the role remains the same as before.");
-                //ModelState.AddModelError("", "Something went wrong!");
-
-                if(await _roleService.ChangeRoleAsync(viewModel.UserId, viewModel.Role))
+                if (await _roleService.ChangeRoleAsync(viewModel.UserId, viewModel.Role))
+                {
+                    TempData["SuccessMessage"] = "The user was updated successfully!";
                     return RedirectToAction("index", "users");
+                }
+                else
+                    ModelState.AddModelError("", "Something went wrong, no changes have been made!");
 
+                return View(viewModel);
             }
-            
-            //THIS RENDERS ALL THE USERS ROLE TO THE VIEWMODELS ROLE. Example, all user get the ADMIN role (NOT IN DB, just in the frontend):
-            //return View(viewModel);
 
-            return RedirectToAction("index", "users");
+            ModelState.AddModelError("", "Something went wrong, no changes have been made!");
+
+            return View(viewModel);
         }
 
         public async Task<IActionResult> Register()

@@ -20,7 +20,13 @@ namespace Bmerketo_WebApp.Controllers
 			var viewModel = new ContactsIndexViewModel
 			{
 				Title = "Contact",
-				ContactHero = new HeroModel { Heading = "CONTACT", Subheading = "HOME. CONTACT" },
+				ContactHero = new HeroModel 
+				{ 
+					Heading = "CONTACT", 
+					Subheading = "HOME. CONTACT",
+					BackgroundImg = "/images/header.jpg"
+
+                },
 			};
 
 			ViewData["Title"] = viewModel.Title;
@@ -43,7 +49,7 @@ namespace Bmerketo_WebApp.Controllers
 				{
 					if (await _contactService.RegisterAsync(viewModel.ContactForm))
 					{
-                        ModelState.Clear();
+						ModelState.Clear();
 
 						//Clear form
 						viewModel.ContactForm.FullName = "";
@@ -51,11 +57,12 @@ namespace Bmerketo_WebApp.Controllers
 						viewModel.ContactForm.PhoneNumber = "";
 						viewModel.ContactForm.CompanyName = "";
 						viewModel.ContactForm.Comment = "";
-						
-                        ModelState.AddModelError("", "Your comment has now been sent!");
+
+
+                        TempData["SuccessMessage"] = "Your comment has now been sent!";
 						ViewData["Title"] = "Successfully sent comment";
 						return View(viewModel);
-                    }
+					}
 					else
 						ModelState.AddModelError("", "Something went wrong while posting the comment.");
 				}

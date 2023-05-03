@@ -2,13 +2,29 @@
 
 <div class="container d-grid justify-content-center text-center mt-4">
 	<h1>Welcome to your account, @(User!.FindFirst("DisplayName")?.Value)!</h1>
+	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Id: </span>@Model.User.Id</p>
+
 	<div class="fw-bold me-2 d-flex flex-column align-items-center">
-		Profile image:
+		@*Profile image:*@
 		<div style="width: 200px; height: 200px; overflow: hidden;" class="d-flex justify-content-center align-items-center">
 			<img src="@Model.UserProfile.ProfileImage" style="object-fit:cover; width: 100%; height: 100%; " />
 		</div>
 	</div>
-	@*<p class="mt-4 mb-0 font-roboto"><span class="fw-bold">Id: </span>@Model.UserProfile.UserId</p>*@
+	
+	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">First Name: </span>@Model.UserProfile.FirstName</p>
+	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Last Name: </span>@Model.UserProfile.LastName</p>
+	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Email: </span>@Model.User.Email</p>
+
+	@if (Model.User.PhoneNumber != null)
+	{
+		<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Phone Number: </span>@Model.User.PhoneNumber</p>
+	}
+
+	@if (Model.UserProfile.CompanyName != null)
+	{
+		<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Phone Number: </span>@Model.UserProfile.CompanyName</p>
+	}
+
 	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Street Name: </span>@Model.UserProfile.StreetName</p>
 	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Postal Code: </span>@Model.UserProfile.PostalCode</p>
 	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">City: </span>@Model.UserProfile.City</p>
@@ -20,4 +36,5 @@
 			<a class="btn-white" asp-controller="admin" asp-action="index">ADMIN PAGE</a>
 		</div>
 	}
+
 </div>

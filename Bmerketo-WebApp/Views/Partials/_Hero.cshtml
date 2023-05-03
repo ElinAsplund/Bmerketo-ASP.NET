@@ -1,11 +1,12 @@
-﻿@*
+﻿@model HeroModel
+@*
     NO NEED?
     @model HeroModel
 *@
 
 <!-- hero start -->
 <section class="hero">
-    <div class="container-fluid">
+    <div class="container-fluid" style="background-image: url(@Model.BackgroundImg)">
         <div class="shop-heading">
             @Model.Heading<br><span>@Model.Subheading</span>
         </div>

@@ -48,17 +48,18 @@ namespace Bmerketo_WebApp.Controllers
 				ShopHero = new HeroModel
 				{
 					Heading = "SHOP",
-					Subheading = "HOME. PRODUCT DETAILS"
-				},
+					Subheading = "HOME. PRODUCT DETAILS",
+					BackgroundImg = "/images/header.jpg"
+                },
 				Related = new RelatedProductsViewModel
 				{
 					//GridCards = await _gridCollectionCardService.PopulateCardsAsync(),
 					GridCards = new List<GridCollectionCardViewModel>
 					{
-						new GridCollectionCardViewModel{ Id =1, Title = "Apple watch series", Price = 10, ImageUrl = "https://images.pexels.com/photos/7897470/pexels-photo-7897470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-						new GridCollectionCardViewModel{ Id =2, Title = "Apple watch series", Price = 20, ImageUrl = "https://images.pexels.com/photos/1667071/pexels-photo-1667071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-						new GridCollectionCardViewModel{ Id =3, Title = "Apple watch series", Price = 30, ImageUrl = "https://images.pexels.com/photos/37539/colored-pencils-colour-pencils-mirroring-color-37539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-						new GridCollectionCardViewModel{ Id =4, Title = "Apple watch series", Price = 40, ImageUrl = "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+						new GridCollectionCardViewModel{ Id = 1, Title = "Apple watch series", Price = 10, ImageUrl = "https://images.pexels.com/photos/7897470/pexels-photo-7897470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+						new GridCollectionCardViewModel{ Id = 2, Title = "Apple watch series", Price = 20, ImageUrl = "https://images.pexels.com/photos/1667071/pexels-photo-1667071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+						new GridCollectionCardViewModel{ Id = 3, Title = "Apple watch series", Price = 30, ImageUrl = "https://images.pexels.com/photos/37539/colored-pencils-colour-pencils-mirroring-color-37539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+						new GridCollectionCardViewModel{ Id = 4, Title = "Apple watch series", Price = 40, ImageUrl = "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
 					}
 				},
 				Test = id
@@ -72,9 +73,9 @@ namespace Bmerketo_WebApp.Controllers
 			return View(viewModel);
         }
 
-        //----PRODUCT LIST----
-        //[Authorize(Roles = "admin")]
-        public async Task<IActionResult> List()
+		//----PRODUCT LIST----
+		[Authorize(Roles = "admin")]
+		public async Task<IActionResult> List()
 		{
 			var viewModel = new ProductListViewModel
 			{
@@ -113,9 +114,9 @@ namespace Bmerketo_WebApp.Controllers
         }
 
 
-        //----REGISTER PRODUCT----
-        //[Authorize(Roles = "admin")]
-        public async Task<IActionResult> Register()
+		//----REGISTER PRODUCT----
+		[Authorize(Roles = "admin")]
+		public async Task<IActionResult> Register()
 		{
 
 			var viewModel = new ProductRegisterViewModel
@@ -128,8 +129,8 @@ namespace Bmerketo_WebApp.Controllers
 			return View(viewModel);
 		}
 
-        //[Authorize(Roles = "admin")]
-        [HttpPost]
+		[Authorize(Roles = "admin")]
+		[HttpPost]
 		public async Task<IActionResult> Register(ProductRegisterViewModel viewModel)
 		{
 
