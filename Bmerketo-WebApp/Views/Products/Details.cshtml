@@ -1,7 +1,8 @@
 ﻿@model ProductsDetailsViewModel
 
+@*<div>ID: @Model.Test</div>*@
 <partial name="/Views/Partials/_Hero.cshtml" model="@Model.ShopHero" />
-<partial name="/Views/Partials/_ProductDetails.cshtml" />
+<partial name="/Views/Partials/_ProductDetails.cshtml" model="@Model.Product" />
 <partial name="/Views/Partials/_ReadMore.cshtml" />
 <partial name="/Views/Partials/_RelatedProducts.cshtml" model="@Model.Related" />
 <partial name="/Views/Partials/_InspirationImages.cshtml" />

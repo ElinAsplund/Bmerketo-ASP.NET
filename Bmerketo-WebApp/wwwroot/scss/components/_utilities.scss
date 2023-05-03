@@ -119,6 +119,7 @@ a.btn-theme {
     .img-holder {
         width: 270px; //<--------CHANGE THIS WHEN OTHER WIDTH?
         overflow: hidden;
+        background: $color-dark-4;
 
         display: flex;
         justify-content: center;

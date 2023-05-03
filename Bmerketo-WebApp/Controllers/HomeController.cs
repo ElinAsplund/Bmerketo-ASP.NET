@@ -1,11 +1,25 @@
-﻿using Bmerketo_WebApp.ViewModels;
+﻿using Bmerketo_WebApp.Services;
+using Bmerketo_WebApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bmerketo_WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly GridCollectionCardService _gridCollectionCardService;
+
+        public HomeController(GridCollectionCardService gridCollectionCardService)
+        {
+            _gridCollectionCardService = gridCollectionCardService;
+        }
+
+        //REFERENCE categories
+        //-----------------------------
+        //CategoryId = 1 => "new"
+        //CategoryId = 2 => "popular"
+        //CategoryId = 3 => "featured"
+
+        public async Task<IActionResult> Index()
         {
             var viewModel = new HomeIndexViewModel
             {
@@ -13,31 +27,20 @@ namespace Bmerketo_WebApp.Controllers
                 {
                     Title = "Best Collection",
                     Categories = new List<string> { "All", "Bags", "Dress", "Decoration", "Essentials", "Interior", "Laptop", "Mobile", "Beauty" },
-                    GridCards = new List<GridCollectionCardViewModel>
-                    {
-                        new GridCollectionCardViewModel{ Id =1, Title = "Apple watch series", Price = 10, ImageUrl = "https://images.pexels.com/photos/7897470/pexels-photo-7897470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-                        new GridCollectionCardViewModel{ Id =2, Title = "Apple watch series", Price = 20, ImageUrl = "https://images.pexels.com/photos/1667071/pexels-photo-1667071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-                        new GridCollectionCardViewModel{ Id =3, Title = "Apple watch series", Price = 30, ImageUrl = "https://images.pexels.com/photos/37539/colored-pencils-colour-pencils-mirroring-color-37539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-                        new GridCollectionCardViewModel{ Id =4, Title = "Apple watch series", Price = 40, ImageUrl = "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-                        new GridCollectionCardViewModel{ Id =5, Title = "Apple watch series", Price = 50, ImageUrl = "https://images.pexels.com/photos/2783873/pexels-photo-2783873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-                        new GridCollectionCardViewModel{ Id =6, Title = "Apple watch series", Price = 60, ImageUrl = "https://images.pexels.com/photos/2849742/pexels-photo-2849742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-                        new GridCollectionCardViewModel{ Id =7, Title = "Apple watch series", Price = 70, ImageUrl = "https://images.pexels.com/photos/2465877/pexels-photo-2465877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-                        new GridCollectionCardViewModel{ Id =8, Title = "Apple watch series", Price = 80, ImageUrl = "https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" }
-                    },
+                    GridCards = await _gridCollectionCardService.PopulateCardsByCategoryIdAsync(x => x.CategoryId == 3), //CategoryId = 3 => "featured"
                     LoadMore = true
+                },
+                NewCollection = new GridCollectionViewModel 
+                {
+                    Title = "News",
+                    Categories = new List<string> {"Bags", "Dress", "Decoration", "Beauty" },
+                    GridCards = await _gridCollectionCardService.PopulateCardsByCategoryIdAsync(x => x.CategoryId == 1), //CategoryId = 1 => "new"
+                    LoadMore = false
                 },
 				TopSellingCollection = new GridCollectionViewModel
 				{
 					Title = "Top selling products in this week",
-					GridCards = new List<GridCollectionCardViewModel>
-					{
-                        new GridCollectionCardViewModel{ Id =1, Title = "Apple watch series", Price = 10, ImageUrl = "https://images.pexels.com/photos/7897470/pexels-photo-7897470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-                        new GridCollectionCardViewModel{ Id =2, Title = "Apple watch series", Price = 20, ImageUrl = "https://images.pexels.com/photos/1667071/pexels-photo-1667071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-                        new GridCollectionCardViewModel{ Id =3, Title = "Apple watch series", Price = 30, ImageUrl = "https://images.pexels.com/photos/37539/colored-pencils-colour-pencils-mirroring-color-37539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-                        new GridCollectionCardViewModel{ Id =4, Title = "Apple watch series", Price = 40, ImageUrl = "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-                        new GridCollectionCardViewModel{ Id =5, Title = "Apple watch series", Price = 50, ImageUrl = "https://images.pexels.com/photos/2783873/pexels-photo-2783873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-                        new GridCollectionCardViewModel{ Id =6, Title = "Apple watch series", Price = 60, ImageUrl = "https://images.pexels.com/photos/2849742/pexels-photo-2849742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-                    },
+                    GridCards = await _gridCollectionCardService.PopulateCardsByCategoryIdAsync(x => x.CategoryId == 2), //CategoryId = 2 => "popular"
                     LoadMore = true
                 },
                 LampSpotlight = new SpotlightViewModel 

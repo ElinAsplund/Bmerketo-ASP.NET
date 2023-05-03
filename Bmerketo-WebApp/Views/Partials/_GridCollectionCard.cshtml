@@ -1,4 +1,7 @@
 ﻿@model GridCollectionCardViewModel
+@{
+    var price = (Model.Price).ToString("0.00");
+}
 
 <div class="col">
     <div class="card">
@@ -8,7 +11,7 @@
         <div class="card-body">
             <div>
                 <a class="card-link" asp-controller="products" asp-action="details" asp-route-id="@Model.Id">@Model.Title</a>
-                <p class="card-text">$@Model.Price</p>
+                <p class="card-text">$@price</p>
             </div>
             <a class="card-icon" href="#"><i class="fa-regular fa-cart-plus"></i></a>
         </div>

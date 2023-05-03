@@ -13,7 +13,7 @@ public class ProductModel
 	public string? LgImgUrl { get; set; }
 	public string? SmImgUrl { get; set; }
 
-	public List<CategoryEntity> Categories = new(); //NO NEED?
+	public List<ProductCategoryModel> Categories = new(); //NO NEED?
 
 
     #region implicit operators

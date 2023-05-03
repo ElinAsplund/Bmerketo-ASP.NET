@@ -22,6 +22,7 @@ builder.Services.AddScoped<ContactService>();
 builder.Services.AddScoped<RoleService>();
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<CheckboxOptionService>();
+builder.Services.AddScoped<GridCollectionCardService>();
 
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(x =>

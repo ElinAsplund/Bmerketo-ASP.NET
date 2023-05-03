@@ -35,6 +35,8 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                background: $color-dark-4;
+                min-height: 400px;
 
                 @include lg {
                     width: 501px;
@@ -54,6 +56,7 @@
             }
         }
 
+
         .small-img {
             grid-area: small-img;
             display: grid;
@@ -69,6 +72,7 @@
                 justify-content: center;
                 align-items: center;
                 height: 113px;
+                background: $color-dark-4;
                 //height: auto;
                 //height: 113px;
 
@@ -81,6 +85,7 @@
                     height: 113px;
                 }
 
+
                 &:last-child {
                     margin-right: 0rem;
                     display: none;
@@ -89,6 +94,11 @@
                     @media (min-width: 450px) {
                         display: block;
                     }
+                }
+
+                img[src=""],
+                img:not([src]) {
+                    opacity: 0;
                 }
 
                 img {
