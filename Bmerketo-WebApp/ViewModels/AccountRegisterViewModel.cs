@@ -62,7 +62,7 @@ public class AccountRegisterViewModel
 	public string ConfirmPassword { get; set; } = null!;
 
 
-	[Display(Name = "Profile Image (optional)")]
+	[Display(Name = "Profile Image Url (optional)")]
 	public string? ProfileImage { get; set; }
 
 	[Required(ErrorMessage = "Please Accept the Terms.")]
@@ -113,27 +113,27 @@ public class AccountRegisterViewModel
 
 
 	//Vanilla
-	public static implicit operator UserEntity(AccountRegisterViewModel viewModel)
-	{
-		var userEntity = new UserEntity { Email = viewModel.Email };
-		userEntity.GenerateSecurePassword(viewModel.Password);
-		return userEntity;
-	}
+	//public static implicit operator UserEntity(AccountRegisterViewModel viewModel)
+	//{
+	//	var userEntity = new UserEntity { Email = viewModel.Email };
+	//	userEntity.GenerateSecurePassword(viewModel.Password);
+	//	return userEntity;
+	//}
 	
-	public static implicit operator ProfileEntity(AccountRegisterViewModel viewModel)
-	{
-		return new ProfileEntity
-		{
-			FirstName = viewModel.FirstName,
-			LastName = viewModel.LastName,
-			StreetName = viewModel.StreetName,
-			PostalCode = viewModel.PostalCode,
-			City = viewModel.City,
-			PhoneNumber = viewModel.PhoneNumber,
-			CompanyName = viewModel.CompanyName,
-			ProfileImage = viewModel.ProfileImage
-		};
-	}
+	//public static implicit operator ProfileEntity(AccountRegisterViewModel viewModel)
+	//{
+	//	return new ProfileEntity
+	//	{
+	//		FirstName = viewModel.FirstName,
+	//		LastName = viewModel.LastName,
+	//		StreetName = viewModel.StreetName,
+	//		PostalCode = viewModel.PostalCode,
+	//		City = viewModel.City,
+	//		PhoneNumber = viewModel.PhoneNumber,
+	//		CompanyName = viewModel.CompanyName,
+	//		ProfileImage = viewModel.ProfileImage
+	//	};
+	//}
 	
 	#endregion
 }

@@ -66,7 +66,6 @@ namespace Bmerketo_WebApp.Controllers
             {
                 Title = "Register User",
                 AllRoles = await _roleService.GetRolesAsync()
-                //Checkboxes = await _checkBoxOptionService.PopulateRoleCheckBoxesAsync()
             };
 
             ViewData["Title"] = viewModel.Title;

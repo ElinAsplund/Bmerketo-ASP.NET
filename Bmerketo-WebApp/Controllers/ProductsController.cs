@@ -53,7 +53,7 @@ namespace Bmerketo_WebApp.Controllers
                 },
 				Related = new RelatedProductsViewModel
 				{
-					//GridCards = await _gridCollectionCardService.PopulateCardsAsync(),
+					//HARDCODED PRODUCTS
 					GridCards = new List<GridCollectionCardViewModel>
 					{
 						new GridCollectionCardViewModel{ Id = 1, Title = "Apple watch series", Price = 10, ImageUrl = "https://images.pexels.com/photos/7897470/pexels-photo-7897470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
@@ -109,7 +109,6 @@ namespace Bmerketo_WebApp.Controllers
 			}
 
             ViewData["Title"] = viewModel.Title;
-
 			return View(viewModel);
         }
 

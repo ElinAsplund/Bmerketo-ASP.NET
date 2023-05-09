@@ -2,7 +2,6 @@
 using Bmerketo_WebApp.Services;
 using Bmerketo_WebApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 
 namespace Bmerketo_WebApp.Controllers
 {
@@ -25,7 +24,6 @@ namespace Bmerketo_WebApp.Controllers
 					Heading = "CONTACT", 
 					Subheading = "HOME. CONTACT",
 					BackgroundImg = "/images/header.jpg"
-
                 },
 			};
 
@@ -39,7 +37,7 @@ namespace Bmerketo_WebApp.Controllers
 			var viewModel = new ContactsIndexViewModel
 			{
 				Title = "Contact",
-				ContactHero = new HeroModel { Heading = "CONTACT", Subheading = "HOME. CONTACT" },
+				ContactHero = new HeroModel { Heading = "CONTACT", Subheading = "HOME. CONTACT", BackgroundImg = "/images/header.jpg" },
 				ContactForm = contactFormViewModel
 			};
 
@@ -60,7 +58,7 @@ namespace Bmerketo_WebApp.Controllers
 
 
                         TempData["SuccessMessage"] = "Your comment has now been sent!";
-						ViewData["Title"] = "Successfully sent comment";
+						ViewData["Title"] = "Comment sent";
 						return View(viewModel);
 					}
 					else

@@ -44,6 +44,7 @@ namespace Bmerketo_WebApp.Controllers
                 },
                 LampSpotlight = new SpotlightViewModel 
                 {
+                    //HARDCODED SPOTLIGHTS
                     SpotlightCards = new List<SpotlightCardViewModel>
                     {
                         new SpotlightCardViewModel{ Id="1", Title = "Wall lamp 1562 LTG modal", UserName = "Admin", CommentsTotal = 13 , Description = "Best dress for everyone ed totam velit risus viverra nobis donec recusandae perspiciatis incididuno", ImageUrl="./images/wall-lamp.jpg"},

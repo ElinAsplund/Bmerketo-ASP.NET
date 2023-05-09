@@ -18,17 +18,26 @@ public class CustomClaimsPrincipalFactory : UserClaimsPrincipalFactory<IdentityU
 	{
 		var claimsIdentity = await base.GenerateClaimsAsync(user);
 
-		//Add custom claims
-		var userProfileEntity = await _userProfileService.GetUserProfileAsync(user.Id);
-		claimsIdentity.AddClaim(new Claim("DisplayName", $"{userProfileEntity.FirstName} {userProfileEntity.LastName}"));
-
-		// Add user roles to claims
-		var roles = await UserManager.GetRolesAsync(user);
-		foreach (var role in roles)
+		try 
 		{
-			claimsIdentity.AddClaim(new Claim(ClaimTypes.Role, role));
-		}
+			//Add custom claims
+			var userProfileEntity = await _userProfileService.GetUserProfileAsync(user.Id);
 
-		return claimsIdentity;
+			if(userProfileEntity != null)
+			{
+				claimsIdentity.AddClaim(new Claim("DisplayName", $"{userProfileEntity.FirstName} {userProfileEntity.LastName}"));
+
+				// Add user roles to claims
+				var roles = await UserManager.GetRolesAsync(user);
+				foreach (var role in roles)
+				{
+					claimsIdentity.AddClaim(new Claim(ClaimTypes.Role, role));
+				}
+
+				return claimsIdentity;		
+			}
+			return null!;
+		}
+		catch { return null!; }
 	}
 }

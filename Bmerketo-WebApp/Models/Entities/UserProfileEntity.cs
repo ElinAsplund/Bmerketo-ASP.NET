@@ -22,4 +22,7 @@ public class UserProfileEntity
 	//public bool AcceptsTerms { get; set; } <-- No need? Confirms in the frontend!? (it will always "true" in db?)
 
 	public IdentityUser User { get; set; } = null!;
+
+    public int AddressId { get; set; }
+	public AddressEntity Address { get; set; } = null!;
 }
