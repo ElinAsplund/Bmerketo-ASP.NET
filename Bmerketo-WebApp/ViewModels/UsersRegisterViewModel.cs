@@ -101,11 +101,18 @@ public class UsersRegisterViewModel
         {
             FirstName = viewModel.FirstName,
             LastName = viewModel.LastName,
-            StreetName = viewModel.StreetName,
-            PostalCode = viewModel.PostalCode,
-            City = viewModel.City,
+            //StreetName = viewModel.StreetName,
+            //PostalCode = viewModel.PostalCode,
+            //City = viewModel.City,
             CompanyName = viewModel.CompanyName,
-            ProfileImage = viewModel.ProfileImage
+            ProfileImage = viewModel.ProfileImage,
+
+            Address = new AddressEntity
+            {
+                StreetName = viewModel.StreetName,
+                PostalCode = viewModel.PostalCode,
+                City = viewModel.City
+            }
         };
     }
 

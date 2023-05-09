@@ -71,7 +71,6 @@ public class AccountRegisterViewModel
 
 	#region implicit operators
 	
-	//Standard Identity
 	public static implicit operator IdentityUser(AccountRegisterViewModel viewModel)
 	{
 		return new IdentityUser
@@ -88,52 +87,31 @@ public class AccountRegisterViewModel
 		{
 			FirstName = viewModel.FirstName,
 			LastName = viewModel.LastName,
-			StreetName = viewModel.StreetName,
-			PostalCode = viewModel.PostalCode,
-			City = viewModel.City,
+			//StreetName = viewModel.StreetName,
+			//PostalCode = viewModel.PostalCode,
+			//City = viewModel.City,
 			CompanyName = viewModel.CompanyName,
-			ProfileImage = viewModel.ProfileImage
+			ProfileImage = viewModel.ProfileImage,
+
+			//Address = new AddressEntity 
+			//{
+			//	StreetName = viewModel.StreetName,
+			//	PostalCode = viewModel.PostalCode,
+			//	City = viewModel.City
+			//}
 		};
 	}
 
 
-	//Custom Identity
-	//public static implicit operator CustomIdentityUser(AccountRegisterViewModel viewModel)
-	//{
-	//	return new CustomIdentityUser
-	//	{
-	//		UserName = viewModel.Email,
+	public static implicit operator AddressEntity(AccountRegisterViewModel viewModel)
+	{
+		return new AddressEntity
+		{
+			StreetName = viewModel.StreetName,
+			PostalCode = viewModel.PostalCode,
+			City = viewModel.City
+		};
+	}
 
-	//		FirstName = viewModel.FirstName,
-	//		LastName = viewModel.LastName,
-	//		Email = viewModel.Email,
-	//		PhoneNumber = viewModel.PhoneNumber,
-	//	};
-	//}
-
-
-	//Vanilla
-	//public static implicit operator UserEntity(AccountRegisterViewModel viewModel)
-	//{
-	//	var userEntity = new UserEntity { Email = viewModel.Email };
-	//	userEntity.GenerateSecurePassword(viewModel.Password);
-	//	return userEntity;
-	//}
-	
-	//public static implicit operator ProfileEntity(AccountRegisterViewModel viewModel)
-	//{
-	//	return new ProfileEntity
-	//	{
-	//		FirstName = viewModel.FirstName,
-	//		LastName = viewModel.LastName,
-	//		StreetName = viewModel.StreetName,
-	//		PostalCode = viewModel.PostalCode,
-	//		City = viewModel.City,
-	//		PhoneNumber = viewModel.PhoneNumber,
-	//		CompanyName = viewModel.CompanyName,
-	//		ProfileImage = viewModel.ProfileImage
-	//	};
-	//}
-	
 	#endregion
 }

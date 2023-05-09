@@ -48,11 +48,11 @@ function validateInput(event) {
         const errorMsg = document.querySelector(`#${element.id}-error`);
         const errorSpan = document.querySelector(`#${element.id}-span`);
 
-        let inputName = (element.id).replace(/-/g, " ");
+        let label = (element.id).replace(/-/g, " ");
 
         removeAspValidation(errorSpan)
 
-        if (validateInputSwitch(element, errorMsg, inputName))
+        if (validateInputSwitch(element, errorMsg, label))
             return true;
 
     } catch { }

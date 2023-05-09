@@ -34,8 +34,17 @@ public class AuthService
 
 			await _userManager.AddToRoleAsync(identityUser, roleName);
 
+			AddressEntity addressEntity = viewModel;
+			_identityContext.Addresses.Add(addressEntity);
+			await _identityContext.SaveChangesAsync();
+
 			UserProfileEntity userProfileEntity = viewModel;
 			userProfileEntity.UserId = identityUser.Id;
+			userProfileEntity.AddressId = addressEntity.Id;
+			//userProfileEntity.Address.Id = addressEntity.Id;
+
+
+			var test = userProfileEntity;
 
 			_identityContext.UserProfiles.Add(userProfileEntity);
 			await _identityContext.SaveChangesAsync();

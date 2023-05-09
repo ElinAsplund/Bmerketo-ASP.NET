@@ -19,7 +19,7 @@ public class UserProfileService
 
     public async Task<UserProfileEntity> GetUserProfileAsync(string userId)
 	{
-		var userProfileEntity = await _identityContext.UserProfiles.Include(x => x.User).FirstOrDefaultAsync(x => x.UserId == userId);
+		var userProfileEntity = await _identityContext.UserProfiles.Include(x => x.User).Include(x => x.Address).FirstOrDefaultAsync(x => x.UserId == userId);
 		return userProfileEntity!;
 	}
 
@@ -29,19 +29,6 @@ public class UserProfileService
 
 		return identityUser!;
 	}
-
- //   public async Task<IEnumerable<UserProfileEntity>> GetAllUserProfileAsync()
- //   {
- //       var userProfiles = new List<UserProfileEntity>();
- //       var userProfileEntity = await _identityContext.UserProfiles.ToListAsync();
-
- //       foreach (var profile in userProfileEntity)
- //       {
- //           userProfiles.Add(profile);
- //       }
-
-	//	return userProfiles!;
-	//}
 
     public async Task<IEnumerable<UserModel>> GetAllUserModelAsync()
     {

@@ -25,9 +25,9 @@
 		<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Phone Number: </span>@Model.UserProfile.CompanyName</p>
 	}
 
-	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Street Name: </span>@Model.UserProfile.StreetName</p>
-	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Postal Code: </span>@Model.UserProfile.PostalCode</p>
-	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">City: </span>@Model.UserProfile.City</p>
+	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Street Name: </span>@Model.UserProfile.Address.StreetName</p>
+	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">Postal Code: </span>@Model.UserProfile.Address.PostalCode</p>
+	<p class="mt-1 mb-0 font-roboto"><span class="fw-bold">City: </span>@Model.UserProfile.Address.City</p>
 
 	@if (User.IsInRole("admin"))
 	{
