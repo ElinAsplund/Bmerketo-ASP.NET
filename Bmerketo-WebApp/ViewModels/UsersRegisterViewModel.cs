@@ -77,14 +77,8 @@ public class UsersRegisterViewModel
 
     public IEnumerable<IdentityRole>? AllRoles { get; set; }
 
-    //public List<CheckboxOptionModel> Checkboxes { get; set; } = new();
-
-    //public List<int> CheckboxCategoryId { get; set; } = new();
-
-
     #region implicit operators
 
-    //Standard Identity
     public static implicit operator IdentityUser(UsersRegisterViewModel viewModel)
     {
         return new IdentityUser
@@ -97,24 +91,24 @@ public class UsersRegisterViewModel
 
     public static implicit operator UserProfileEntity(UsersRegisterViewModel viewModel)
     {
-        return new UserProfileEntity
-        {
-            FirstName = viewModel.FirstName,
-            LastName = viewModel.LastName,
-            //StreetName = viewModel.StreetName,
-            //PostalCode = viewModel.PostalCode,
-            //City = viewModel.City,
-            CompanyName = viewModel.CompanyName,
-            ProfileImage = viewModel.ProfileImage,
-
-            Address = new AddressEntity
-            {
-                StreetName = viewModel.StreetName,
-                PostalCode = viewModel.PostalCode,
-                City = viewModel.City
-            }
-        };
+		return new UserProfileEntity
+		{
+			FirstName = viewModel.FirstName,
+			LastName = viewModel.LastName,
+			CompanyName = viewModel.CompanyName,
+			ProfileImage = viewModel.ProfileImage,
+		};
     }
 
-    #endregion
+	public static implicit operator AddressEntity(UsersRegisterViewModel viewModel)
+	{
+		return new AddressEntity
+		{
+			StreetName = viewModel.StreetName,
+			PostalCode = viewModel.PostalCode,
+			City = viewModel.City
+		};
+	}
+
+	#endregion
 }

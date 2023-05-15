@@ -40,9 +40,12 @@ namespace Bmerketo_WebApp.Migrations.Identity
 
                     b.Property<string>("StreetName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("StreetName")
+                        .IsUnique();
 
                     b.ToTable("Addresses");
                 });

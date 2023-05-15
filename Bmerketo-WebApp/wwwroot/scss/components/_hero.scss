@@ -5,16 +5,14 @@
 .hero {
 
     .container-fluid {
+        //Background-image is set at the _Hero partial.
         padding: 0;
-        //background-image: url("/images/header.jpg");
-        // margin-top: 15px;
         height: 150px;
         display: flex;
         align-items: center;
         justify-content: center;
 
         @include lg {
-            //margin-top: 30px;
             height: 300px;
         }
     }

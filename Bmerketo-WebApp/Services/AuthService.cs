@@ -20,6 +20,7 @@ public class AuthService
 		_signInManager = signInManager;
 	}
 
+	//User registration
 	public async Task<bool> RegisterAsync(AccountRegisterViewModel viewModel)
 	{
 		try
@@ -34,17 +35,23 @@ public class AuthService
 
 			await _userManager.AddToRoleAsync(identityUser, roleName);
 
-			AddressEntity addressEntity = viewModel;
-			_identityContext.Addresses.Add(addressEntity);
-			await _identityContext.SaveChangesAsync();
-
 			UserProfileEntity userProfileEntity = viewModel;
 			userProfileEntity.UserId = identityUser.Id;
-			userProfileEntity.AddressId = addressEntity.Id;
-			//userProfileEntity.Address.Id = addressEntity.Id;
 
+			AddressEntity addressEntity = viewModel;
 
-			var test = userProfileEntity;
+			//Checks if there is any matching address in the db.
+			var addressInDb = await _identityContext.Addresses.FirstOrDefaultAsync(x => x.StreetName == viewModel.StreetName);
+			if (addressInDb != null)
+			{
+				userProfileEntity.AddressId = addressInDb.Id;
+			}
+			else
+			{
+				_identityContext.Addresses.Add(addressEntity);
+				await _identityContext.SaveChangesAsync();
+				userProfileEntity.AddressId = addressEntity.Id;
+			}
 
 			_identityContext.UserProfiles.Add(userProfileEntity);
 			await _identityContext.SaveChangesAsync();
@@ -54,6 +61,7 @@ public class AuthService
 		catch { return false; }
 	}
 
+	//User registration in back-office, can you do this more simple? (almost a copy of the method above)
 	public async Task<bool> RegisterAsync(UsersRegisterViewModel viewModel)
 	{
 		try
@@ -67,9 +75,24 @@ public class AuthService
 			UserProfileEntity userProfileEntity = viewModel;
 			userProfileEntity.UserId = identityUser.Id;
 
+			AddressEntity addressEntity = viewModel;
+
+			//Checks if there is any matching address in the db.
+			var addressInDb = await _identityContext.Addresses.FirstOrDefaultAsync(x => x.StreetName == viewModel.StreetName);
+			if (addressInDb != null)
+			{
+				userProfileEntity.AddressId = addressInDb.Id;
+			}
+			else
+			{
+				_identityContext.Addresses.Add(addressEntity);
+				await _identityContext.SaveChangesAsync();
+				userProfileEntity.AddressId = addressEntity.Id;
+			}
+
 			_identityContext.UserProfiles.Add(userProfileEntity);
 			await _identityContext.SaveChangesAsync();
-			
+
 			return true;
 		}
 		catch { return false; }

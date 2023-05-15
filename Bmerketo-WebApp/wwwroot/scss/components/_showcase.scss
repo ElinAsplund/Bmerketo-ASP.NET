@@ -4,6 +4,11 @@
 
 .showcase {
     background: $color-theme-3;
+    //Background-image is set at the _Showcase partial.
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
 
     .container {
         padding-top: 40px;

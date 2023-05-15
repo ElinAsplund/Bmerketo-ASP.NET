@@ -44,41 +44,10 @@
                     <span asp-validation-for="SmImgUrl" class="error-text"></span>
                 </div>
 
-                @* --------------select ONLY ONE category!-------------- *@
-                @*This one is working, but you can only select ONE category!*@
-                @*<div class="line">
-                    <label asp-for="Category" class=""></label>
-                    <select asp-for="Category">
-                        @foreach (var category in categories)
-                        {
-                            <option value="@category.Name">@category.Name</option>
-                        }
-                    </select>
-                </div>*@
-                @* --------------select ONLY ONE category!-------------- *@
-
-                @* --------------select MULTIPLE category!-------------- *@
+                @* --------------select MULTIPLE categories!-------------- *@
                 <label class="">Product category:</label>
                 @foreach(var checkbox in Model.Checkboxes)
                 {
-                    @* Using bootstraps standard checkbox!
-                    <div class="form-check">
-
-                        <input class="form-check-input" 
-                            type="checkbox" 
-                            value="@checkbox.Value"
-                               name="CheckboxCategoryId"
-                               id="checkbox_@checkbox.Value"
-                            checked="@checkbox.IsChecked">
-
-                        <label class="form-check-label"
-                            for="checkbox_@checkbox.Value">
-
-                            @checkbox.Description
-
-                        </label>
-                    </div>*@
-
                     @* Using custom styled checkbox!*@
                     <div class="form-check">
                         <label class="custom-checkbox" for="checkbox_@checkbox.Value">
@@ -97,7 +66,7 @@
                         </label>
                     </div>
                 }
-                @* --------------select MULTIPLE category!-------------- *@
+                @* --------------select MULTIPLE categories!-------------- *@
 
                 <button class="btn-theme" type="submit" id="btn-product-submit">Submit</button>
             </form>
