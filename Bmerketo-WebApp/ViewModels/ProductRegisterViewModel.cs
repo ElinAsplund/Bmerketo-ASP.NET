@@ -24,11 +24,11 @@ public class ProductRegisterViewModel
 	public decimal Price { get; set; }
 
 
-	[Display(Name = "Large Product Image")]
+	[Display(Name = "Large Product Image (optional)")]
 	public string? LgImgUrl { get; set; }
 
 
-	[Display(Name = "Small Product Image")]
+	[Display(Name = "Small Product Image (optional)")]
 	public string? SmImgUrl { get; set; }
 
     public List<CheckboxOptionModel> Checkboxes { get; set; } = new();

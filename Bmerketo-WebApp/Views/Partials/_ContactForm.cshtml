@@ -35,17 +35,10 @@
                         <div id="contact-phone-number-error" class="error-text"></div>
                     </div>
                     <div class="col company">
-
                         <label asp-for="CompanyName"></label>
                         <input asp-for="CompanyName" onkeyup="validateInput(event)" id="contact-company" required />
-@*                        <span asp-validation-for="CompanyName" id="contact-company-span" class="error-text"></span>
-                        <div id="contact-company-error" class="error-text"></div>
-*@                    </div>
+                    </div>
                 </div>
-
-@*                <input asp-for="Email" onkeyup="validateInput(event)" id="login-email" required />
-                <span asp-validation-for="Email" id="login-email-span" class="error-text"></span>
-                <div id="login-email-error" class="error-text"></div>*@
 
                 <div class="text-area">
                     <label asp-for="Comment"></label>

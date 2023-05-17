@@ -18,23 +18,6 @@ function removeAddClassSubscribe() {
     } catch { }
 }
 
-//For contact-form
-//function removeAddClassContact() {
-//    try {
-//        const aspError = document.querySelector(`#contact-asp-validation`);
-
-//        if (aspError.innerText === "Your comment has now been sent!") {
-//            aspError.classList.add('text-success')
-//            aspError.classList.remove('text-danger')
-//        } else {
-//            aspError.classList.remove('text-success')
-//            aspError.classList.add('text-danger')
-//        }
-
-//    } catch { }
-//}
-//removeAddClassContact()
-
 //For asp-validation
 function removeAspValidation(errorSpan) {
     if (errorSpan.innerText !== null)
@@ -70,6 +53,8 @@ function validateInputSwitch(element, errorMsg, label) {
         errorMsg.innerText = `Please enter a ${label}.`;
 
     switch (label) {
+
+        //---User register form---
         case "first name":
             if (element.value.length < 2)
                 errorMsg.innerText = `Your ${label} must contain at least 2 characters!`;
@@ -119,30 +104,24 @@ function validateInputSwitch(element, errorMsg, label) {
                 errorMsg.innerText = `Please confirm the password.`;
             break;
 
+        //---Login form---
         case "login email":
-            //if (!regExEmail.test(element.value))
-            //    errorMsg.innerText = `Please enter a valid email.`;
-
             if (element.value === "")
                 errorMsg.innerText = `Please enter a email.`;
             break;
 
         case "login password":
-            //if (element.value.length < 8)
-            //    errorMsg.innerText = `Your password contains at least 8 characters!`;
-
             if (element.value === "")
                 errorMsg.innerText = `Please enter a password.`;
             break;
 
+        //---Subscribe form---
         case "subscribe email":
-            //if (!regExEmail.test(element.value))
-            //    errorMsg.innerText = `Please enter a valid email.`;
-
             if (element.value === "")
                 errorMsg.innerText = `Please enter an email.`;
             break;
 
+        //---Contact form---
         case "contact full name":
             if (element.value === "")
                 errorMsg.innerText = `Please enter a name.`;
@@ -174,6 +153,25 @@ function validateInputSwitch(element, errorMsg, label) {
 
             if (element.value.length < 10)
                 errorMsg.innerText = `Your name must contain at least 10 characters!`;
+            break;
+
+        //---Product form---
+        case "product name":
+            if (element.value.length < 2)
+                errorMsg.innerText = `Your product name must contain at least 2 characters!`;
+            break;
+
+        case "product description":
+            if (element.value.length < 5)
+                errorMsg.innerText = `Your product description must contain at least 5 characters!`;
+            break;
+
+        case "product price":
+            if (element.value < 0)
+                element.value = Math.abs(element.value);
+
+            if (element.value == 0 || element.value == "")
+                errorMsg.innerText = `Please enter a product price.`;
             break;
     }
 
@@ -275,6 +273,37 @@ function validateSubscribe(event) {
         }
 
         removeAddClassSubscribe()
+
+    } catch { }
+}
+
+//---Product form---
+function validateAllProduct(event) {
+    try {
+        event.preventDefault();
+
+        const errorMsg = document.querySelector('#form-error');
+
+        var nameOK = validationErrorMsgPresent("product-name")
+        var descriptionOK = validationErrorMsgPresent("product-description")
+        var priceOK = validationErrorMsgPresent("product-price")
+
+        //--------------------------------------
+        //If empty price input, sets input.value to zero:
+        const priceInput = document.querySelector(`#product-price`);
+        if (priceInput.value == "") { priceInput.value = 0; }
+        //--------------------------------------
+
+        if (nameOK && descriptionOK && priceOK)
+            event.target.submit();
+        else {
+            if (priceInput.value == 0) {
+                const errorMsgPrice = document.querySelector(`#product-price-error`);
+                errorMsgPrice.innerText = "Please enter a product price.";
+            }
+
+            errorMsg.innerText = "Please enter the form correctly.";
+        }
 
     } catch { }
 }

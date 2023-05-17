@@ -139,6 +139,16 @@ namespace Bmerketo_WebApp.Controllers
 			{
 				try 
 				{
+					if(viewModel.CheckboxCategoryId.Count == 0)	
+					{ 
+						ModelState.AddModelError("", "Please enter at least one product category.");
+
+						viewModel.Checkboxes = await _checkBoxOptionService.PopulateCategoryCheckBoxesAsync();
+                        ViewData["Title"] = viewModel.Title;
+
+                        return View(viewModel);
+                    }
+
 					if (await _productService.RegisterAsync(viewModel))
 						return RedirectToAction("register", "products");
 					else
