@@ -10,13 +10,13 @@ namespace Bmerketo_WebApp.Controllers
     public class UsersController : Controller
 	{
         public readonly RoleService _roleService;
-        public readonly UserProfileService _userProfileService;
+        public readonly UserService _userService;
         public readonly AuthService _authService;
 
-        public UsersController(RoleService roleService, UserProfileService userProfileService, AuthService authService)
+        public UsersController(RoleService roleService, UserService userService, AuthService authService)
         {
             _roleService = roleService;
-            _userProfileService = userProfileService;
+            _userService = userService;
             _authService = authService;
         }
 
@@ -25,7 +25,7 @@ namespace Bmerketo_WebApp.Controllers
             var viewModel = new UsersIndexViewModel
             {
                 Title = "Users",
-                UserModels = await _userProfileService.GetAllUserModelAsync(),
+                UserModels = await _userService.GetAllUserModelAsync(),
                 AllRoles = await _roleService.GetRolesAsync()
             };
 
@@ -37,7 +37,7 @@ namespace Bmerketo_WebApp.Controllers
         public async Task<IActionResult> Index(UsersIndexViewModel viewModel)
         {
             viewModel.Title = "Users";
-            viewModel.UserModels = await _userProfileService.GetAllUserModelAsync();
+            viewModel.UserModels = await _userService.GetAllUserModelAsync();
             viewModel.AllRoles = await _roleService.GetRolesAsync();
 
             ViewData["Title"] = viewModel.Title;

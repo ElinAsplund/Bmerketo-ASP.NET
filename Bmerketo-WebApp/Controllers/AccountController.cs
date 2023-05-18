@@ -10,27 +10,27 @@ public class AccountController : Controller
 {
 	private readonly SignInManager<IdentityUser> _signInManager;
 	private readonly AuthService _auth;
-	private readonly UserProfileService _userProfileService;
+	private readonly UserService _userService;
 
 
-    public AccountController(SignInManager<IdentityUser> signInManager, AuthService auth, UserProfileService userProfileService)
+    public AccountController(SignInManager<IdentityUser> signInManager, AuthService auth, UserService userService)
     {
         _signInManager = signInManager;
         _auth = auth;
-        _userProfileService = userProfileService;
+        _userService = userService;
     }
 
     //----INDEX----
     [Authorize]
 	public async Task<IActionResult> Index()
 	{
-		var _identityUser = await _userProfileService.GetIdentityUserAsync(User!.Identity!.Name!);
+		var _identityUser = await _userService.GetIdentityUserAsync(User!.Identity!.Name!);
 
 		var viewModel = new AccountIndexViewModel
 		{
 			Title = "My Account",
-			UserProfile = await _userProfileService.GetUserProfileAsync(_identityUser.Id),
-			User = await _userProfileService.GetIdentityUserAsync(User!.Identity!.Name!)
+			UserProfile = await _userService.GetUserProfileAsync(_identityUser.Id),
+			User = await _userService.GetIdentityUserAsync(User!.Identity!.Name!)
         };
 
         ViewData["Title"] = viewModel.Title;

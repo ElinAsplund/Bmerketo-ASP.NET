@@ -7,11 +7,11 @@ namespace Bmerketo_WebApp.Factories;
 
 public class CustomClaimsPrincipalFactory : UserClaimsPrincipalFactory<IdentityUser>
 {
-	private readonly UserProfileService _userProfileService;
+	private readonly UserService _userService;
 
-	public CustomClaimsPrincipalFactory(UserManager<IdentityUser> userManager, IOptions<IdentityOptions> optionsAccessor, UserProfileService userProfileService) : base(userManager, optionsAccessor)
+	public CustomClaimsPrincipalFactory(UserManager<IdentityUser> userManager, IOptions<IdentityOptions> optionsAccessor, UserService userService) : base(userManager, optionsAccessor)
 	{
-		_userProfileService = userProfileService;
+		_userService = userService;
 	}
 
 	protected override async Task<ClaimsIdentity> GenerateClaimsAsync(IdentityUser user)
@@ -21,7 +21,7 @@ public class CustomClaimsPrincipalFactory : UserClaimsPrincipalFactory<IdentityU
 		try 
 		{
 			//Add custom claims
-			var userProfileEntity = await _userProfileService.GetUserProfileAsync(user.Id);
+			var userProfileEntity = await _userService.GetUserProfileAsync(user.Id);
 
 			if(userProfileEntity != null)
 			{
