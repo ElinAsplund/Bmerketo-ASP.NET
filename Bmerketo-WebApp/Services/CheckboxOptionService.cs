@@ -1,6 +1,4 @@
-﻿using Bmerketo_WebApp.Models.Entities;
-using Bmerketo_WebApp.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Bmerketo_WebApp.Models;
 
 namespace Bmerketo_WebApp.Services;
 
@@ -28,25 +26,6 @@ public class CheckboxOptionService
 
             checkbox.Description = category.Name;
             checkbox.Value = category.Id.ToString();
-
-            checkboxes.Add(checkbox);
-        }
-
-        return checkboxes;
-    }
-    
-    public async Task<List<CheckboxOptionModel>> PopulateRoleCheckBoxesAsync()
-    {
-        var checkboxes = new List<CheckboxOptionModel>();
-        var roles = await _roleService.GetRolesAsync();
-
-        foreach (var role in roles)
-        {
-            var checkbox = new CheckboxOptionModel
-            {
-                Description = role.Name!,
-                Value = role.Id
-            };
 
             checkboxes.Add(checkbox);
         }

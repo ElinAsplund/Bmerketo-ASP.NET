@@ -17,10 +17,8 @@ public class ContactService
 	{
 		try
 		{
-			//converts to entity
 			ContactEntity contactEntity = viewModel;
 
-			//create user
 			_context.Contacts.Add(contactEntity);
 			await _context.SaveChangesAsync();
 

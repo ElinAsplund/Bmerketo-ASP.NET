@@ -48,7 +48,6 @@ public class RoleService
         return userRoleModels!;
     }
 
-
     public async Task<bool> ChangeRoleAsync(string userId, string roleChange)
     {
         try

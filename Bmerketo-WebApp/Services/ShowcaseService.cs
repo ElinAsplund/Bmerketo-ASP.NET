@@ -4,7 +4,7 @@ namespace Bmerketo_WebApp.Services;
 
 public class ShowcaseService
 {
-	//FOR LEARNING PURPOSES
+	//I LEAVE THIS HERE FOR LEARNING PURPOSES
 
 	//A LIST
 	private readonly List<ShowcaseModel> _showcases = new()
@@ -58,5 +58,4 @@ public class ShowcaseService
     {
         return showcase;
     }
-
 }

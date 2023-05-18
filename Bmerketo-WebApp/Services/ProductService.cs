@@ -18,26 +18,16 @@ public class ProductService
         _categoryService = categoryService;
     }
 
-    //public async Task<bool> UserExist(Expression<Func<UserEntity, bool>> predicate)
-    //{
-    //	if (await _context.Users.AnyAsync(predicate))
-    //		return true;
-
-    //	return false;
-    //}
-
     public async Task<bool> RegisterAsync(ProductRegisterViewModel viewModel)
 	{
 		try
 		{
-			//converts to entity
 			ProductEntity productEntity = viewModel;
 
-            //create product
             _productContext.Products.Add(productEntity);
             await _productContext.SaveChangesAsync();
 
-            //---WITH MULTIPLE CATEGORY---
+            //---WITH MULTIPLE CATEGORIES---
             if(viewModel.CheckboxCategoryId.Any())
             {
                 foreach (var categoryId in viewModel.CheckboxCategoryId)
@@ -78,20 +68,6 @@ public class ProductService
 			ProductModel productModel = product;
 
             productModel.Categories = await _categoryService.GetProductCategoriesAsync(product);
-
-            //foreach (var item in productCategories)
-            //{
-            //	if (item.ProductId == product.Id)
-            //	{
-            //		var productCategoryModel = new ProductCategoryModel { 
-            //			CategoryId = item.Category.Id,
-            //			CategoryName = item.Category.Name,
-            //			ProductId = product.Id
-            //		};
-
-            //                 productModel.Categories.Add(productCategoryModel);
-            //	}
-            //}
 
             products.Add(productModel);
 		}
@@ -154,14 +130,4 @@ public class ProductService
 
 		return products;
 	}
-
-	//public async Task<bool> LoginAsync(AccountLoginViewModel accountLoginViewModel)
-	//{
-	//	var userEntity = await GetAsync(x => x.Email == accountLoginViewModel.Email);
-
-	//	if (userEntity != null)
-	//		return userEntity.VerifySecurePassword(accountLoginViewModel.Password);
-
-	//	return false;
-	//}
 }
