@@ -16,7 +16,7 @@
                 {
                     var price = (product.Price).ToString("0.00");
 
-                    <div class="d-flex justify-content-between align-items-center bg-body-tertiary mb-2 ps-3 pe-1 py-1">
+                    <div class="d-flex justify-content-between align-items-center mb-2 ps-3 pe-1 py-1 list-row">
                         <div>
                             <span class="fw-bold">Id:</span> @product.Id ,
                             <span class="fw-bold">Name:</span> @product.Name ,
@@ -74,7 +74,7 @@
                                 <input type="hidden" asp-for="Title" value="@Model.Title" />
                                 <input type="hidden" asp-for="Products" value="@Model.Products" />
                                 <input type="hidden" asp-for="ProductId" value="@product.Id" />
-                                <button type="submit" class="btn-white ms-2" style="padding: 0.5rem;">X</button>
+                                <button type="submit" class="btn-theme ms-3" style="padding: 0.5rem;">X</button>
                             </form>
                         </div>
                     </div>

@@ -23,7 +23,7 @@ public class RoleService
         return roles!;
     }
 
-    public async Task<IEnumerable<UserRoleModel>> GetUserRolesAsync()
+    public async Task<List<UserRoleModel>> GetUserRolesAsync()
     {
         var userRoleModels = new List<UserRoleModel>();
         var roles = await _identityContext.Roles.ToListAsync();
@@ -46,6 +46,15 @@ public class RoleService
         }
 
         return userRoleModels!;
+    }
+    
+    public async Task<UserRoleModel> GetSpecificUserRolesAsync(string userId)
+    {
+        var userRoleModels = await GetUserRolesAsync();
+
+        var specificUserRole = userRoleModels.FirstOrDefault(x => x.Id == userId);
+
+        return specificUserRole!;
     }
 
     public async Task<bool> ChangeRoleAsync(string userId, string roleChange)

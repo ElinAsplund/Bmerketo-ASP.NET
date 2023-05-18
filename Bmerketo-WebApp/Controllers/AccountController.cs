@@ -11,17 +11,19 @@ public class AccountController : Controller
 	private readonly SignInManager<IdentityUser> _signInManager;
 	private readonly AuthService _auth;
 	private readonly UserService _userService;
+	private readonly RoleService _roleService;
 
 
-    public AccountController(SignInManager<IdentityUser> signInManager, AuthService auth, UserService userService)
-    {
-        _signInManager = signInManager;
-        _auth = auth;
-        _userService = userService;
-    }
+	public AccountController(SignInManager<IdentityUser> signInManager, AuthService auth, UserService userService, RoleService roleService)
+	{
+		_signInManager = signInManager;
+		_auth = auth;
+		_userService = userService;
+		_roleService = roleService;
+	}
 
-    //----INDEX----
-    [Authorize]
+	//----INDEX----
+	[Authorize]
 	public async Task<IActionResult> Index()
 	{
 		var _identityUser = await _userService.GetIdentityUserAsync(User!.Identity!.Name!);
@@ -32,6 +34,11 @@ public class AccountController : Controller
 			UserProfile = await _userService.GetUserProfileAsync(_identityUser.Id),
 			User = await _userService.GetIdentityUserAsync(User!.Identity!.Name!)
         };
+
+		var roleModel = await _roleService.GetSpecificUserRolesAsync(_identityUser.Id);
+
+		//This also makes the first letter in roleModel.RoleName to be capitalized:
+		viewModel.User.Role = char.ToUpper(roleModel.RoleName[0]) + roleModel.RoleName.Substring(1);
 
         ViewData["Title"] = viewModel.Title;
 		return View(viewModel);

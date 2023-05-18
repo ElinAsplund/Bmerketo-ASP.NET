@@ -71,11 +71,27 @@ a,
     }
 }
 
+.list-row {
+    background-color: #f8f9fa;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        background-color: $color-theme-2;
+    }
+}
+
+.background-styling {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
 //---Button styling---
 button,
 a.btn-white,
 a.btn-dark,
-a.btn-theme {
+a.btn-theme,
+a.btn-light-theme {
     display: inline-block;
     max-width: max-content;
     padding: 10px 35px;
@@ -110,6 +126,18 @@ a.btn-dark {
     &:hover {
         background-color: $color-white;
         color: $color-dark-1;
+    }
+}
+
+.btn-light-theme,
+a.btn-light-theme {
+    background-color: $color-theme-4;
+    color: $color-white;
+    border: none;
+
+    &:hover {
+        background-color: $color-dark-1;
+        color: $color-white;
     }
 }
 
