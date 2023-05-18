@@ -47,9 +47,9 @@ namespace Bmerketo_WebApp.Controllers
                     //HARDCODED SPOTLIGHTS
                     SpotlightCards = new List<SpotlightCardViewModel>
                     {
-                        new SpotlightCardViewModel{ Id="1", Title = "Wall lamp 1562 LTG modal", UserName = "Admin", CommentsTotal = 13 , Description = "Best dress for everyone ed totam velit risus viverra nobis donec recusandae perspiciatis incididuno", ImageUrl="./images/wall-lamp.jpg"},
-                        new SpotlightCardViewModel{ Id="2", Title = "Wall lamp 1562 LTG modal", UserName = "HurrDurr", CommentsTotal = 14 , Description = "Best dress for everyone ed totam velit risus viverra nobis donec recusandae perspiciatis incididuno", ImageUrl="./images/wall-lamp.jpg"},
-                        new SpotlightCardViewModel{ Id="3", Title = "Wall lamp 1337 LTG modal", UserName = "KurrFnurr", CommentsTotal = 15 , Description = "Best dress for everyone ed totam velit risus viverra nobis donec recusandae perspiciatis incididuno", ImageUrl="./images/wall-lamp.jpg"}
+                        new SpotlightCardViewModel{ Id="1", Title = "PLACEHOLDER", UserName = "Admin", CommentsTotal = 13 , Description = "Best dress for everyone ed totam velit risus viverra nobis donec recusandae perspiciatis incididuno", ImageUrl="./images/wall-lamp.jpg"},
+                        new SpotlightCardViewModel{ Id="2", Title = "PLACEHOLDER", UserName = "HurrDurr", CommentsTotal = 14 , Description = "Best dress for everyone ed totam velit risus viverra nobis donec recusandae perspiciatis incididuno", ImageUrl="./images/wall-lamp.jpg"},
+                        new SpotlightCardViewModel{ Id="3", Title = "PLACEHOLDER", UserName = "KurrFnurr", CommentsTotal = 15 , Description = "Best dress for everyone ed totam velit risus viverra nobis donec recusandae perspiciatis incididuno", ImageUrl="./images/wall-lamp.jpg"}
                     }
                 }
 			};

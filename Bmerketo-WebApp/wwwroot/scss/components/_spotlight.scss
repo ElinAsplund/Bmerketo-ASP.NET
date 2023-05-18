@@ -37,14 +37,14 @@
             width: 370px;
         }
 
-        @include lg{
-            &:last-child{
+        @include lg {
+            &:last-child {
                 display: none;
             }
         }
-        
-        @include xxl{
-            &:last-child{
+
+        @include xxl {
+            &:last-child {
                 display: block;
             }
         }
@@ -63,6 +63,12 @@
             @include sm {
                 width: 370px;
             }
+
+            img {
+                width: 100%;
+                border-radius: 0;
+                transition: 0.45s ease-in-out;
+            }
         }
 
         .card-body {
@@ -74,7 +80,7 @@
                 margin-bottom: 16px;
                 color: $color-black;
 
-                &:hover{
+                &:hover {
                     color: $color-theme-1;
                 }
             }

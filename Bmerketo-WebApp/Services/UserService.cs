@@ -1,67 +1,54 @@
 ﻿using Bmerketo_WebApp.Contexts;
+using Bmerketo_WebApp.Models;
 using Bmerketo_WebApp.Models.Entities;
-using Bmerketo_WebApp.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
 
 namespace Bmerketo_WebApp.Services;
 
 public class UserService
 {
-	//private readonly DataContext _context;
+    private readonly IdentityContext _identityContext;
+    private readonly RoleService _roleService;
 
-	//public UserService(DataContext context)
-	//{
-	//	_context = context;
-	//}
+    public UserService(IdentityContext identityContext, RoleService roleService)
+    {
+        _identityContext = identityContext;
+        _roleService = roleService;
+    }
 
-	//public async Task<bool> UserExist (Expression<Func<UserEntity, bool>> predicate)
-	//{
-	//	if (await _context.Users.AnyAsync(predicate))
-	//		return true;
+    public async Task<UserProfileEntity> GetUserProfileAsync(string userId)
+    {
+        var userProfileEntity = await _identityContext.UserProfiles.Include(x => x.User).Include(x => x.Address).FirstOrDefaultAsync(x => x.UserId == userId);
+        return userProfileEntity!;
+    }
 
-	//	return false;
-	//}
+    public async Task<IdentityUser> GetIdentityUserAsync(string email)
+    {
+        var identityUser = await _identityContext.Users.FirstOrDefaultAsync(x => x.Email == email);
 
-	//public async Task<bool> RegisterAsync(AccountRegisterViewModel accountRegisterViewModel)
-	//{
-	//	try
-	//	{
-	//		//converts to entities
-	//		UserEntity userEntity = accountRegisterViewModel;
-	//		ProfileEntity profileEntity = accountRegisterViewModel;
+        return identityUser!;
+    }
 
-	//		//create user
-	//		_context.Users.Add(userEntity);
-	//		await _context.SaveChangesAsync();
+    public async Task<IEnumerable<UserModel>> GetAllUserModelAsync()
+    {
+        var userModels = new List<UserModel>();
+        var userProfileEntities = await _identityContext.UserProfiles.Include(x => x.User).ToListAsync();
 
-	//		//create profile
-	//		profileEntity.UserId = userEntity.Id;
-	//		_context.Profiles.Add(profileEntity);
-	//		await _context.SaveChangesAsync();
+        var roles = await _roleService.GetUserRolesAsync();
 
-	//		return true;
-	//	}
-	//	catch
-	//	{
-	//		return false;
-	//	}
-	//}
+        foreach (var user in userProfileEntities)
+        {
 
-	//public async Task<UserEntity> GetAsync(Expression<Func<UserEntity, bool>> predicate)
-	//{
-	//	var userEntity = await _context.Users.FirstOrDefaultAsync(predicate);
+            UserModel userModel = user;
 
-	//	return userEntity!;
-	//}
+            var foundRole = roles.FirstOrDefault(x => x.Id == userModel.Id);
 
-	//public async Task<bool> LoginAsync(AccountLoginViewModel accountLoginViewModel) 
-	//{
-	//	var userEntity = await GetAsync(x => x.Email == accountLoginViewModel.Email);
+            userModel.Role = foundRole!.RoleName;
 
-	//	if (userEntity != null)
-	//		return userEntity.VerifySecurePassword(accountLoginViewModel.Password);
+            userModels.Add(userModel);
+        }
 
-	//	return false;
-	//}
+        return userModels!;
+    }
 }

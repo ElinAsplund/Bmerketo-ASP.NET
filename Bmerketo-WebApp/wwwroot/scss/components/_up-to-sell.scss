@@ -55,6 +55,12 @@
             @include sm {
                 width: 369px;
             }
+
+            img {
+                width: 100%;
+                border-radius: 0;
+                transition: 0.45s ease-in-out;
+            }
         }
 
         .card-body {

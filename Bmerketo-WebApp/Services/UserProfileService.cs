@@ -51,5 +51,4 @@ public class UserProfileService
 
         return userModels!;
 	}
-
 }
