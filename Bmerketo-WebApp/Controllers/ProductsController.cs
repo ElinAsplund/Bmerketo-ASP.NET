@@ -18,8 +18,8 @@ namespace Bmerketo_WebApp.Controllers
 			_checkBoxOptionService = checkBoxOptionService;
 			_gridCollectionCardService = gridCollectionCardService;
 		}
-
-		public async Task<IActionResult> Index()
+        //----INDEX----
+        public async Task<IActionResult> Index()
         {
 
 			var viewModel = new ProductsIndexViewModel
@@ -37,8 +37,9 @@ namespace Bmerketo_WebApp.Controllers
             ViewData["Title"] = viewModel.Title;
             return View(viewModel);
         }
-        
-		public async Task<IActionResult> Details(int id)
+
+        //----DETAILS----
+        public async Task<IActionResult> Details(int id)
         {
 			if(id == 0) { return RedirectToAction("index", "home"); }
 
@@ -62,7 +63,6 @@ namespace Bmerketo_WebApp.Controllers
 						new GridCollectionCardViewModel{ Id = 4, Title = "PLACEHOLDER", Price = 40, ImageUrl = "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
 					}
 				},
-				Test = id
 			};
 
 			if (await _productService.GetAsync(x => x.Id == id) == null){ return RedirectToAction("index", "home"); }

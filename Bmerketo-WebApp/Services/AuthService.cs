@@ -61,7 +61,7 @@ public class AuthService
 		catch { return false; }
 	}
 
-	//User registration in back-office, can you do this more simple? (almost a copy of the method above)
+	//User registration in back-office
 	public async Task<bool> RegisterAsync(UsersRegisterViewModel viewModel)
 	{
 		try

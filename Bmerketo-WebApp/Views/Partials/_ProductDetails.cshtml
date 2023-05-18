@@ -3,7 +3,6 @@
     var price = (Model.Price).ToString("0.00");
 }
 
-
 <!-- product-details start -->
 <section class="product-details">
     <div class="container">
@@ -11,35 +10,20 @@
             <div class="big-img">
                 <div class="img-holder">
                     <img src="@Model.LgImgUrl" />
-                    @*<img src="/images/shoes.jpg" />*@
-                    @*<img src="https://images.pexels.com/photos/37539/colored-pencils-colour-pencils-mirroring-color-37539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />*@
-                    @*<img src="https://images.pexels.com/photos/159821/pencils-colored-drawing-school-159821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />*@
                 </div>
             </div>
             <div class="small-img">
                 <div class="img-holder">
                     <img src="@Model.SmImgUrl" />
-                    @*<img src="https://images.pexels.com/photos/159821/pencils-colored-drawing-school-159821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />*@
-                    @*<img src="https://images.pexels.com/photos/37539/colored-pencils-colour-pencils-mirroring-color-37539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />*@
-                    @*<img src="/images/shoes-small.jpg" />*@
                 </div>
                 <div class="img-holder">
                     <img src="@Model.SmImgUrl" />
-                    @*<img src="https://images.pexels.com/photos/159821/pencils-colored-drawing-school-159821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />*@
-                    @*<img src="https://images.pexels.com/photos/37539/colored-pencils-colour-pencils-mirroring-color-37539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />*@
-                    @*<img src="/images/shoes-small.jpg" />*@
                 </div>
                 <div class="img-holder">
                     <img src="@Model.SmImgUrl" />
-                    @*<img src="https://images.pexels.com/photos/159821/pencils-colored-drawing-school-159821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />*@
-                    @*<img src="https://images.pexels.com/photos/37539/colored-pencils-colour-pencils-mirroring-color-37539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />*@
-                    @*<img src="/images/shoes-small.jpg" />*@
                 </div>
                 <div class="img-holder">
                     <img src="@Model.SmImgUrl" />
-                    @*<img src="https://images.pexels.com/photos/159821/pencils-colored-drawing-school-159821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />*@
-                    @*<img src="https://images.pexels.com/photos/37539/colored-pencils-colour-pencils-mirroring-color-37539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />*@
-                    @*<img src="/images/shoes-small.jpg" />*@
                 </div>
             </div>
             <div class="product-text">
@@ -57,7 +41,6 @@
                         <i class="fa-solid fa-star"></i>
                     </div>
                     <a class="link review-count" href="#">16 reviews</a>
-                    @*<a class="link review-count" asp-controller="products" asp-action="reviews">16 reviews</a>*@
                 </div>
                 <div class="product-price">$@price</div>
                 <div class="btn-holder">
@@ -77,6 +60,7 @@
                     <div class="product-sku">SKU: N/A</div>
                 </div>
                 <button class="btn-white">Add to wishlist</button>
+
                 @if(Model.Categories.Count != 0)
                 {
                     <div class="d-flex">
@@ -87,7 +71,7 @@
                         }
                     </div>
                 }
-                @*<div class="product-category">Category: Table Lamp, Light</div>*@
+
             </div>
         </div>
     </div>

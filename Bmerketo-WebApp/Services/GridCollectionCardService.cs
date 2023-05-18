@@ -1,6 +1,4 @@
-﻿using Bmerketo_WebApp.Contexts;
-using Bmerketo_WebApp.Models;
-using Bmerketo_WebApp.Models.Entities;
+﻿using Bmerketo_WebApp.Models.Entities;
 using Bmerketo_WebApp.ViewModels;
 using System.Linq.Expressions;
 

@@ -16,10 +16,10 @@ public class ProductEntity
 	public string? SmImgUrl { get; set; }
 
 	public ICollection<ProductCategoryEntity> ProductCategories = new HashSet<ProductCategoryEntity>();
-	//public ICollection<CategoryEntity> Categories = new HashSet<CategoryEntity>(); //Dont need?
 
 
     #region implicit operators
+
     public static implicit operator ProductModel(ProductEntity productEntity)
 	{
 		return new ProductModel
@@ -30,7 +30,6 @@ public class ProductEntity
 			Price = productEntity.Price,
 			LgImgUrl = productEntity.LgImgUrl!,
 			SmImgUrl = productEntity.SmImgUrl!,
-			//Categories = productEntity.Categories
 		};
 	}
 	
@@ -38,13 +37,11 @@ public class ProductEntity
 	{
 		return new ProductEntity
 		{
-			//Id = productModel.Id,
 			Name = productModel.Name,
 			Description = productModel.Description,
 			Price = productModel.Price,
 			LgImgUrl = productModel.LgImgUrl,
 			SmImgUrl = productModel.SmImgUrl,
-			//Categories = productModel.Categories.Name
 		};
 	}
 	#endregion

@@ -9,6 +9,4 @@ public class ProductsDetailsViewModel
 	public RelatedProductsViewModel Related { get; set; } = null!;
 
 	public ProductModel Product { get; set; } = null!;
-
-	public int Test { get; set; }
 }

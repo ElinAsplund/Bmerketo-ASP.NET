@@ -19,6 +19,7 @@ namespace Bmerketo_WebApp.Controllers
         //CategoryId = 2 => "popular"
         //CategoryId = 3 => "featured"
 
+        //----INDEX----
         public async Task<IActionResult> Index()
         {
             var viewModel = new HomeIndexViewModel

@@ -1,13 +1,4 @@
 ﻿@model ProductListViewModel
-@*@{
-    var products = new List<ProductModel>();
-
-    foreach (var product in Model.Products)
-    {
-        products.Add(product);
-    }
-}*@
-
 
 <partial name="/Views/Partials/_ProductHeader.cshtml" />
 
@@ -17,7 +8,7 @@
         <div class="form-content">
             <div class="form-title">Product List</div>
             <hr>
-            <div class="mb-2">Here are the products in the database. @*Remove-btn, do not work.*@</div>
+            <div class="mb-2">Here are the products in the database.</div>
             <div asp-validation-summary="ModelOnly" class="error-text"></div>
             @if (Model.Products != null)
             {

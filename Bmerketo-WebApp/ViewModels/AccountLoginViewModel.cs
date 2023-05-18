@@ -17,16 +17,6 @@ public class AccountLoginViewModel
 	[Required(ErrorMessage = "Please enter your Password.")]
 	public string Password { get; set; } = null!;
 
+	//Not actually in use:
 	public bool KeepLoggedIn { get; set; } = false;
-
-	#region implicit operators
-
-	//public static implicit operator UserEntity(AccountLoginViewModel accountLoginViewModel)
-	//{
-	//	var userEntity = new UserEntity { Email = accountLoginViewModel.Email };
-	//	userEntity.VerifySecurePassword(accountLoginViewModel.Password);
-	//	return userEntity;
-	//}
-
-	#endregion
 }

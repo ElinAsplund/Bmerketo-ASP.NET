@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Bmerketo_WebApp.Models.Entities;
+﻿namespace Bmerketo_WebApp.Models.Entities;
 
 public class ContactEntity
 {

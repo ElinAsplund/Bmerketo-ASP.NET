@@ -48,7 +48,6 @@ header {
 
         .menu-links {
             color: $color-dark-1;
-            // padding-top: 30px;
 
             @include lg {
                 display: block;
@@ -57,7 +56,6 @@ header {
 
             .link {
                 color: $color-dark-1;
-                // display: none;
                 display: block;
                 margin: 10px 20px;
                 padding: 10px;
@@ -83,7 +81,6 @@ header {
             text-align: center;
             padding: 20px;
             background: $color-dark-1;
-            // background: #e3cacb;
 
             @include lg {
                 position: static;
@@ -96,7 +93,6 @@ header {
                 margin-left: 15px;
 
                 &:hover {
-                    //color: $color-dark-2;
                     color: $color-theme-1;
                 }
 

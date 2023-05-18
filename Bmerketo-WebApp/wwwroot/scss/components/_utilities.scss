@@ -10,6 +10,8 @@ body {
     color: $color-dark-3;
 }
 
+
+//---Utility classes---
 .no-bullets{
     ul{
         margin: 0;
@@ -23,7 +25,6 @@ body {
 
 .h1-placeholder {
     padding-top: 60px;
-    //height: 100svh;
     min-height: 425px;
     display: flex;
     justify-content: center;
@@ -70,7 +71,7 @@ a,
     }
 }
 
-//Button styling
+//---Button styling---
 button,
 a.btn-white,
 a.btn-dark,
@@ -119,7 +120,7 @@ a.btn-theme {
     color: $color-white;
 }
 
-//Card styling
+//---Card styling---
 .card {
     border: none !important;
     width: 270px; //<--------CHANGE THIS WHEN OTHER WIDTH?
@@ -193,7 +194,7 @@ a.btn-theme {
     }
 }
 
-//Custom checkbox styling
+//---Custom checkbox styling---
 //~~ with help of www3school + chatGPT + Hans github ~~
 .custom-checkbox {
     display: inline-block;
@@ -248,7 +249,7 @@ a.btn-theme {
     }
 }
 
-//Error styling of forms
+//---Error styling of forms---
 .error-text {
     display: block !important;
     color: $color-theme-1;
@@ -289,7 +290,7 @@ a.btn-theme {
     }
 }
 
-// Positions
+//---Positions---
 .position-static {
     position: static !important;
 }

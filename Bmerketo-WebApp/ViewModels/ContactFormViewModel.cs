@@ -27,9 +27,6 @@ public class ContactFormViewModel
 	[Required(ErrorMessage = "Please enter a comment.")]
 	public string Comment { get; set; } = null!;
 
-	//public bool SaveInBrowser { get; set; } = false;
-
-
 	#region implicit operators
 
 	public static implicit operator ContactEntity(ContactFormViewModel viewModel)

@@ -1,5 +1,4 @@
-﻿using Bmerketo_WebApp.Models.Entities;
-using Bmerketo_WebApp.ViewModels;
+﻿using Bmerketo_WebApp.ViewModels;
 
 namespace Bmerketo_WebApp.Models;
 
@@ -13,7 +12,7 @@ public class ProductModel
 	public string? LgImgUrl { get; set; }
 	public string? SmImgUrl { get; set; }
 
-	public List<ProductCategoryModel> Categories = new(); //NO NEED?
+	public List<ProductCategoryModel> Categories = new();
 
 
     #region implicit operators

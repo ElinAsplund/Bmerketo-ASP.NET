@@ -1,5 +1,4 @@
 ﻿using Bmerketo_WebApp.Models.Entities;
-using Bmerketo_WebApp.ViewModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace Bmerketo_WebApp.Models;
@@ -12,14 +11,7 @@ public class UserModel
     public string LastName { get; set; } = null!;
     public string Email { get; set; } = null!;
     public string? PhoneNumber { get; set; }
-
-    //ROLES?
     public string Role { get; set; } = null!;
-
-    //LATER?
-    //public string StreetName { get; set; } = null!;
-    //public string PostalCode { get; set; } = null!;
-    //public string City { get; set; } = null!;
     public string? ProfileImage { get; set; }
 
     #region implicit operators

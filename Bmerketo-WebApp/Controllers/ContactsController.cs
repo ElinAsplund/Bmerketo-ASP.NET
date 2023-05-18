@@ -14,7 +14,8 @@ namespace Bmerketo_WebApp.Controllers
 			_contactService = contactService;
 		}
 
-		public IActionResult Index()
+        //----INDEX----
+        public IActionResult Index()
         {
 			var viewModel = new ContactsIndexViewModel
 			{

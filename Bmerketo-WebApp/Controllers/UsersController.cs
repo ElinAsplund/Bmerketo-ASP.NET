@@ -20,6 +20,7 @@ namespace Bmerketo_WebApp.Controllers
             _authService = authService;
         }
 
+        //----INDEX----
         public async Task<IActionResult> Index()
         {
             var viewModel = new UsersIndexViewModel
@@ -60,6 +61,7 @@ namespace Bmerketo_WebApp.Controllers
             return View(viewModel);
         }
 
+        //----REGISTER USER----
         public async Task<IActionResult> Register()
         {
             var viewModel = new UsersRegisterViewModel

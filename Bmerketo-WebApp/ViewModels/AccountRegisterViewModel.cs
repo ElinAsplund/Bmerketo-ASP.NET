@@ -92,7 +92,6 @@ public class AccountRegisterViewModel
 		};
 	}
 
-
 	public static implicit operator AddressEntity(AccountRegisterViewModel viewModel)
 	{
 		return new AddressEntity

@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bmerketo_WebApp.Models.Entities;
-
 
 [PrimaryKey(nameof(ProductId), nameof(CategoryId))]
 public class ProductCategoryEntity

@@ -78,14 +78,14 @@
             }
         }
 
-        .card { //
-            width: 270px; //
+        .card { 
+            width: 270px; 
 
             .img-holder {
-                width: 270px; //
-                height: 295px; //
-            } //
-        } //
+                width: 270px; 
+                height: 295px; 
+            } 
+        } 
 
         .button-holder {
             display: none;
@@ -96,7 +96,6 @@
             }
 
             button {
-                // font-weight: $font-weight-medium;
                 font-size: 1.3rem;
                 border-radius: 3px;
                 padding: 0px 10px;
