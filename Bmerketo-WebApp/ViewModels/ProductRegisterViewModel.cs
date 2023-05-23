@@ -23,76 +23,42 @@ public class ProductRegisterViewModel
 	[DataType(DataType.Currency)]
 	public decimal Price { get; set; }
 
-
-	[Display(Name = "Large Product Image (optional)")]
-	public string? LgImgUrl { get; set; }
-
-
+    [Display(Name = "Large Product Image (optional)")]
+    [DataType(DataType.Upload)]
+	public IFormFile? ImageLg { get; set; }
+	
 	[Display(Name = "Small Product Image (optional)")]
-	public string? SmImgUrl { get; set; }
+    [DataType(DataType.Upload)]
+	public IFormFile? ImageSm { get; set; }
 
-    public List<CheckboxOptionModel> Checkboxes { get; set; } = new();
+	public List<CheckboxOptionModel> Checkboxes { get; set; } = new();
 
     public List<int> CheckboxCategoryId { get; set; } = new();
 
 
-
-    //TEEEST
-
-    [Display(Name = "Large Product Image (optional)")]
-    [DataType(DataType.Upload)]
-	public IFormFile? ImageTestLg { get; set; }
-	
-	[Display(Name = "Small Product Image (optional)")]
-    [DataType(DataType.Upload)]
-	public IFormFile? ImageTestSm { get; set; }
-
-    //TEEEST
-
-
-
-
-
     #region implicit operators
 
-    //public static implicit operator ProductEntity(ProductRegisterViewModel productRegisterViewModel)
-    //{
-    //	return new ProductEntity
-    //	{
-    //		Name = productRegisterViewModel.Name,
-    //		Description = productRegisterViewModel.Description,
-    //		Price = productRegisterViewModel.Price,
-    //		LgImgUrl = productRegisterViewModel.LgImgUrl,
-    //		SmImgUrl = productRegisterViewModel.SmImgUrl
-    //	};
-    //}
-
-
-    //TEEEST
     public static implicit operator ProductEntity(ProductRegisterViewModel viewModel)
 	{
 		var productEntity = new ProductEntity
 		{
 			Name = viewModel.Name,
 			Description = viewModel.Description,
-			Price = viewModel.Price,
-			LgImgUrl = viewModel.LgImgUrl,
-			SmImgUrl = viewModel.SmImgUrl
+			Price = viewModel.Price
 		};
 
-		if(viewModel.ImageTestLg != null )
+		if(viewModel.ImageLg != null )
 		{
-			productEntity.LgImgUrl = $"{Guid.NewGuid()}_{viewModel.ImageTestLg.FileName}";
+			productEntity.LgImgUrl = $"{Guid.NewGuid()}_{viewModel.ImageLg.FileName}";
 		}
 		
-		if(viewModel.ImageTestSm != null )
+		if(viewModel.ImageSm != null )
 		{
-			productEntity.SmImgUrl = $"{Guid.NewGuid()}_{viewModel.ImageTestSm.FileName}";
+			productEntity.SmImgUrl = $"{Guid.NewGuid()}_{viewModel.ImageSm.FileName}";
 		}
 
 		return productEntity;
 	}
-    //TEEEST
 
     #endregion
 }

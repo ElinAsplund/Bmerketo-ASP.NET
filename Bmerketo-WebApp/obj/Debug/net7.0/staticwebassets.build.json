@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HP12sJXYb3LKj2rvEkPx6OyluXofk10zM9DrbacJ9ok=",
+  "Hash": "T6taTn6lioCfKhbVdvVlLCsYmWvqvy4dwAtAZ/TonA4=",
   "Source": "Bmerketo-WebApp",
   "BasePath": "_content/Bmerketo-WebApp",
   "Mode": "Default",
@@ -1394,6 +1394,23 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\83866555-f906-430c-8416-b02271e40c6b_camera-lg.webp"
     },
     {
+      "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\89c1a7e4-b85a-42fd-b62f-37d57ee3901d_shoes.jpg",
+      "SourceId": "Bmerketo-WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\",
+      "BasePath": "_content/Bmerketo-WebApp",
+      "RelativePath": "images/products/89c1a7e4-b85a-42fd-b62f-37d57ee3901d_shoes.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\89c1a7e4-b85a-42fd-b62f-37d57ee3901d_shoes.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\9b0efbdb-2807-4408-9996-4fe17d481073_pencil-sm.webp",
       "SourceId": "Bmerketo-WebApp",
       "SourceType": "Discovered",
@@ -1426,6 +1443,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\a8faf052-a160-4fd1-876c-7e57c0ff604f_foundation-sm.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\abf2379f-b97a-4976-8082-793461d31a8f_shoes-small.jpg",
+      "SourceId": "Bmerketo-WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\",
+      "BasePath": "_content/Bmerketo-WebApp",
+      "RelativePath": "images/products/abf2379f-b97a-4976-8082-793461d31a8f_shoes-small.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\abf2379f-b97a-4976-8082-793461d31a8f_shoes-small.jpg"
     },
     {
       "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\d770d86e-85b6-4b36-8893-80f645dc9038_cutlery-sm.webp",

@@ -4,7 +4,6 @@ using Bmerketo_WebApp.Models.Entities;
 using Bmerketo_WebApp.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using System.Reflection.Metadata.Ecma335;
 
 namespace Bmerketo_WebApp.Services;
 
@@ -50,20 +49,10 @@ public class ProductService
             }
 
             await _productContext.SaveChangesAsync();
-			
-			//TEST
-			await UploadImageAsync(productEntity, viewModel.ImageTestLg!, viewModel.ImageTestSm!);
-			
-			//if(viewModel.ImageTestLg != null)
-			//{
-			//	await UploadImageAsync(productEntity, viewModel.ImageTestLg, viewModel.ImageTestSm);
-			//}
-			
-			//if(viewModel.ImageTestSm != null)
-			//{
-			//	await UploadImageAsync(productEntity, viewModel.ImageTestSm);
-			//}
-			//TEST
+
+			//Upload Image:
+			if (await UploadImageAsync(productEntity, viewModel.ImageLg!, viewModel.ImageSm!) != true)
+				return false;
 
 			return true;
 		}
@@ -148,7 +137,6 @@ public class ProductService
 		return products;
 	}
 
-	//TEST
 	public async Task<bool> UploadImageAsync(ProductEntity product, IFormFile imageLg, IFormFile imageSm)
 	{
 		try
@@ -169,5 +157,4 @@ public class ProductService
 		} 
 		catch { return false; }
 	}
-	//TEST
 }
