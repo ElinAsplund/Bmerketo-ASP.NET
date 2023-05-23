@@ -64,7 +64,7 @@ public class UsersRegisterViewModel
     public string ConfirmPassword { get; set; } = null!;
 
 
-    [Display(Name = "Profile Image Url (optional)")]
+    [Display(Name = "Profile Image Web Url (optional)")]
     public string? ProfileImage { get; set; }
 
     [Required(ErrorMessage = "Please Accept the Terms.")]

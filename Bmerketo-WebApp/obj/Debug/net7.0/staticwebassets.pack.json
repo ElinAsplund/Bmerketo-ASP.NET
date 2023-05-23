@@ -33,8 +33,80 @@
       "PackagePath": "staticwebassets\\images\\product.jpg"
     },
     {
-      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\5c066964-f09c-42ac-b246-258a6c716176_shoes.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\5c066964-f09c-42ac-b246-258a6c716176_shoes.jpg"
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\00808e5e-72a1-4271-bc42-4d17dfd0c456_pencil-lg.webp",
+      "PackagePath": "staticwebassets\\images\\products\\00808e5e-72a1-4271-bc42-4d17dfd0c456_pencil-lg.webp"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\141a35b3-5c28-4a3d-84cc-5af0cc3b0635_shoes.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\141a35b3-5c28-4a3d-84cc-5af0cc3b0635_shoes.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\27bfa887-25de-4e24-abb5-49f8d27590ff_watch-sm.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\27bfa887-25de-4e24-abb5-49f8d27590ff_watch-sm.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\27f6de5a-a071-472e-82a7-7b7bcf755bb3_coffee-lg.webp",
+      "PackagePath": "staticwebassets\\images\\products\\27f6de5a-a071-472e-82a7-7b7bcf755bb3_coffee-lg.webp"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\32224e77-5011-474e-80b3-28e75fb6886d_glasses-sm.webp",
+      "PackagePath": "staticwebassets\\images\\products\\32224e77-5011-474e-80b3-28e75fb6886d_glasses-sm.webp"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\3b6bb0ac-57fe-4543-9a07-d3c3b33e170e_camera-sm.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\3b6bb0ac-57fe-4543-9a07-d3c3b33e170e_camera-sm.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\3f85a9dc-e351-4e95-800b-5c497636149f_books-lg.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\3f85a9dc-e351-4e95-800b-5c497636149f_books-lg.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\4f2a5a57-28e2-4d7f-8cfe-f8dc1715dcb6_product.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\4f2a5a57-28e2-4d7f-8cfe-f8dc1715dcb6_product.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\68d4fbfb-3595-4d0d-88bd-3b032ceb22b1_books-sm.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\68d4fbfb-3595-4d0d-88bd-3b032ceb22b1_books-sm.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\6f13edaa-ffc4-4d3b-b13a-6eca2cb49dd5_cutlery-lg.webp",
+      "PackagePath": "staticwebassets\\images\\products\\6f13edaa-ffc4-4d3b-b13a-6eca2cb49dd5_cutlery-lg.webp"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\722aa31a-631c-43e8-90d5-1dc5d1d4cd3f_coffee-sm.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\722aa31a-631c-43e8-90d5-1dc5d1d4cd3f_coffee-sm.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\78bb9eec-1047-4d21-b2ab-bf5990af991a_glasses-lg.webp",
+      "PackagePath": "staticwebassets\\images\\products\\78bb9eec-1047-4d21-b2ab-bf5990af991a_glasses-lg.webp"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\83866555-f906-430c-8416-b02271e40c6b_camera-lg.webp",
+      "PackagePath": "staticwebassets\\images\\products\\83866555-f906-430c-8416-b02271e40c6b_camera-lg.webp"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\9b0efbdb-2807-4408-9996-4fe17d481073_pencil-sm.webp",
+      "PackagePath": "staticwebassets\\images\\products\\9b0efbdb-2807-4408-9996-4fe17d481073_pencil-sm.webp"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\a8faf052-a160-4fd1-876c-7e57c0ff604f_foundation-sm.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\a8faf052-a160-4fd1-876c-7e57c0ff604f_foundation-sm.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\d770d86e-85b6-4b36-8893-80f645dc9038_cutlery-sm.webp",
+      "PackagePath": "staticwebassets\\images\\products\\d770d86e-85b6-4b36-8893-80f645dc9038_cutlery-sm.webp"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\f6a2c9cb-4b08-48a8-884a-309fef74f178_watch-lg.webp",
+      "PackagePath": "staticwebassets\\images\\products\\f6a2c9cb-4b08-48a8-884a-309fef74f178_watch-lg.webp"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\f92f9e89-6f14-43e5-bb17-055db248842e_foundation-lg.webp",
+      "PackagePath": "staticwebassets\\images\\products\\f92f9e89-6f14-43e5-bb17-055db248842e_foundation-lg.webp"
+    },
+    {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\product.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\product.jpg"
     },
     {
       "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\shoes-info.jpg",

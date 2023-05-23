@@ -39,9 +39,13 @@ public class ProductRegisterViewModel
 
     //TEEEST
 
-    [Display(Name = "Image TEST (optional)")]
+    [Display(Name = "Large Product Image (optional)")]
     [DataType(DataType.Upload)]
-	public IFormFile? ImageTest { get; set; }
+	public IFormFile? ImageTestLg { get; set; }
+	
+	[Display(Name = "Small Product Image (optional)")]
+    [DataType(DataType.Upload)]
+	public IFormFile? ImageTestSm { get; set; }
 
     //TEEEST
 
@@ -76,9 +80,14 @@ public class ProductRegisterViewModel
 			SmImgUrl = viewModel.SmImgUrl
 		};
 
-		if(viewModel.ImageTest != null )
+		if(viewModel.ImageTestLg != null )
 		{
-			productEntity.LgImgUrl = $"{Guid.NewGuid()}_{viewModel.ImageTest.FileName}";
+			productEntity.LgImgUrl = $"{Guid.NewGuid()}_{viewModel.ImageTestLg.FileName}";
+		}
+		
+		if(viewModel.ImageTestSm != null )
+		{
+			productEntity.SmImgUrl = $"{Guid.NewGuid()}_{viewModel.ImageTestSm.FileName}";
 		}
 
 		return productEntity;

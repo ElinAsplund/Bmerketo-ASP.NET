@@ -37,15 +37,15 @@
                 </div>
 
                 <div class="line">
-                    <label asp-for="LgImgUrl"></label>
-                    <input asp-for="LgImgUrl" />
-                    <span asp-validation-for="LgImgUrl" class="error-text"></span>
+                    <label asp-for="ImageTestLg"></label>
+                    <input asp-for="ImageTestLg" class="form-control" />
+                    <span asp-validation-for="ImageTestLg" class="error-text"></span>
                 </div>
 
                 <div class="line">
-                    <label asp-for="SmImgUrl"></label>
-                    <input asp-for="SmImgUrl" required />
-                    <span asp-validation-for="SmImgUrl" class="error-text"></span>
+                    <label asp-for="ImageTestSm"></label>
+                    <input asp-for="ImageTestSm" class="form-control" />
+                    <span asp-validation-for="ImageTestSm" class="error-text"></span>
                 </div>
 
                 @* --------------select MULTIPLE categories!-------------- *@
@@ -70,22 +70,6 @@
                     </div>
                 }
                 @* --------------select MULTIPLE categories!-------------- *@
-
-
-                @* --------------TEST AREA!-------------- *@
-                <br />
-                <hr />
-                <div class="line">
-                    <label asp-for="ImageTest"></label>
-                    <input asp-for="ImageTest" class="form-control" />
-                    <span asp-validation-for="ImageTest" class="error-text"></span>
-                </div>
-                
-                
-                @* --------------TEST AREA!-------------- *@
-
-
-
 
                 <button class="btn-theme" type="submit" id="btn-product-submit">Submit</button>
                 <div id="form-error" class="error-text mt-2"></div>

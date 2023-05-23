@@ -52,10 +52,17 @@ public class ProductService
             await _productContext.SaveChangesAsync();
 			
 			//TEST
-			if(viewModel.ImageTest != null)
-			{
-				await UploadImageAsync(productEntity, viewModel.ImageTest);
-			}
+			await UploadImageAsync(productEntity, viewModel.ImageTestLg!, viewModel.ImageTestSm!);
+			
+			//if(viewModel.ImageTestLg != null)
+			//{
+			//	await UploadImageAsync(productEntity, viewModel.ImageTestLg, viewModel.ImageTestSm);
+			//}
+			
+			//if(viewModel.ImageTestSm != null)
+			//{
+			//	await UploadImageAsync(productEntity, viewModel.ImageTestSm);
+			//}
 			//TEST
 
 			return true;
@@ -142,12 +149,21 @@ public class ProductService
 	}
 
 	//TEST
-	public async Task<bool> UploadImageAsync(ProductEntity product, IFormFile image)
+	public async Task<bool> UploadImageAsync(ProductEntity product, IFormFile imageLg, IFormFile imageSm)
 	{
 		try
 		{
-			string imagePath = $"{_webHostEnvironment.WebRootPath}/images/products/{product.LgImgUrl}";
-			await image.CopyToAsync(new FileStream(imagePath, FileMode.Create));
+			if(product.LgImgUrl != null)
+			{
+				string imagePath = $"{_webHostEnvironment.WebRootPath}/images/products/{product.LgImgUrl}";
+				await imageLg.CopyToAsync(new FileStream(imagePath, FileMode.Create));
+			}
+			
+			if(product.SmImgUrl != null)
+			{
+				string imagePath = $"{_webHostEnvironment.WebRootPath}/images/products/{product.SmImgUrl}";
+				await imageSm.CopyToAsync(new FileStream(imagePath, FileMode.Create));
+			}
 
 			return true;
 		} 
