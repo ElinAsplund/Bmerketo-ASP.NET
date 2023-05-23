@@ -37,19 +37,53 @@ public class ProductRegisterViewModel
 
 
 
-	#region implicit operators
+    //TEEEST
 
-	public static implicit operator ProductEntity(ProductRegisterViewModel productRegisterViewModel)
+    [Display(Name = "Image TEST (optional)")]
+    [DataType(DataType.Upload)]
+	public IFormFile? ImageTest { get; set; }
+
+    //TEEEST
+
+
+
+
+
+    #region implicit operators
+
+    //public static implicit operator ProductEntity(ProductRegisterViewModel productRegisterViewModel)
+    //{
+    //	return new ProductEntity
+    //	{
+    //		Name = productRegisterViewModel.Name,
+    //		Description = productRegisterViewModel.Description,
+    //		Price = productRegisterViewModel.Price,
+    //		LgImgUrl = productRegisterViewModel.LgImgUrl,
+    //		SmImgUrl = productRegisterViewModel.SmImgUrl
+    //	};
+    //}
+
+
+    //TEEEST
+    public static implicit operator ProductEntity(ProductRegisterViewModel viewModel)
 	{
-		return new ProductEntity
+		var productEntity = new ProductEntity
 		{
-			Name = productRegisterViewModel.Name,
-			Description = productRegisterViewModel.Description,
-			Price = productRegisterViewModel.Price,
-			LgImgUrl = productRegisterViewModel.LgImgUrl,
-			SmImgUrl = productRegisterViewModel.SmImgUrl
+			Name = viewModel.Name,
+			Description = viewModel.Description,
+			Price = viewModel.Price,
+			LgImgUrl = viewModel.LgImgUrl,
+			SmImgUrl = viewModel.SmImgUrl
 		};
-	}
 
-	#endregion
+		if(viewModel.ImageTest != null )
+		{
+			productEntity.LgImgUrl = $"{Guid.NewGuid()}_{viewModel.ImageTest.FileName}";
+		}
+
+		return productEntity;
+	}
+    //TEEEST
+
+    #endregion
 }

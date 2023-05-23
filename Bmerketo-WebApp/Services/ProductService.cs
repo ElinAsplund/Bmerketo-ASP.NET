@@ -4,6 +4,7 @@ using Bmerketo_WebApp.Models.Entities;
 using Bmerketo_WebApp.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Bmerketo_WebApp.Services;
 
@@ -11,11 +12,13 @@ public class ProductService
 {
 	private readonly ProductContext _productContext;
 	private readonly CategoryService _categoryService;
+	private readonly IWebHostEnvironment _webHostEnvironment;
 
-    public ProductService(ProductContext context, CategoryService categoryService)
+    public ProductService(ProductContext context, CategoryService categoryService, IWebHostEnvironment webHostEnvironment)
     {
         _productContext = context;
         _categoryService = categoryService;
+        _webHostEnvironment = webHostEnvironment;
     }
 
     public async Task<bool> RegisterAsync(ProductRegisterViewModel viewModel)
@@ -47,6 +50,13 @@ public class ProductService
             }
 
             await _productContext.SaveChangesAsync();
+			
+			//TEST
+			if(viewModel.ImageTest != null)
+			{
+				await UploadImageAsync(productEntity, viewModel.ImageTest);
+			}
+			//TEST
 
 			return true;
 		}
@@ -130,4 +140,18 @@ public class ProductService
 
 		return products;
 	}
+
+	//TEST
+	public async Task<bool> UploadImageAsync(ProductEntity product, IFormFile image)
+	{
+		try
+		{
+			string imagePath = $"{_webHostEnvironment.WebRootPath}/images/products/{product.LgImgUrl}";
+			await image.CopyToAsync(new FileStream(imagePath, FileMode.Create));
+
+			return true;
+		} 
+		catch { return false; }
+	}
+	//TEST
 }

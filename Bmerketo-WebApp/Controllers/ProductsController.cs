@@ -29,7 +29,7 @@ namespace Bmerketo_WebApp.Controllers
 				{
 					Title = "All Products",
 					GridCards = await _gridCollectionCardService.PopulateCardsWithAllProductsAsync(),
-
+					
 					LoadMore = false
 				}
 			};

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4B+xskv6YJDu9b4FDmWx51LB6jvDoZYVS1g14Vqjf+M=",
+  "Hash": "Bec28jnrFJrthORDNSXXxhGE3CvJ9V7WMao96jcFfGA=",
   "Source": "Bmerketo-WebApp",
   "BasePath": "_content/Bmerketo-WebApp",
   "Mode": "Default",
@@ -1171,6 +1171,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\product.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\5c066964-f09c-42ac-b246-258a6c716176_shoes.jpg",
+      "SourceId": "Bmerketo-WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\",
+      "BasePath": "_content/Bmerketo-WebApp",
+      "RelativePath": "images/products/5c066964-f09c-42ac-b246-258a6c716176_shoes.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\5c066964-f09c-42ac-b246-258a6c716176_shoes.jpg"
     },
     {
       "Identity": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\shoes.jpg",

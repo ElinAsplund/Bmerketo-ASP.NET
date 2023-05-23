@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\images\\product.jpg"
     },
     {
+      "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\products\\5c066964-f09c-42ac-b246-258a6c716176_shoes.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\5c066964-f09c-42ac-b246-258a6c716176_shoes.jpg"
+    },
+    {
       "Id": "C:\\Users\\Elin\\Desktop\\ECutbildning\\6_ASP.NET\\Project\\Bmerketo-ASP.NET\\Bmerketo-WebApp\\wwwroot\\images\\shoes-info.jpg",
       "PackagePath": "staticwebassets\\images\\shoes-info.jpg"
     },

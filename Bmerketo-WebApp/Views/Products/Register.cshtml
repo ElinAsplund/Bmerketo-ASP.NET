@@ -8,7 +8,7 @@
         <div class="form-content">
             <div class="form-title">Register a new product</div>
             <hr>
-            <form method="post" onsubmit="validateAllProduct(event)" novalidate>
+            <form enctype="multipart/form-data" method="post" onsubmit="validateAllProduct(event)" novalidate>
 
                 <div class="line">
                     <div asp-validation-summary="ModelOnly" class="alert alert-danger no-bullets"></div>
@@ -70,6 +70,22 @@
                     </div>
                 }
                 @* --------------select MULTIPLE categories!-------------- *@
+
+
+                @* --------------TEST AREA!-------------- *@
+                <br />
+                <hr />
+                <div class="line">
+                    <label asp-for="ImageTest"></label>
+                    <input asp-for="ImageTest" class="form-control" />
+                    <span asp-validation-for="ImageTest" class="error-text"></span>
+                </div>
+                
+                
+                @* --------------TEST AREA!-------------- *@
+
+
+
 
                 <button class="btn-theme" type="submit" id="btn-product-submit">Submit</button>
                 <div id="form-error" class="error-text mt-2"></div>

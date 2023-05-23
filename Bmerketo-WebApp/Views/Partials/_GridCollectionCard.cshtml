@@ -3,12 +3,14 @@
     var price = (Model.Price).ToString("0.00");
 }
 
+@*<img src="/images/products/@Model.ImageUrl" class="card-img-top" alt="@Model.Title">*@
 <div class="col">
     <div class="card">
         <div class="img-holder">
             <a asp-controller="products" asp-action="details" asp-route-id="@Model.Id">
                 <img src="@Model.ImageUrl" class="card-img-top" alt="@Model.Title">
             </a>
+
         </div>
         <div class="card-body">
             <div>
