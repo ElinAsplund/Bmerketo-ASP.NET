@@ -36,20 +36,8 @@
 
                 </div>
 
-                <div class="line">
-                    <label asp-for="ImageLg"></label>
-                    <input asp-for="ImageLg" class="form-control" />
-                    <span asp-validation-for="ImageLg" class="error-text"></span>
-                </div>
-
-                <div class="line">
-                    <label asp-for="ImageSm"></label>
-                    <input asp-for="ImageSm" class="form-control" />
-                    <span asp-validation-for="ImageSm" class="error-text"></span>
-                </div>
-
                 @* --------------select MULTIPLE categories!-------------- *@
-                <label class="">Product category:</label>
+                <label>Product Category*</label>
                 @foreach(var checkbox in Model.Checkboxes)
                 {
                     <div class="form-check">
@@ -70,6 +58,18 @@
                     </div>
                 }
                 @* --------------select MULTIPLE categories!-------------- *@
+
+                <div class="line mt-4">
+                    <label asp-for="ImageLg"></label>
+                    <input asp-for="ImageLg" class="form-control" />
+                    <span asp-validation-for="ImageLg" class="error-text"></span>
+                </div>
+
+                <div class="line">
+                    <label asp-for="ImageSm"></label>
+                    <input asp-for="ImageSm" class="form-control" />
+                    <span asp-validation-for="ImageSm" class="error-text"></span>
+                </div>
 
                 <button class="btn-theme" type="submit" id="btn-product-submit">Submit</button>
                 <div id="form-error" class="error-text mt-2"></div>
